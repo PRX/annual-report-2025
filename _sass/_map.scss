@@ -8,7 +8,6 @@
 #map {
   height: 600px;
   width: 100%;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   border: 1px solid $navy;
   border-radius: 20px;
 }
@@ -28,46 +27,43 @@
 }
 
 .layer-btn {
-  background: linear-gradient(45deg, #0089BD, #006B94);
-  color: white;
+  background: $blue;
+  color: $white;
   border: none;
   padding: 12px 24px;
-  border-radius: 25px;
+  border-radius: 10px;
   cursor: pointer;
   font-weight: bold;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0,137,189,0.3);
 }
 
 .layer-btn:hover {
-  background: linear-gradient(45deg, #006B94, #0089BD);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0,137,189,0.4);
+  background: $blue-200;
+  color: $navy;
 }
 
 .layer-btn.active {
-  background: linear-gradient(45deg, #FF9600, #CC7700);
-  box-shadow: 0 4px 10px rgba(255,150,0,0.3);
+  background: $orange;
+  color: $navy;
 }
 
 .layer-btn.active:hover {
-  background: linear-gradient(45deg, #CC7700, #FF9600);
+  background: $orange-200;
 }
 
 .popup-content {
-  font-family: "Courier New", monospace;
   line-height: 1.6;
 }
 
 .popup-title {
-  color: #0089BD;
+  color: $navy;
   font-weight: bold;
   font-size: 1.2em;
   margin-bottom: 5px;
 }
 
 .popup-detail {
-  color: #333;
+  color: $blue-700;
   margin: 5px 0;
 }
 
@@ -90,7 +86,7 @@
   height: 20px;
   border-radius: 50%;
   margin-right: 10px;
-  border: 2px solid white;
+  border: 2px solid $white;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
@@ -103,7 +99,7 @@
 }
 
 .info-panel h3 {
-  color: white;
+  color: $white;
   margin-top: 0;
 }
 
@@ -112,11 +108,11 @@
   padding: 15px;
   border-radius: 10px;
   margin-top: 20px;
-  border-left: 4px solid #0089BD;
+  border-left: 4px solid $blue;
 }
 
 .data-source h4 {
-  color: #0089BD;
+  color: $blue;
   margin-top: 0;
 }
 
@@ -129,14 +125,14 @@
 
 .loading-message {
   text-align: center;
-  color: #0089BD;
+  color: $blue;
   font-size: 1.2em;
   margin: 20px 0;
 }
 
 .error-message {
-  background: #ff4444;
-  color: white;
+  background: $red;
+  color: $white;
   padding: 15px;
   border-radius: 10px;
   margin: 20px 0;
@@ -152,16 +148,16 @@
 }
 
 .status-loading {
-  background: #FF9600;
-  color: white;
+  background: $orange;
+  color: $white;
 }
 
 .status-success {
   background: none;
-  color: white;
+  color: $white;
 }
 
 .status-error {
-  background: #EF4444;
-  color: white;
+  background: $red;
+  color: $white;
 }
