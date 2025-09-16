@@ -40,6 +40,10 @@
     color: var(--_btn-text-color--hover);
   }
 
+  &.text-white {
+    color: $white;
+  }
+
   &.white {
     --btn-background-color: #{$white};
   }

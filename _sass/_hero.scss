@@ -43,14 +43,26 @@
 }
 
 .hero-image {
+  animation-name: hero-card-image-select;
+  animation-duration: var(--_hero-card--animation-duration);
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(var(--hero-card--image-count), jump-none);
+  animation-delay: var(--_hero-card-image--animation-delay);
+  
   top: 0;
   left: 0;
   width: 100%;
   bottom: 0;
   z-index: 0;
   position: absolute;
-
+  
   img {
+    animation-name: hero-card-image-zoom;
+    animation-duration: 10s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out; 
+    animation-fill-mode: forwards;
+
     position: absolute;
     inset: 0px;
     box-sizing: border-box;
@@ -65,5 +77,16 @@
     min-height: 100%;
     max-height: 100%;
     object-fit: cover;
+  }
+}
+
+@keyframes hero-card-image-zoom {
+  0% {
+    scale: 1;
+    filter: saturate(100%);
+  }
+  100% {
+    scale: 1.1;
+    filter: saturate(100%);
   }
 }
