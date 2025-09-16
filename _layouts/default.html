@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+<head>
+  {% include app/meta.html %}
+
+  {%- feed_meta -%}
+
+  {%- include app/head.html -%}
+
+</head>
+
+<body>
+  {% include navbar/navbar.html %}
+  {% include page-types/hero.html %}
+
+  <section id="intro" class="container section-centered">
+    <div class="content-wrapper">
+      {{ content }}
+    </div>
+  </section>
+
+  <div class="welcomes">
+    {% for welcome in site.welcome %}
+      {% include page-types/welcome.html %}
+    {% endfor %}
+  </div>
+
+  <div class="stats">
+    {% include page-types/stats.html %}
+  </div>
+
+  <div class="shows">
+    {% for show in site.shows %}
+      {% include page-types/show.html %}
+    {% endfor %}
+  </div>
+
+  <div class="contents">
+    {% for content in site.content %}
+      {% include page-types/content.html %}
+    {% endfor %}
+  </div>
+
+  {% include page-types/playlist.html %}
+
+  {% include navbar/navbar-drawer.html %}
+  {% include app/footer.html %}
+</body>
+</html>
