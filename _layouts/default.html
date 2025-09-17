@@ -30,16 +30,6 @@
     {% include page-types/map.html %}
   </div>
 
-  <div class="stats">
-    {% include page-types/stats.html %}
-  </div>
-
-  <div class="shows">
-    {% for show in site.shows %}
-      {% include page-types/show.html %}
-    {% endfor %}
-  </div>
-
   <div class="contents">
     {% for content in site.content %}
       {% include page-types/content.html %}
