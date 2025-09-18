@@ -4,10 +4,10 @@ title: "Cultivating the Future Sound of Public Radio"
 link:
   anchor: "cultivating-sound"
   label: "Future of Sound"
-intro: "PRX brings radio listeners some of the best examples of public media storytelling, from the thoughtful perspectives of The World’s international journalism, to the definitional sound of This American Life — which celebrated its 30th anniversary with a Tribeca Festival gala in June. In just this year, investigative reporting from Reveal was a winner of the Ambie Awards, Webby Awards, Healthcare Journalism Awards, DuPont-Columbia Awards, Investigative Reporters and Editors Awards, National Magazine Award and a finalist for the Pulitzer Prize. In fact, PRX has distributed half of the winners of the Pulitzers for audio reporting since audio became a category. The PRX roster is award-winning and foundational. We are also expanding its sound to meet the future of public radio."
+intro: "<p>PRX brings radio listeners some of the best examples of public media storytelling, from the thoughtful perspectives of The World’s international journalism, to the definitional sound of This American Life — which celebrated its 30th anniversary with a Tribeca Festival gala in June. In just this year, investigative reporting from Reveal was a winner of the Ambie Awards, Webby Awards, Healthcare Journalism Awards, DuPont-Columbia Awards, Investigative Reporters and Editors Awards, National Magazine Award and a finalist for the Pulitzer Prize. In fact, PRX has distributed half of the winners of the Pulitzers for audio reporting since audio became a category. The PRX roster is award-winning and foundational. We are also expanding its sound to meet the future of public radio.</p>"
 quote:
   text: "“Can we make public media and the public media sensibility a little edgier and a little bit more contemporary and a little bit more in tune with the zeitgeist? And so, what, what do millennials as a generation want then? What do Gen Z as a generation want? Not what do age groups want? What do generations as cultural markers want? The future of public media doesn't have to sound exactly the same. It needs to uphold the same values, but it doesn't have to sound the same.”"
-  citation: " — Stephanie Kuo, VP Content"
+  citation: "— Stephanie Kuo, VP Content"
   audio:
     url: https://f.prxu.org/9003/b55bb9fa-3366-42e2-9e4c-f8f942dfbcf1/51bcf4a2-0261-4a35-ae85-a29877089722.mp3
     title: Stephanie Kuo
