@@ -79,25 +79,16 @@ collections:
   welcome:
     order:
       - ceo-letter.html
-  shows:
-    order:
-      - the-recipe.html
-      - ear-hustle.html
-      - the-world.html
-      - reveal.html
-      - monumental.html
-      - snap-judgment.html
-      - the-big-dig.html
-      - song-exploder.html
-      - weight-for-it.html
-      - marfa-for-beginners.html
-      - normal-gossip.html
-      - left-right-center.html
-      - second-sunday.html
   content:
     order:
-      - vision-for-content.html
-      - awards-press.html
-      - planned-giving.html
-      - donor-list.html
-      - finances.html
+      - transition-backbone.md
+      - empowering-stations.md
+      - cta-station-support.md
+      - cultivating-sound.md
+      - transition-storytelling.md
+      - radiotopia.md
+      - cta-donation.md
+      - awards-press.md
+      - planned-giving.md
+      - donor-list.md
+      - finances.md

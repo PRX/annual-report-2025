@@ -32,7 +32,11 @@
 
   <div class="contents">
     {% for content in site.content %}
-      {% include page-types/content.html %}
+      {% if content.content-type == 'transition' %}
+        {% include page-types/transition.html %}
+      {% else %}
+        {% include page-types/content.html %}
+      {% endif %}
     {% endfor %}
   </div>
 

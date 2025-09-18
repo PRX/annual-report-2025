@@ -1,6 +1,15 @@
 <section id="{{ content.link.anchor | default: content.slug }}" class="container content">
   <div class="content-header">
     <h2 class="content-title">{{ content.title }}</h2>
+    {%- if content.intro -%}
+    <div class="content-intro">
+      <div class="content-intro--layout">
+        <div class="content-content">
+          {{ content.intro }}
+        </div>
+      </div>
+    </div>
+    {%- endif -%}
     {%- if content.quote -%}
     <div class="content-quote">
       {% include components/quote.html
