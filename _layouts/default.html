@@ -12,37 +12,41 @@
 
 <body>
   {% include navbar/navbar.html %}
-  {% include page-types/hero.html %}
 
-  <section id="intro" class="container section-centered">
-    <div class="content-wrapper">
-      {{ content }}
+  <div class="wrapper-overall">
+    {% include navbar/navbar-drawer.html %}
+    {% include page-types/hero.html %}
+
+    <section id="intro" class="container section-centered">
+      <div class="content-wrapper">
+        {{ content }}
+      </div>
+    </section>
+
+    <div class="welcomes">
+      {% for welcome in site.welcome %}
+        {% include page-types/welcome.html %}
+      {% endfor %}
     </div>
-  </section>
 
-  <div class="welcomes">
-    {% for welcome in site.welcome %}
-      {% include page-types/welcome.html %}
-    {% endfor %}
+    <div class="map">
+      {% include page-types/map.html %}
+    </div>
+
+    <div class="contents">
+      {% for content in site.content %}
+        {% if content.content-type == 'transition' %}
+          {% include page-types/transition.html %}
+        {% else %}
+          {% include page-types/content.html %}
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    {% include page-types/playlist.html %}
+
   </div>
 
-  <div class="map">
-    {% include page-types/map.html %}
-  </div>
-
-  <div class="contents">
-    {% for content in site.content %}
-      {% if content.content-type == 'transition' %}
-        {% include page-types/transition.html %}
-      {% else %}
-        {% include page-types/content.html %}
-      {% endif %}
-    {% endfor %}
-  </div>
-
-  {% include page-types/playlist.html %}
-
-  {% include navbar/navbar-drawer.html %}
   {% include app/footer.html %}
 </body>
 </html>

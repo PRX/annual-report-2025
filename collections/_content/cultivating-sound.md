@@ -17,6 +17,9 @@ donor-quote:
   audio:
     url: https://f.prxu.org/9003/d6ea99b4-8e0b-4f93-a219-21e940240de3/e5840f53-5bd2-4cf8-b231-4b100d073e37.mp3
     title: "Sean Nesbitt"
+featured-image:
+  url: img/content/ira.png
+  alt: Ira Glass being interviewed on a stage at the Tribeca Festival
 
 ---
 

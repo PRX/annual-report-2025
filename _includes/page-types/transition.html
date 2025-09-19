@@ -1,4 +1,9 @@
 <section class="container section-centered section-transition">
+  {%- if content.featured-image -%}
+  <figure class="transition-bg">
+    {% picture show-featured-image {{ content.featured-image.url }} --alt {{ content.featured-image.alt }}  %}
+  </figure>
+  {%- endif -%}
   <div class="content-wrapper">
     {{ content.content }}
   </div>
