@@ -1,9 +1,13 @@
-((doc) => {
-  const drawer = doc.getElementById('navDrawerPopover');
+document.addEventListener('DOMContentLoaded', () => {
+  const nav = document.getElementById('nav-drawer');
+  const content = document.getElementById('layout-content');
+  const toggleBtn = document.getElementById('nav-toggle');
 
-  drawer.addEventListener('click', (evt) => {
-    const anchor = evt.target.closest('a');
+  toggleBtn.addEventListener('click', () => {
+    nav.classList.toggle('collapsed');
+    nav.classList.toggle('expanded');
 
-    if (anchor) drawer.hidePopover();
+    content.classList.toggle('collapsed');
+    content.classList.toggle('expanded');
   });
-})(document);
+});

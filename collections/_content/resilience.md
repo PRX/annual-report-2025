@@ -3,7 +3,8 @@ content-type: "content"
 title: "Resilience and Innovation in Uncertain Times"
 link:
   anchor: "resilience"
-  label: "Resilience and Innovation in Uncertain Times"
+  label: "Resilience and Innovation"
+  icon: "sprout"
 intro: "<p>This year brought sobering changes in how public media is supported across the system. Loss of funding and directional shifts in the industry are blows to mission-driven efforts to make media that serves the public interest. This turbulent landscape impacts PRX, but our work to find new paths forward continues with the type of strategic innovation PRX was created to pursue more than two decades ago when we championed a digital path forward for public media.</p>"
 quote:
   text: "“Every time there's a door closed, I feel PRX is the place that opens another one. And I, I, I think that's unique and I, again, I don't think any other organization is going to take the chances, nor have the credibility in the market, to innovate on the scale that we do.”"

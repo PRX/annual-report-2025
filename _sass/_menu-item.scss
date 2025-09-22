@@ -1,38 +1,56 @@
 .menu {
   margin: 0;
   padding: 0;
+
+  hr {
+    border: 0;
+    height: 1px;
+    background: $yellow;
+    background-image: linear-gradient(to right, $cyan, $yellow, $orange, $violet);
+  }
 }
 
 .menu-item {
   justify-content: space-between;
-  border-bottom: 1px solid $border-color;
   list-style: none;
-
-  svg {
-    fill: currentColor;
-  }
 }
 
 .menu-link {
-  --_menu-link-background-color: var(--menu-link-background-color, #{$white});
-  --_menu-link-background-color--hover: var(--menu-link-background-color--hover, #{mix(white, $cyan, 10%)});
-  --_menu-link-text-color: var(--menu-link-text-color, #{$navy});
-  --_menu-link-text-color--hover: var(--menu-link-text-color--hover, var(--_menu-link-text-color));
-
   display: flex;
   align-items: center;
   width: 100%;
-  gap: 0.25rem;
   padding: 0.5rem 1rem;
+  font-weight: bold;
 
-  background-color: var(--_menu-link-background-color);
-  color: var(--_menu-link-text-color);
+  background-color: transparent;
+  color: $white;
 
   text-decoration: none;
 
+  &.awards-press {
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid;
+    border-image-slice: 1;
+    border-width: 1px;
+    border-image-source: linear-gradient(to right, $cyan, $yellow, $orange, $violet);
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 0.5rem;
+  }
+
+  svg {
+    path {
+      stroke: $cyan;
+    }
+  }
+
   &:link,
   &:visited {
-    color: $navy;
+    color: $cyan;
   }
 
   &.icon {
@@ -41,23 +59,6 @@
   }
 
   &:hover {
-    background-color: var(--_menu-link-background-color--hover);
-    color: var(--_menu-link-text-color--hover);
-  }
-
-  &.cyan {
-    --menu-link-background-color: #{$cyan};
-    --menu-link-background-color--hover: #{mix(white, $cyan, 25%)};
-  }
-
-  &.yellow {
-    --menu-link-background-color: #{$yellow};
-    --menu-link-background-color--hover: #{mix(white, $yellow, 25%)};
-  }
-
-
-  &.light-blue {
-    --menu-link-background-color: #{$cyan-a-10};
-    --menu-link-background-color--hover: #{mix(white, $cyan, 25%)};
+    color: $cyan;
   }
 }

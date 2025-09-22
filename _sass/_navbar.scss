@@ -1,3 +1,7 @@
+:root {
+  --nav-expanded: 250px;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -6,6 +10,7 @@
   left: 0;
   width: 100%;
   z-index: 1000;
+  background: linear-gradient(180deg,rgba(0, 58, 87, 0.5) 0%, rgba(0, 58, 87, 0) 80%);
 
   > nav {
     display: flex;
@@ -15,8 +20,6 @@
     padding: 1rem;
 
     border-radius: 0 0 20px 20px;
-
-    background-color: transparent;
 
     &:first-of-type {
       border-bottom-left-radius: 0;
@@ -41,90 +44,43 @@
   margin-left: 0.25rem;
 }
 
-#navDrawerPopover {
-  --_nav-animation-speed: var(--nav-animation-speed, 0.3s);
-  --_nav-backdrop-opacity: var(--nav-backdrop-opacity, 50%);
+.btn-menu {
+  svg path {
+    stroke: $white;
+  }
+}
 
-  animation: navbar-closed var(--_nav-animation-speed);
+.navbar-buttons {
+  svg path {
+    stroke: $navy;
+  }
+}
 
-  /* Allows backdrop to fade out. */
-  transition-property: overlay;
-  transition-duration: var(--_nav-animation-speed);
-  transition-behavior: allow-discrete;
-
-  top: 0;
-  bottom: 0;
+.layout-nav {
+  background-color: transparent;
+  position: fixed;
+  top: 72px;
   left: 0;
-  width: 16rem;
-  height: 100vh;
-  height: 100dvh;
-  margin: 0;
-  padding: 0;
-  background: $white;
-  border: none;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-
-  &::backdrop {
-    animation: backdrop-fade-out var(--_nav-animation-speed);
-
-    background-image: radial-gradient(
-      circle at top left in oklch,
-      color-mix(in oklch, transparent, $cyan var(--_nav-backdrop-opacity)) 20rem,
-      color-mix(in oklch, transparent, $orange var(--_nav-backdrop-opacity)),
-      color-mix(in oklch, transparent, $yellow var(--_nav-backdrop-opacity)) 60%,
-      color-mix(in oklch, transparent, $white var(--_nav-backdrop-opacity))
-    );
-
-    backdrop-filter: blur(10px);
-  }
-
-  &:popover-open {
-    animation: navbar-open var(--_nav-animation-speed);
-
-    &::backdrop {
-      animation: backdrop-fade-in var(--_nav-animation-speed);
-    }
-  }
+  min-height: calc(100vh - 72px);
+  height: 100%;
+  width: 0;
+  transition: width 0.35s ease;
 }
 
-/* Animations */
-
-@keyframes navbar-open {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translate(0);
-  }
+.layout-content {
+  transition: margin-left 0.35s ease;
+  margin-left: 0;
+  min-height: calc(100vh - 72px);
 }
 
-@keyframes navbar-closed {
-  from {
-    display: block;
-    transform: translateX(0);
-  }
-  to {
-    display: none;
-    transform: translate(-100%);
-  }
-}
+.layout-nav.expanded { width: var(--nav-expanded); }
+.layout-nav.collapsed { display: none; }
 
-@keyframes backdrop-fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+.layout-content.expanded { margin-left: var(--nav-expanded); }
+.layout-content.collapsed { margin-left: 0; }
 
-@keyframes backdrop-fade-out {
-  from {
-    display: block;
-    opacity: 1;
-  }
-  to {
-    display: none;
-    opacity: 0;
-  }
+/* Medium+ screens default expanded */
+@media (min-width: 768px) {
+  .layout-nav     { width: var(--nav-expanded); }
+  .layout-content { margin-left: var(--nav-expanded); }
 }

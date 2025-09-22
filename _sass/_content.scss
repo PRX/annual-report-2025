@@ -7,18 +7,18 @@
   padding: 3rem;
   overflow: hidden;
   color: $white;
-  background: linear-gradient(to right, $navy, $violet);
+  background: linear-gradient(to right, rgba(0,0,0,0), $violet);
 
   &:nth-of-type(3n + 1) {
-    background: linear-gradient(to right, $navy, $red);
+    background: linear-gradient(to right, rgba(0,0,0,0), $red);
   }
 
   &:nth-of-type(3n + 2) {
-    background: linear-gradient(to right, $navy, $teal);
+    background: linear-gradient(to right, rgba(0,0,0,0), $teal);
   }
 
   &:nth-of-type(3n) {
-    background: linear-gradient(to right, $navy, $violet);
+    background: linear-gradient(to right, rgba(0,0,0,0), $violet);
   }
 }
 

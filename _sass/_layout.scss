@@ -1,15 +1,16 @@
 body {
-  --navy: #{$navy};
-  --violet: #{$violet};
-
   margin: 0;
   padding: 0;
-
   background: $navy;
-  background: linear-gradient(90deg, var(--navy) 0%, var(--violet) 100%);
-
+  background: linear-gradient(to right, $navy, $navy, $violet);
   color: $base-text-color;
   font-family: 'Montserrat', sans-serif;
+}
+
+.layout-wrapper {
+  padding-top: 72px;
+  display: flex;
+  flex-direction: column;
 }
 
 .container {

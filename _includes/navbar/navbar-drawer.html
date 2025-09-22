@@ -1,46 +1,59 @@
-<nav id="navDrawerPopover" class="nav-drawer" popover>
+<nav id="nav-drawer" class="layout-nav" aria-hidden="false">
   <ul class="menu" role="list">
     {% include components/menu-item.html
       href="#intro"
       label="Introduction"
       color="white"
+      slug=intro
+      icon="hand"
     %}
 
     {% for welcome in site.welcome %}
       {% assign href = welcome.link.anchor | default: welcome.slug | prepend: '#' %}
       {% assign label = welcome.link.label | default: welcome.title %}
+      {% assign icon = welcome.link.icon %}
       {% include components/menu-item.html
         href=href
         label=label
+        slug=slug
         color="white"
+        icon=icon
       %}
     {% endfor %}
 
+  <hr>
   {% for content in site.content %}
     {% unless content.content-type == 'transition' %}
       {% assign href = content.link.anchor | default: content.slug | prepend: '#' %}
+      {% assign slug = content.link.anchor | default: content.slug %}
       {% assign label = content.link.label | default: content.title %}
+      {% assign icon = content.link.icon %}
       {% include components/menu-item.html
         href=href
         label=label
+        slug=slug
+        icon=icon
+        aria-label="hidden"
       %}
     {% endunless %}
   {% endfor %}
-
+  <hr>
     {% include components/menu-item.html
       href="#playlist"
       label="Podcast Playlist"
       color="yellow"
-      icon="playlist_play"
+      icon="list-video"
       aria-label="hidden"
+      slug=playlist
     %}
 
     {% include components/menu-item.html
       href="https://give.prx.org/give/323700/#!/donation/checkout?c_src=donate_home?c_src=Referral&c_src2=AR-2025"
       color="cyan"
-      icon="favorite"
+      icon="heart-handshake"
       aria-label="hidden"
       label="Donate"
+      slug=donate
     %}
   </ul>
 </nav>
