@@ -16,6 +16,7 @@
   padding-block: var(--_welcome--padding-y);
 
   background: var(--_welcome--bg--color);
+  background: linear-gradient(to right, $navy, $teal);
 
   &:nth-of-type(odd):nth-of-type(4n + 1) {
     --welcome--color: #{$yellow};
