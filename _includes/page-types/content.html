@@ -1,7 +1,15 @@
 <section id="{{ content.link.anchor | default: content.slug }}" class="container content">
   <div class="content-content-wrapper">
     <div class="content-header">
-      <h2 class="content-title">{{ content.title }}</h2>
+      <h2 class="content-title">
+        {%- if content.link.icon -%}
+        <span class="icon">
+          {%- capture icon_path %}svg/icons/{{ content.link.icon }}.svg{% endcapture -%}
+          {% include {{ icon_path }} %}
+        </span>
+        {%- endif -%}
+        {{ content.title }}
+      </h2>
       {%- if content.intro -%}
       <div class="content-intro">
         <div class="content-intro--layout">
