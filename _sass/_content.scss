@@ -7,20 +7,21 @@
   padding: 3rem;
   overflow: hidden;
   color: $white;
-  background: linear-gradient(to right, $navy, $violet);
 
   &:nth-of-type(3n + 1) {
-    background: linear-gradient(to right, $navy, $red);
+    background: linear-gradient(to right, transparent $red);
   }
 
   &:nth-of-type(3n + 2) {
-    background: linear-gradient(to right, $navy, $teal);
+    background: linear-gradient(to right, transparent $teal);
   }
 
   &:nth-of-type(3n) {
-    background: linear-gradient(to right, $navy, $violet);
+    background: linear-gradient(to right, transparent $violet);
   }
 }
+
+
 
 .content-content-wrapper {
   display: flex;
@@ -46,7 +47,7 @@
 }
 
 .content-interlude {
-  background: $navy;
+  //background: $navy;
   color: $white;
   text-wrap: balance;
 
@@ -71,7 +72,6 @@
   z-index: 0;
   padding: 0 3rem;
   position: absolute;
-  background: $navy;
   background: linear-gradient(90deg,rgba(9, 9, 121, 1) 0%, rgba(0, 212, 255, 1) 100%);
 
   div {

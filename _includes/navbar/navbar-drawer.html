@@ -4,41 +4,38 @@
       href="#intro"
       label="Introduction"
       color="white"
-      slug=intro
       icon="hand"
     %}
 
     {% for welcome in site.welcome %}
-      {% assign href = welcome.link.anchor | default: welcome.slug | prepend: '#' %}
       {% assign label = welcome.link.label | default: welcome.title %}
       {% assign icon = welcome.link.icon %}
       {% include components/menu-item.html
         href=href
         label=label
-        slug=slug
         color="white"
         icon=icon
       %}
     {% endfor %}
 
-  <hr>
-  {% for content in site.content %}
-    {% if content.menu-group == '1' or content.menu-group == '2' %}
-      {% assign href = content.link.anchor | default: content.slug | prepend: '#' %}
-      {% assign slug = content.link.anchor | default: content.slug %}
-      {% assign label = content.link.label | default: content.title %}
-      {% assign icon = content.link.icon %}
+    <hr>
 
-      {% include components/menu-item.html
-        href=href
-        label=label
-        slug=slug
-        icon=icon
-        aria-label="hidden"
-      %}
-    {% endif %}
-  {% endfor %}
-  <hr>
+    {% for content in site.content %}
+      {% if content.menu-group == '1' %}
+        {% include navbar/navbar-menu-group.html %}
+      {% endif %}
+    {% endfor %}
+
+    <hr>
+
+    {% for content in site.content %}
+      {% if content.menu-group == '2' %}
+        {% include navbar/navbar-menu-group.html %}
+      {% endif %}
+    {% endfor %}
+
+    <hr>
+
     {% include components/menu-item.html
       href="#playlist"
       label="Podcast Playlist"
@@ -54,7 +51,6 @@
       icon="heart-handshake"
       aria-label="hidden"
       label="Donate"
-      slug=donate
     %}
   </ul>
 </nav>

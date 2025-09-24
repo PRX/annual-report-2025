@@ -1,9 +1,8 @@
 .map {
-  max-width: 1600px;
   margin-inline: auto;
   padding: 6rem 3rem;
   padding-inline: 2rem;
-  background: linear-gradient(to right, $navy, $red);
+  background: linear-gradient(to right, transparent $red);
 }
 
 #map {
