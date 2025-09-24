@@ -4,6 +4,7 @@ link:
   anchor: "awards-press"
   label: "Awards &amp; Press"
   icon: "trophy"
+menu-group: "2"
 ---
 {% assign max_item_count = site.data.awards | size %}
 {% if site.data.press.size > max_item_count %}

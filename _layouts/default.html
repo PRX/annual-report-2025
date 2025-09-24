@@ -37,8 +37,8 @@
 
       <div class="contents">
         {% for content in site.content %}
-          {% if content.content-type == 'transition' %}
-            {% include page-types/transition.html %}
+          {% if content.content-type == 'content-interlude' %}
+            {% include page-types/content-interlude.html %}
           {% else %}
             {% include page-types/content.html %}
           {% endif %}

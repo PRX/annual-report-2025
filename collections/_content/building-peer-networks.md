@@ -5,6 +5,7 @@ link:
   anchor: "building-peer-networks"
   label: "Building Peer Networks"
   icon: "handshake"
+menu-group: "1"
 intro: "<p>Facilitating the success of creators not only within, but also beyond our direct portfolio underpins our commitment to media in the public interest. At Creator Summits, this year hosted by PRX with our partners KUT and KUTX in Austin, TX, and later, WABE in Atlanta, GA, we brought together hundreds of local audio makers to take a pulse of the local creator industry and learn from each other.</p>"
 quote:
   text: "“I'm Gabe Wardell and I participated in the Podcaster Maker Summit. It was really a terrific opportunity and a terrific event. And the reason something like this is important is because independent makers need opportunities to really hone their skills and learn how to make quality content over time, right? What's happening right now is the barrier to entry for podcasting is super low, but the barrier to quality depends on people learning the processes and learning how to do it right. So I went into this event and I learned so much, and they led me through this amazing process that by the end of it, I had to reevaluate all the ideas I had going in. But now I know that I'm ready to deliver something of high quality that is built to last.”"

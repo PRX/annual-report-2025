@@ -1,4 +1,4 @@
-<nav id="nav-drawer" class="layout-nav" aria-hidden="false">
+<nav id="nav-drawer" class="nav-drawer" aria-hidden="false">
   <ul class="menu" role="list">
     {% include components/menu-item.html
       href="#intro"
@@ -23,11 +23,12 @@
 
   <hr>
   {% for content in site.content %}
-    {% unless content.content-type == 'transition' %}
+    {% if content.menu-group == '1' or content.menu-group == '2' %}
       {% assign href = content.link.anchor | default: content.slug | prepend: '#' %}
       {% assign slug = content.link.anchor | default: content.slug %}
       {% assign label = content.link.label | default: content.title %}
       {% assign icon = content.link.icon %}
+
       {% include components/menu-item.html
         href=href
         label=label
@@ -35,7 +36,7 @@
         icon=icon
         aria-label="hidden"
       %}
-    {% endunless %}
+    {% endif %}
   {% endfor %}
   <hr>
     {% include components/menu-item.html
