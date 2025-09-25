@@ -24,7 +24,7 @@ body {
       margin-left: 0;
     }
 
-    body[data-menu-open="true"] & {
+    [data-menu-open="true"] & {
       margin-left: var(--nav-expanded);
     }
   }
