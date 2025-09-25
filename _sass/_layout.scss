@@ -12,6 +12,24 @@ body {
   flex-direction: column;
 }
 
+.layout-content {
+  transition: margin-left var(--transition-speed) ease;
+  min-height: calc(100vh - 72px);
+  margin-left: 0;
+
+  @media (min-width: 768px) {
+    margin-left: var(--nav-expanded);
+
+    [data-menu-open="false"] & {
+      margin-left: 0;
+    }
+
+    body[data-menu-open="true"] & {
+      margin-left: var(--nav-expanded);
+    }
+  }
+}
+
 .container {
   min-height: 80vh;
 

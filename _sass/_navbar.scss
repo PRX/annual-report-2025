@@ -1,5 +1,6 @@
 :root {
   --nav-expanded: 250px;
+  --transition-speed: 0.35s;
 }
 
 .navbar {
@@ -10,7 +11,7 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: linear-gradient(180deg,rgba(0, 58, 87, 0.9) 80%, rgba(0, 58, 87, 0) 100%);
+  background: linear-gradient(180deg,rgba(0, 58, 87, 0.9) 80%, transparent 100%);
 
   > nav {
     display: flex;
@@ -66,62 +67,17 @@
   left: 0;
   min-height: calc(100vh - 72px);
   height: 100%;
-  width: 0;
-  transition: width 0.35s ease;
+  width: var(--nav-expanded);
+  transform: translateX(-100%);
+  transition: transform var(--transition-speed) ease;
   z-index: 999;
 
-  &.expanded {
-    width: var(--nav-expanded);
-  }
-
-  &.collapsed {
-    width: 0;
-    overflow: hidden;
+  [data-menu-open="true"] & {
+    transform: translateX(0);
   }
 
   @media (min-width: 768px) {
-    width: var(--nav-expanded);
     background-color: transparent;
     box-shadow: none;
-
-    &.collapsed {
-      width: 0;
-      overflow: hidden;
-    }
-
-    &.expanded {
-      width: var(--nav-expanded);
-      overflow: visible;
-    }
-  }
-}
-
-.layout-content {
-  transition: margin-left 0.35s ease;
-  margin-left: 0;
-  min-height: calc(100vh - 72px);
-
-  // Mobile states
-  &.expanded {
-    margin-left: 0; // On mobile, content doesn't shift
-  }
-
-  &.collapsed {
-    margin-left: 0;
-  }
-
-  // Desktop default - content offset by default, but allow toggle
-  @media (min-width: 768px) {
-    // Default desktop state (when no classes are applied by JS)
-    margin-left: var(--nav-expanded);
-
-    // Allow toggle functionality on desktop
-    &.collapsed {
-      margin-left: 0;
-    }
-
-    &.expanded {
-      margin-left: var(--nav-expanded);
-    }
   }
 }
