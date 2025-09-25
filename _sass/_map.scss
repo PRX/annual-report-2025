@@ -2,7 +2,7 @@
   margin-inline: auto;
   padding: 6rem 3rem;
   padding-inline: 2rem;
-  background: linear-gradient(to right, transparent $red);
+  background: linear-gradient(to right, transparent, $violet);
 }
 
 #map {
@@ -10,6 +10,7 @@
   width: 100%;
   border: 1px solid $navy;
   border-radius: 20px;
+  opacity: 0.7;
 }
 
 .controls {
@@ -160,4 +161,19 @@
 .status-error {
   background: $red;
   color: $white;
+}
+
+.leaflet-layer,
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out,
+.leaflet-control-scale,
+.leaflet-control-attribution {
+  filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+}
+
+// ensure the Ukrainian flag is displayed in actual colors:
+.leaflet-container div.leaflet-control-attribution {
+  background: rgba(0,0,0,0.6);
+  color: #ddd;
+  filter: invert(0) hue-rotate(0deg) brightness(100%) contrast(100%);
 }

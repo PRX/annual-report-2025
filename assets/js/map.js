@@ -1,6 +1,9 @@
-
 // Initialize the map centered on the US
-const map = L.map('map').setView([39.8283, -98.5795], 4);
+const map = L.map('map').setView([39.8283, -98.5795], 4, {
+    minZoom: 1,
+    maxZoom: 18,
+    dragging: false
+});
 
 // Add OpenStreetMap tiles
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -31,10 +34,26 @@ const layerColors = {
 let csvData = [];
 let isDataLoaded = false;
 
+// Disable scroll wheel and touch zoom initially, enable on click/touch
+(function () {
+    map.scrollWheelZoom.disable();
+    map.touchZoom.disable();
+
+    var enableMapInteraction = function () {
+        map.scrollWheelZoom.enable();
+        map.touchZoom.enable();
+        map.dragging.enable(); // Also enable dragging on interaction
+    }
+
+    // Using vanilla JavaScript instead of jQuery
+    document.getElementById('map').addEventListener('click', enableMapInteraction);
+    document.getElementById('map').addEventListener('touchstart', enableMapInteraction);
+})();
+
 // Function to create custom markers
     function createMarker(layer, size = 'medium') {
     const color = layerColors[layer] || layerColors.broadcast;
-    
+
     // Define size mappings with proper iconSize and anchor values
     const sizeMap = {
         'small': { width: 10, height: 10, iconSize: 10, anchor: 5 },
@@ -42,10 +61,10 @@ let isDataLoaded = false;
         'large': { width: 30, height: 30, iconSize: 30, anchor: 15 },
         'xlarge': { width: 40, height: 40, iconSize: 40, anchor: 20 },
     };
-    
+
     // Get size configuration, default to medium if size not recognized
     const sizeConfig = sizeMap[size] || sizeMap['medium'];
-    
+
     return L.divIcon({
         className: 'custom-marker',
         html: `<div style="
@@ -77,29 +96,29 @@ async function loadCSVData() {
     try {
         updateStatus('loading', 'Loading map.csv...');
         console.log('Loading data from map.csv...');
-        
+
         // Fetch the CSV file
         const response = await fetch('/assets/js/map.csv');
-        
+
         // Check if the request was successful
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        
+
         // Get the CSV text
         const csvText = await response.text();
-        
+
         // Parse CSV data
         csvData = parseCSV(csvText);
         isDataLoaded = true;
-        
+
         console.log(`Successfully loaded ${csvData.length} records from map.csv`);
         updateStatus('success', `${csvData.length} locations`);
-        
+
         // Process the data and add to map
         processCSVData();
         updateDataStats();
-        
+
     } catch (error) {
         console.error('Error loading map.csv:', error);
         updateStatus('error', 'Failed to load data');
@@ -113,27 +132,27 @@ function parseCSV(csvText) {
     if (lines.length < 2) {
         throw new Error('CSV file appears to be empty or invalid');
     }
-    
+
     const headers = lines[0].split(',').map(header => header.trim().replace(/"/g, ''));
     const data = [];
-    
+
     for (let i = 1; i < lines.length; i++) {
         if (lines[i].trim() === '') continue; // Skip empty lines
-        
+
         const values = parseCSVLine(lines[i]);
         const row = {};
-        
+
         headers.forEach((header, index) => {
             let value = values[index] || '';
-            
+
             // Try to convert numbers
             if (!isNaN(value) && value !== '' && value !== null) {
                 value = parseFloat(value);
             }
-            
+
             row[header] = value;
         });
-        
+
         // Only add rows that have valid lat and lng coordinates
         if (row.lat && row.lng && !isNaN(row.lat) && !isNaN(row.lng)) {
             data.push(row);
@@ -141,7 +160,7 @@ function parseCSV(csvText) {
             console.warn(`Skipping row ${i + 1}: Missing or invalid lat/lng coordinates`);
         }
     }
-    
+
     return data;
 }
 
@@ -150,10 +169,10 @@ function parseCSVLine(line) {
     const result = [];
     let current = '';
     let inQuotes = false;
-    
+
     for (let i = 0; i < line.length; i++) {
         const char = line[i];
-        
+
         if (char === '"') {
             inQuotes = !inQuotes;
         } else if (char === ',' && !inQuotes) {
@@ -163,7 +182,7 @@ function parseCSVLine(line) {
             current += char;
         }
     }
-    
+
     result.push(current.trim());
     return result;
 }
@@ -182,7 +201,7 @@ function processCSVData() {
     csvData.forEach(item => {
         // Determine which layer this item belongs to
         let layerType = 'broadcast'; // default layer
-        
+
         if (item.type) {
             switch(item.type.toLowerCase()) {
                 case 'podcast':
@@ -207,11 +226,11 @@ function processCSVData() {
         const marker = L.marker([item.lat, item.lng], {
             icon: createMarker(layerType, markerSize)
         });
-        
+
         // Create popup content
         const popupContent = createPopupContent(item);
         marker.bindPopup(popupContent);
-        
+
         // Add to both 'all' layer and specific layer
         layerGroups.all.addLayer(marker);
         layerGroups[layerType].addLayer(marker);
@@ -223,7 +242,7 @@ function processCSVData() {
 function createPopupContent(item) {
     let content = `<div class="popup-content">
         <div class="popup-title">${item.name || 'Unknown Location'}${item['Primary Market'] ? ' ' + item['Primary Market'] : ''}</div>`;
-    
+
     // Add audio component if audio URL exists
     if (item.audio && item.audio.trim() !== '') {
         const audioPath = `audio/${item.audio}`;
@@ -234,11 +253,11 @@ function createPopupContent(item) {
                 Your browser does not support the audio element.
             </audio>
             <button type="button" class="show-audio--button" onclick="toggleAudio(this)" style="
-                background: #0089BD; 
-                color: white; 
-                border: none; 
-                padding: 8px 12px; 
-                border-radius: 5px; 
+                background: #0089BD;
+                color: white;
+                border: none;
+                padding: 8px 12px;
+                border-radius: 5px;
                 cursor: pointer;
                 display: flex;
                 align-items: center;
@@ -250,7 +269,7 @@ function createPopupContent(item) {
             </button>
         </div>`;
     }
-    
+
     // Add all available fields to popup (except lat, lng, name, type, and audio)
     Object.keys(item).forEach(key => {
         if (key !== 'lat' && key !== 'lng' && key !== 'name' && key !== 'type' && key !== 'audio' && key !== 'Primary Market' && key !== 'size' && item[key] !== '' && item[key] !== null) {
@@ -258,7 +277,7 @@ function createPopupContent(item) {
             content += `<div class="popup-detail"><strong>${displayKey}:</strong> ${item[key]}</div>`;
         }
     });
-    
+
     content += '</div>';
     return content;
 }
@@ -267,7 +286,7 @@ function createPopupContent(item) {
 function toggleAudio(button) {
   const audioElement = button.parentElement.querySelector('audio');
   const playIcon = button.querySelector('.play-icon');
-  
+
   if (audioElement.paused) {
       audioElement.play();
       playIcon.textContent = '⏸️';
@@ -287,7 +306,7 @@ function updateDataStats() {
       console.warn('data-stats element not found, skipping stats update');
       return;
   }
-  
+
   const stats = {
       total: csvData.length,
       broadcast: csvData.filter(item => !item.type || item.type.toLowerCase() === 'Broadcast').length,
@@ -295,7 +314,7 @@ function updateDataStats() {
       technology: csvData.filter(item => item.type && (item.type.toLowerCase() === 'Technology' || item.type.toLowerCase() === 'technology')).length,
       voices: csvData.filter(item => item.type && item.type.toLowerCase() === 'Voices').length
   };
-  
+
   statsDiv.innerHTML = `
       <p><strong>Data Summary:</strong></p>
       <ul>
@@ -331,16 +350,16 @@ function showErrorMessage(message) {
 document.querySelectorAll('.layer-btn').forEach(btn => {
   btn.addEventListener('click', function() {
     const layer = this.dataset.layer;
-    
+
     // Toggle button active state
     document.querySelectorAll('.layer-btn').forEach(b => b.classList.remove('active'));
     this.classList.add('active');
-    
+
     // Remove all layers from map
     Object.keys(layerGroups).forEach(key => {
         map.removeLayer(layerGroups[key]);
     });
-    
+
     // Add selected layer to map
     if (layerGroups[layer]) {
         layerGroups[layer].addTo(map);
