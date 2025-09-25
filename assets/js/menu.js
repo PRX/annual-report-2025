@@ -1,9 +1,28 @@
-((doc) => {
-  const drawer = doc.getElementById('navDrawerPopover');
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleBtn = document.getElementById('nav-toggle');
+  const body = document.body;
+  const main = document.getElementById('layout-content');
 
-  drawer.addEventListener('click', (evt) => {
-    const anchor = evt.target.closest('a');
+  // set initial state
+  const setInitialState = () => {
+    const isMenuOpen = body.dataset.menuOpen === 'true';
+    if (isMenuOpen && window.innerWidth < 768) {
+      main.setAttribute('inert', ''); // desktop default open
+    } else {
+      main.removeAttribute('inert'); // mobile default closed
+    }
+  };
 
-    if (anchor) drawer.hidePopover();
+  function handleResize(){
+    setInitialState();
+  };
+
+  setInitialState();
+  window.addEventListener('resize', handleResize);
+
+  // toggle handler
+  toggleBtn.addEventListener('click', () => {
+    const isOpen = body.getAttribute('data-menu-open') === 'true';
+    body.setAttribute('data-menu-open', String(!isOpen));
   });
-})(document);
+});

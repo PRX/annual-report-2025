@@ -3,6 +3,8 @@ title: "Finances"
 link:
   anchor: "finances"
   label: "Finances"
+  icon: "circle-dollar-sign"
+menu-group: "2"
 ---
 <div class="financials">
   {% assign info_tiles = site.data.financials | where: 'type', 'revenue' %}

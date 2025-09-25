@@ -3,6 +3,8 @@ title: "Thank you"
 link:
   anchor: "donor-list"
   label: "Donor List"
+  icon: "hand-heart"
+menu-group: "2"
 quote:
   text: "PRX gratefully acknowledges the many individuals, institutions, and foundations that have generously supported our programs and initiatives over the past year."
 

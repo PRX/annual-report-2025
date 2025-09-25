@@ -1,24 +1,27 @@
+:root {
+  --gutter-size: 3rem;
+}
+
 .content {
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 3rem;
+  padding: var(--gutter-size);
   overflow: hidden;
   color: $white;
-  background: linear-gradient(to right, $navy, $violet);
 
   &:nth-of-type(3n + 1) {
-    background: linear-gradient(to right, $navy, $red);
+    background: linear-gradient(to right, transparent $red);
   }
 
   &:nth-of-type(3n + 2) {
-    background: linear-gradient(to right, $navy, $teal);
+    background: linear-gradient(to right, transparent $teal);
   }
 
   &:nth-of-type(3n) {
-    background: linear-gradient(to right, $navy, $violet);
+    background: linear-gradient(to right, transparent $violet);
   }
 }
 
@@ -35,12 +38,18 @@
   margin-bottom: 2rem;
 }
 
+.content-title {
+  svg {
+    path, circle {stroke: $orange;}
+  }
+}
+
 .content-content p {
   max-width: 800px;
 }
 
-.section-transition {
-  background: $navy;
+.content-interlude {
+  //background: $navy;
   color: $white;
   text-wrap: balance;
 
@@ -57,14 +66,14 @@
   max-width: 800px;
 }
 
-.transition-bg {
+.content-interlude-bg {
   top: 0;
   left: 0;
   width: 100%;
   bottom: 0;
   z-index: 0;
+  padding: 0 var(--gutter-size);
   position: absolute;
-  background: $navy;
   background: linear-gradient(90deg,rgba(9, 9, 121, 1) 0%, rgba(0, 212, 255, 1) 100%);
 
   div {

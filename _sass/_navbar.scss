@@ -1,3 +1,8 @@
+:root {
+  --nav-width: 250px;
+  --transition-speed: 0.35s;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -6,17 +11,20 @@
   left: 0;
   width: 100%;
   z-index: 1000;
+  background-image: linear-gradient(180deg,rgba(0, 58, 87, 0.9) 80%, transparent 100%);
+
+  @media (max-width: 769px) {
+    [data-menu-open="true"] & {
+      background: $navy;
+    }
+  }
 
   > nav {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-
     padding: 1rem;
-
     border-radius: 0 0 20px 20px;
-
-    background-color: transparent;
 
     &:first-of-type {
       border-bottom-left-radius: 0;
@@ -33,98 +41,65 @@
     @media (min-width: 480px) {
       display: block;
     }
-
   }
+
+  @media (min-width: 768px) {
+    background: linear-gradient(180deg,rgba(0, 58, 87, 1) 0%, rgba(0, 58, 87, 0) 80%);
+  }
+
 }
 
 .prx-logo {
   margin-left: 0.25rem;
 }
 
-#navDrawerPopover {
-  --_nav-animation-speed: var(--nav-animation-speed, 0.3s);
-  --_nav-backdrop-opacity: var(--nav-backdrop-opacity, 50%);
+.btn-menu {
+  svg path {
+    stroke: $white;
+  }
+}
 
-  animation: navbar-closed var(--_nav-animation-speed);
+.navbar-buttons {
+  svg path {
+    stroke: $navy;
+  }
+}
 
-  /* Allows backdrop to fade out. */
-  transition-property: overlay;
-  transition-duration: var(--_nav-animation-speed);
-  transition-behavior: allow-discrete;
-
-  top: 0;
-  bottom: 0;
+.nav-drawer {
+  background-color: $navy;
+  position: fixed;
+  top: 72px;
   left: 0;
-  width: 16rem;
-  height: 100vh;
-  height: 100dvh;
-  margin: 0;
-  padding: 0;
-  background: $white;
-  border: none;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  bottom: 0;
+  right: 0;
+  transform: translateX(-100%);
+  transition: transform var(--transition-speed) ease;
+  overflow-y: auto;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox, Safari 18.2+, Chromium 121+ */
+  z-index: 999;
 
-  &::backdrop {
-    animation: backdrop-fade-out var(--_nav-animation-speed);
-
-    background-image: radial-gradient(
-      circle at top left in oklch,
-      color-mix(in oklch, transparent, $cyan var(--_nav-backdrop-opacity)) 20rem,
-      color-mix(in oklch, transparent, $orange var(--_nav-backdrop-opacity)),
-      color-mix(in oklch, transparent, $yellow var(--_nav-backdrop-opacity)) 60%,
-      color-mix(in oklch, transparent, $white var(--_nav-backdrop-opacity))
-    );
-
-    backdrop-filter: blur(10px);
-  }
-
-  &:popover-open {
-    animation: navbar-open var(--_nav-animation-speed);
-
-    &::backdrop {
-      animation: backdrop-fade-in var(--_nav-animation-speed);
-    }
-  }
-}
-
-/* Animations */
-
-@keyframes navbar-open {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translate(0);
-  }
-}
-
-@keyframes navbar-closed {
-  from {
-    display: block;
+  [data-menu-open="true"] & {
     transform: translateX(0);
+    box-shadow: 0 0 0 100vw hsla(0,0%,0%,0.3);
   }
-  to {
-    display: none;
-    transform: translate(-100%);
-  }
-}
 
-@keyframes backdrop-fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes backdrop-fade-out {
-  from {
-    display: block;
-    opacity: 1;
-  }
-  to {
+  &::-webkit-scrollbar {
     display: none;
-    opacity: 0;
+  }
+
+  @media (min-width: 768px) {
+    background-color: transparent;
+    transform: translateX(0);
+    width: var(--nav-width);
+    right: auto;
+
+    [data-menu-open="true"] & {
+      box-shadow: none;
+    }
+
+    [data-menu-open="false"] & {
+      transform: translateX(-100%);
+    }
   }
 }

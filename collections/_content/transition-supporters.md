@@ -1,5 +1,5 @@
 ---
-content-type: "transition"
+content-type: "content-interlude"
 ---
 
 <blockquote>

@@ -4,6 +4,8 @@ title: "Radiotopia: Independent Artists in Community"
 link:
   anchor: "radiotopia"
   label: "Radiotopia"
+  icon: "radiotopia"
+menu-group: "1"
 intro: "<p>Radiotopia from PRX is a cultural tastemaker, evolving from public radio roots into visionary storytellers that represent the best of their genres across history, fiction, society and culture. This year, Radiotopia launched 17 seasons and specials, including bringing on Hyperfixed from Alex Goldman, Proxy with Yowei Shaw, Never Post, and Radiotopia Presents: Red for Revolution, a limited series audio drama centering intergenerational stories of Black women and queer love set in the 1970s. With support from the Mellon Foundation, Ear Hustle built an audio production space in the California Institution for Women, where the training program will feature collaboration with KALW public radio’s Uncuffed. Radiotopia Presents: We're Doing the Wiz and The Memory Palace were featured at Tribeca Festival. And Normal Gossip’s creators passed the reins of the hit show to new host Rachelle Hampton and producer Se’era Spragley Ricks.</p>"
 quote:
   text: "“Audio storytelling — that style of storytelling — it started in public media and it feels like we're, like, a couple of generations beyond it, like in terms of like the lineage. It's kind of like when you put cheese on broccoli, we are sharing educational information, but we're making it, like, really fun and entertaining and I think engaging people to consume content that is still, like, high quality but also very fun.”"

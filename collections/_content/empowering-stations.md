@@ -4,6 +4,8 @@ title: "Empowering Stations for the Digital Future"
 link:
   anchor: "empowering-stations"
   label: "Empowering Stations"
+  icon: "radio-tower"
+menu-group: "1"
 intro: "<p>PRX offers a community of support for our network of 850 local stations across the U.S. We distribute a cost-accessible broadcast portfolio of defining shows in public radio like The Moth and Latino USA, but also offer personalized services that help stations explore podcasting possibilities, brainstorm solutions to their technology needs, or share their content and find new, unique programming on PRX Networks or the Exchange — public radio's largest distribution marketplace.</p>"
 quote:
   text: "“To me, it seems like the tone and the tenor with the conversations we have with stations — it seems to be finding new ways to partner with stations and understanding, like, what they're trying to do. And, we have a lot of things we can offer. We can talk about programming, we can talk about helping them get their local content on the Exchange, which they can do for free. If they're trying to make moves in podcasting, we can connect them. We can set up a demo of Dovetail. Or we can just even set up just a conversation to, to learn about their podcasting journey and ask and answer questions they may have about the medium. With a lot of these stations, I'm not always coming at them with programming. Our conversations are multidimensional and it's always about a real, a true partnership.”"
