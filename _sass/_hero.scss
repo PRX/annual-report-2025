@@ -1,12 +1,5 @@
 .hero {
-  min-height: 90vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: left;
-  position: relative;
-  padding: 72px 3rem 0;
-  background: linear-gradient(to right, transparent, $violet);
+  min-height: calc(100vh - 3rem);
 
   h1 {
     font-size: clamp(2.5rem, calc(5vw + 0.5rem), 3rem);
@@ -55,8 +48,11 @@
 
   top: 0;
   left: 0;
-  width: 100%;
   bottom: 0;
+  right: 0;
+
+  margin: 72px 3rem 0;
+
   z-index: 0;
   position: absolute;
   filter: blur(.025rem);
