@@ -10,12 +10,10 @@
 
 </head>
 
-<body data-menu-open="true">
+<body>
   {% include navbar/navbar.html %}
-
+  {% include navbar/navbar-drawer.html %}
   <div class="layout-wrapper">
-    {% include navbar/navbar-drawer.html %}
-
      <main id="layout-content" class="layout-content">
       {% include page-types/hero.html %}
 
@@ -48,8 +46,8 @@
       {% include page-types/playlist.html %}
 
     </div>
-  </div>
 
-  {% include app/footer.html %}
+    {% include app/footer.html %}
+  </div>
 </body>
 </html>
