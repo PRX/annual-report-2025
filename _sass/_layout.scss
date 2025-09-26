@@ -35,14 +35,31 @@ body {
 
 .layout-content {
   margin-left: var(--nav-expanded);
-  padding-block-start: 72px;
 }
 
 .container {
-  min-height: 80vh;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: left;
 
-  &.navy {
-    background-color: $navy;
-    color: $white;
+  min-height: 80vh;
+  padding: 3rem;
+
+  overflow: hidden;
+  color: $white;
+
+  &.violet {
+    background-image: linear-gradient(to right, transparent, $violet);
+  }
+
+  &.teal {
+    background-image: linear-gradient(to right, transparent, $teal);
+  }
+
+  &.red {
+    background-image: linear-gradient(to right, transparent, $red);
   }
 }
