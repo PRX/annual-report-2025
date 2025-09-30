@@ -5,6 +5,7 @@ link:
   anchor: "leading-values"
   label: "Leading with Values"
   icon: "spotlight"
+color: "red"
 menu-group: "1"
 intro: "<p>In a year when many organizations retreated from equity work under external pressures, PRX made a different choice. We continue to lean into the values that underscore the best aspirations of public media — to reflect the full American public. PRX is a pillar for Inclusion, Diversity, Equity and Accessibility (IDEA) efforts in public media across the country — supporting a cohort of professionals who often find themselves as the only person focused on equity work in their organizations. With PRX leadership, these practitioners are sharing expertise, resources, and moral support, leveraging their collective knowledge to strengthen equity work nationwide.</p>"
 quote:

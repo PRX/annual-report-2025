@@ -5,6 +5,7 @@ link:
   anchor: "productions"
   label: "Mission-Driven Productions"
   icon: "boom-box"
+color: "red"
 menu-group: "1"
 intro: "<p>PRX offers a community of support for our network of 850 local stations across the U.S. We distribute a cost-accessible broadcast portfolio of defining shows in public radio like The Moth and Latino USA, but also offer personalized services that help stations explore podcasting possibilities, brainstorm solutions to their technology needs, or share their content and find new, unique programming on PRX Networks or the Exchange — public radio's largest distribution marketplace."
 quote:

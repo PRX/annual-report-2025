@@ -1,9 +1,15 @@
 #map {
+  --_map--accent--color1: var(--welcome-image--accent--color1, #{$yellow});
+  --_map--accent--color2: var(--welcome-image--accent--color2, #{$cyan});
+
   height: 600px;
   width: 100%;
   border: 1px solid $navy;
-  border-radius: 20px;
+  border-radius: 10px;
   opacity: 0.7;
+
+  width: 100%;
+  box-shadow: 10px -10px 0px 0px var(--_map--accent--color1), -10px 10px 0px 0px var(--_map--accent--color2);
 }
 
 .controls {

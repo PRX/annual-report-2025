@@ -5,6 +5,7 @@ link:
   anchor: "technology"
   label: "Public Interest Technology"
   icon: "rss"
+color: "violet"
 menu-group: "1"
 intro: "<p>This year marked a pivotal moment for PRX’s Dovetail platform, evolving from a tool for close partners into a comprehensive platform capable of serving public media makers nationwide. Dovetail — a digital platform that allows everyone from individual creators to public radio stations to manage, monetize, and monitor metrics on their podcasts — is becoming the foundational digital audio infrastructure for media in the public interest.</p><p>Technology built by PRX is fundamentally different from the products commercial companies offer. Commercial platforms extract maximum revenue for themselves, but our explicit goal is to build sustainability, growth, and genuine support for the creators and stations that depend on us — while ensuring that our listeners are maximally protected with privacy-centric advertising. This means developing networks that serve the system rather than exploit it, and creating opportunities for cross-promotion that helps our entire community thrive.</p>"
 quote:
