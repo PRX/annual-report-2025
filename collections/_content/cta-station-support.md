@@ -1,7 +1,8 @@
 ---
 content-type: "content-interlude"
+color: "teal"
 featured-image:
-  url: img/content/ira.png
+  url: img/content/ira-3.jpg
   alt: Ira Glass being interviewed on a stage at the Tribeca Festival
 ---
 

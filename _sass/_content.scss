@@ -54,16 +54,32 @@
   min-height: 100vh;
 
   .content-wrapper {
-    background-image: linear-gradient(to right, $violet, $red);
     border-radius: 20px;
     padding: 1rem 2rem;
     margin: 0 0 2rem;
     text-align: left;
 
+    &.violet {
+      background-image: linear-gradient(to bottom, transparent, rgba(152,79,160,0.5) 25%);
+    }
+
+    &.teal {
+      background-image: linear-gradient(to bottom, transparent, rgba(5,150,143,0.5) 25%);
+    }
+
+    &.red {
+      background-image: linear-gradient(to bottom, transparent, rgba(204,57,47,0.5) 25%);
+    }
+
     p {
+      font-size: 0.9rem;
       margin-bottom: 0;
 
       &.donate {margin-top: 1rem;}
+
+      @media (min-width: 768px) {
+        font-size: 1rem;
+      }
     }
   }
 }
