@@ -93,6 +93,14 @@
   padding: 0 var(--gutter-size);
   position: absolute;
 
+  animation-name: content-bg-image-select;
+  animation-duration: var(--_content-bg--animation-duration);
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(var(--content-bg--image-count), jump-none);
+  animation-delay: var(--_content-bg-image--animation-delay);
+  overflow: hidden;
+
+
   div {
     display: block;
     overflow: hidden;
@@ -103,6 +111,12 @@
   }
 
   img {
+    animation-name: content-bg-image-zoom;
+    animation-duration: 10s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+
     position: absolute;
     inset: 0px;
     box-sizing: border-box;
@@ -127,4 +141,15 @@
 
     opacity: 0.6;
   }
+
+  @keyframes content-bg-image-zoom {
+  0% {
+    scale: 1;
+    filter: saturate(100%);
+  }
+  100% {
+    scale: 1.1;
+    filter: saturate(100%);
+  }
+}
 }
