@@ -57,7 +57,7 @@
         line-height: 1;
 
         &:where(:hover, :focus-visible) {
-          color: var(--content--bg--color--start);
+          color: $navy;
           background-color: var(--_link-color);
         }
       }
