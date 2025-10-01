@@ -1,7 +1,7 @@
-$show-tiles--columns: 10;
-$show-tiles--rows: 10;
+$show-tiles--columns: 4;
+$show-tiles--rows: 4;
 $show-tiles--tile-count: $show-tiles--columns * $show-tiles--rows;
-$show-tiles--gap: 16px;
+$show-tiles--gap: 8px;
 $show-tiles--tile-min-size: 100px + $show-tiles--gap;
 $show-tiles--tile-size: minmax($show-tiles--tile-min-size, 1fr);
 
@@ -30,10 +30,10 @@ $show-tiles--tile-size: minmax($show-tiles--tile-min-size, 1fr);
     position: absolute;
     inset: 0;
     background-image: linear-gradient(
-      to right, 
-      color-mix(in oklab, var(--_show-tiles--screen--color) var(--_show-tiles--screen--opacity--edge), transparent) 0%, 
-      color-mix(in oklab, var(--_show-tiles--screen--color) var(--_show-tiles--screen--opacity--center), transparent) 33%, 
-      color-mix(in oklab, var(--_show-tiles--screen--color) var(--_show-tiles--screen--opacity--center), transparent) 66%, 
+      to right,
+      color-mix(in oklab, var(--_show-tiles--screen--color) var(--_show-tiles--screen--opacity--edge), transparent) 0%,
+      color-mix(in oklab, var(--_show-tiles--screen--color) var(--_show-tiles--screen--opacity--center), transparent) 33%,
+      color-mix(in oklab, var(--_show-tiles--screen--color) var(--_show-tiles--screen--opacity--center), transparent) 66%,
       color-mix(in oklab, var(--_show-tiles--screen--color) var(--_show-tiles--screen--opacity--edge), transparent) 100%
     );
   }
