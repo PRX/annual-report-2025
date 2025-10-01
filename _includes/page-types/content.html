@@ -31,13 +31,13 @@
       </div>
       {%- endif -%}
     </div>
+    {%- if content.content -%}
     <div class="content-main">
-      <div class="content-main--layout">
-        <div class="content-content">
-          {{ content.content }}
-        </div>
+      <div class="content-content">
+        {{ content.content }}
       </div>
     </div>
+    {%- endif -%}
     {%- if content.donor-quote or content.featured-image -%}
     <div class="content-footer">
       {%- if content.donor-quote -%}
@@ -57,4 +57,18 @@
     </div>
     {%- endif -%}
   </div>
+
+  {%- if content.awards -%}
+    {% include components/awards.html %}
+  {%- endif -%}
+
+  {%- if content.donor-list -%}
+    {% include components/donors.html %}
+  {%- endif -%}
+
+  {%- if content.financials -%}
+    {% include components/financials.html %}
+  {%- endif -%}
+
+
 </section>
