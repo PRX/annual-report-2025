@@ -5,6 +5,7 @@ link:
   anchor: "building-peer-networks"
   label: "Building Peer Networks"
   icon: "handshake"
+color: "teal"
 menu-group: "1"
 intro: "<p>Facilitating the success of creators not only within, but also beyond our direct portfolio underpins our commitment to media in the public interest. At Creator Summits, this year hosted by PRX with our partners KUT and KUTX in Austin, TX, and later, WABE in Atlanta, GA, we brought together hundreds of local audio makers to take a pulse of the local creator industry and learn from each other.</p>"
 quote:

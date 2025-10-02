@@ -4,17 +4,7 @@ link:
   anchor: "finances"
   label: "Finances"
   icon: "circle-dollar-sign"
+color: "teal"
 menu-group: "2"
+financials: true
 ---
-<div class="financials">
-  {% assign info_tiles = site.data.financials | where: 'type', 'revenue' %}
-  {% if info_tiles %}
-    {% include components/info-tiles.html heading="Revenue" class="financial-section" %}
-  {% endif %}
-
-
-  {% assign info_tiles = site.data.financials | where: 'type', 'expense' %}
-  {% if info_tiles %}
-    {% include components/info-tiles.html heading="Expenses" class="financial-section" %}
-  {% endif %}
-</div>

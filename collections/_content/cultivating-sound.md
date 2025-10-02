@@ -5,6 +5,7 @@ link:
   anchor: "cultivating-sound"
   label: "Future of Sound"
   icon: "audio-lines"
+color: "teal"
 menu-group: "1"
 intro: "<p>PRX brings radio listeners some of the best examples of public media storytelling, from the thoughtful perspectives of The World’s international journalism, to the definitional sound of This American Life — which celebrated its 30th anniversary with a Tribeca Festival gala in June. In just this year, investigative reporting from Reveal was a winner of the Ambie Awards, Webby Awards, Healthcare Journalism Awards, DuPont-Columbia Awards, Investigative Reporters and Editors Awards, National Magazine Award and a finalist for the Pulitzer Prize. In fact, PRX has distributed half of the winners of the Pulitzers for audio reporting since audio became a category. The PRX roster is award-winning and foundational. We are also expanding its sound to meet the future of public radio.</p>"
 quote:
@@ -19,9 +20,6 @@ donor-quote:
   audio:
     url: https://f.prxu.org/9003/d6ea99b4-8e0b-4f93-a219-21e940240de3/e5840f53-5bd2-4cf8-b231-4b100d073e37.mp3
     title: "Sean Nesbitt"
-featured-image:
-  url: img/content/ira.png
-  alt: Ira Glass being interviewed on a stage at the Tribeca Festival
 
 ---
 

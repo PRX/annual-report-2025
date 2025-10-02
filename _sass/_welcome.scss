@@ -142,7 +142,7 @@
 
   img {
     margin-bottom: 1rem;
-    border-radius: 20px;
+    border-radius: 10px;
     width: 100%;
     max-width: 300px;
     box-shadow: 10px -10px 0px 0px var(--_welcome--accent--color1), -10px 10px 0px 0px var(--_welcome--accent--color2);
@@ -299,7 +299,6 @@
   font-size: 1.125rem;
   font-style: italic;
   line-height: 1.125;
-  text-wrap: balance;
 }
 
 .welcome-audio--controls {

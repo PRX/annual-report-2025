@@ -1,5 +1,6 @@
 ---
 content-type: "content-interlude"
+color: "violet"
 featured-image:
   url: img/content/radiotopia.jpg
   alt: A woman and a man are seated in conversation on a stage in an auditorium.
