@@ -163,18 +163,16 @@
   line-height: 4rem;
   text-align: center;
   pointer-events: none;
+  fill: $navy;
+  box-shadow: 5px -5px 0px 0px var(--_carousel--accent--color1), -5px 5px 0px 0px var(--_carousel--accent--color2);
 }
 
 .carousel::before {
-  fill: $navy;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0'/%3E%3C/svg%3E");
-  box-shadow: 5px -5px 0px 0px var(--_carousel--accent--color1), -5px 5px 0px 0px var(--_carousel--accent--color2);
 }
 
 .carousel::after {
-  fill: $navy;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0'/%3E%3C/svg%3E");
-  box-shadow: 5px -5px 0px 0px var(--_carousel--accent--color1), -5px 5px 0px 0px var(--_carousel--accent--color2);
 }
 
 @keyframes tonext {
@@ -195,12 +193,6 @@
 @keyframes tostart {
   75% {
     left: 0;
-  }
-  95% {
-    left: -300%;
-  }
-  98% {
-    left: -300%;
   }
   99% {
     left: 0;
