@@ -70,5 +70,9 @@
     {% include components/financials.html %}
   {%- endif -%}
 
-
+  {%- if content.carousel -%}
+    {% include components/carousel.html
+      carousel=content.carousel
+    %}
+  {%- endif -%}
 </section>

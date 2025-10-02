@@ -20,6 +20,40 @@ donor-quote:
   audio:
     url: https://replace.me
     title: "Stephanie Kuo"
+carousel:
+  - image:
+      src: img/content/atx/ATXPodcast_Day1_1.JPG
+      alt: "ALT TEXT"
+  - image:
+      src: img/content/atx/ATXPodcast_Day1_2.JPG
+      alt: "ALT TEXT"
+  - image:
+      src: img/content/atx/ATXPodcast_Day1_3.JPG
+      alt: "ALT TEXT"
+  - image:
+      src: img/content/atx/ATXPodcast_Day2_1.JPG
+      alt: "ALT TEXT"
+  - image:
+      src: img/content/atx/ATXPodcast_Day2_2.JPG
+      alt: "ALT TEXT"
+  - image:
+      src: img/content/atx/ATXPodcast_Day2_3.JPG
+      alt: "ALT TEXT"
+  - image:
+      src: img/content/atx/ATXPodcast_Day2_4.JPG
+      alt: "ALT TEXT"
+  - image:
+      src: img/content/atx/ATXPodcast_Day2_5.JPG
+      alt: "ALT TEXT"
+  - image:
+      src: img/content/atx/ATXPodcast_Day3_1.JPG
+      alt: "ALT TEXT"
+  - image:
+      src: img/content/atx/ATXPodcast_Day3_2.JPG
+      alt: "ALT TEXT"
+  - image:
+      src: img/content/atx/ATXPodcast_Day3_3.JPG
+      alt: "ALT TEXT"
 ---
 
 In past years, the podcasting industry has swung toward blockbuster names, big money, and mass reach, but audiences are increasingly telling creators they need content that feels authentic, personal, and intimate again — and that they will support meaningful work. This is a pendulum swing back toward the values that have always defined media in the public interest. PRX works to facilitate the success of the creators that are doing this work without being prescriptive or presumptuous.
