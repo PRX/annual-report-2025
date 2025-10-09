@@ -21,9 +21,13 @@ presets:
 
   hero-card:
     formats: [webp, original]
-    crop: 9:11 entropy
-    base_width: 304 # How wide the 1x image should be. Styled to be 270, but zooms to 1.125x.
-    pixel_ratios: [1, 1.5, 2] # Which multipliers to target.
+    widths: [600, 700, 800, 900, 1000, 1200, 1600, 2400, 3600]
+    fallback_width: 500 # The default is 800, which is probably too big.
+    size: 100vw
+    sizes:
+      wide: 2400px
+    formats:  [webp, original]
+    dimension_attributes: true
     format_quality:
       webp: 100
       avif: 100

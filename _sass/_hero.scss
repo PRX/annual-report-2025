@@ -39,12 +39,6 @@
 }
 
 .hero-image {
-  animation-name: hero-card-image-select;
-  animation-duration: var(--_hero-card--animation-duration);
-  animation-iteration-count: infinite;
-  animation-timing-function: steps(var(--hero-card--image-count), jump-none);
-  animation-delay: var(--_hero-card-image--animation-delay);
-  animation-direction: alternate;
   overflow: hidden;
   border-radius: 20px;
 
@@ -54,14 +48,36 @@
 
   margin: 72px 3rem 0;
 
-  filter: blur(.025rem);
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+
+    background-image:
+    linear-gradient(to top left, rgba($teal, 0.5), transparent, rgba($violet, 0.6)),
+    linear-gradient(rgba($black, 0.5) 0 0);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    background-color: rbga($black, 0);
+
+    backdrop-filter: blur(0.4rem);
+
+    mask-image: linear-gradient(to top right, transparent, black 35% 65%, transparent);
+  }
 
   img {
     animation-name: hero-card-image-zoom;
-    animation-duration: 10s;
-    animation-iteration-count: 1;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
     animation-timing-function: ease-out;
-    animation-fill-mode: forwards;
+    animation-direction: alternate;
 
     position: absolute;
     inset: 0px;
