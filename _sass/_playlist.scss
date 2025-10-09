@@ -1,6 +1,8 @@
 #playlist {
   background: linear-gradient(to right, $navy, $violet);
 
+  text-align: center;
+
   .subscribe--nav {
     display: inline-grid;
     row-gap: 1.5rem;

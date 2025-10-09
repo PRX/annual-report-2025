@@ -2,11 +2,14 @@
   --gutter-size: 3rem;
 }
 
-.content-content-wrapper {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  text-align: left;
+.content-wrapper {
+  max-width: 800px;
+  margin-inline: auto;
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
 }
 
 .content-header {
@@ -30,10 +33,6 @@
   color: $white;
   padding-block: 3rem;
 
-  p {
-    text-align: left;
-  }
-
   .btn {
     display: inline-block;
   }
@@ -49,26 +48,29 @@
 }
 
 .content-interlude-image {
-  justify-content: flex-end;
+  align-content: end;
   padding-bottom: 0;
   min-height: 100vh;
+
+  padding-block-end: 2rem;
 
   .content-wrapper {
     border-radius: 20px;
     padding: 1rem 2rem;
-    margin: 0 0 2rem;
-    text-align: left;
+
+
+    background-image: linear-gradient(to bottom, transparent, var(--section-color) 25%);
 
     &.violet {
-      background-image: linear-gradient(to bottom, transparent, rgba(152,79,160,0.5) 25%);
+      --section-color: #{rgba($violet, 0.5)};
     }
 
     &.teal {
-      background-image: linear-gradient(to bottom, transparent, rgba(5,150,143,0.5) 25%);
+      --section-color: #{rgba($teal, 0.5)};
     }
 
     &.red {
-      background-image: linear-gradient(to bottom, transparent, rgba(204,57,47,0.5) 25%);
+      --section-color: #{rgba($red, 0.5)};
     }
 
     p {
@@ -85,27 +87,25 @@
 }
 
 .content-interlude-bg {
-  top: 0;
-  left: 0;
-  width: 100%;
-  bottom: 0;
-  z-index: 0;
-  padding: 0 var(--gutter-size);
   position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: clip;
+
+  padding: 0 var(--gutter-size);
 
   animation-name: content-bg-image-select;
   animation-duration: var(--_content-bg--animation-duration);
   animation-iteration-count: infinite;
   animation-timing-function: steps(var(--content-bg--image-count), jump-none);
   animation-delay: var(--_content-bg-image--animation-delay);
-  overflow: hidden;
-
+  animation-direction: alternate;
 
   div {
     display: block;
     overflow: hidden;
     position: absolute;
-    inset: 0px;
+    inset: 0;
     box-sizing: border-box;
     margin: 0px;
   }
@@ -142,7 +142,18 @@
     opacity: 0.6;
   }
 
-  @keyframes content-bg-image-zoom {
+  :has(> &) {
+    overflow: clip;
+
+    @media (min-width: 768px) {
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+    }
+  }
+
+}
+
+@keyframes content-bg-image-zoom {
   0% {
     scale: 1;
     filter: saturate(100%);
@@ -151,5 +162,4 @@
     scale: 1.1;
     filter: saturate(100%);
   }
-}
 }

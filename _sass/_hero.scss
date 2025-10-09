@@ -44,18 +44,16 @@
   animation-iteration-count: infinite;
   animation-timing-function: steps(var(--hero-card--image-count), jump-none);
   animation-delay: var(--_hero-card-image--animation-delay);
+  animation-direction: alternate;
   overflow: hidden;
   border-radius: 20px;
 
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
 
   margin: 72px 3rem 0;
 
-  z-index: 0;
-  position: absolute;
   filter: blur(.025rem);
 
   img {

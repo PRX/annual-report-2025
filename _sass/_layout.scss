@@ -21,7 +21,7 @@ body {
   }
 
   @media (min-width: 768px) {
-      --nav-expanded: 250px;
+      --nav-expanded: calc(250px + 2rem);
 
     &[data-menu-open="false"] {
       --nav-expanded: 0;
@@ -38,28 +38,26 @@ body {
 }
 
 .container {
-  display: flex;
+  isolation: isolate;
   position: relative;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-align: left;
-
   min-height: 80vh;
+  place-content: center;
+
   padding: 3rem;
 
-  overflow: hidden;
   color: $white;
 
+  background-image: linear-gradient(to right, transparent, var(--section-color, transparent));
+
   &.violet {
-    background-image: linear-gradient(to right, transparent, $violet);
+    --section-color: #{$violet};
   }
 
   &.teal {
-    background-image: linear-gradient(to right, transparent, $teal);
+    --section-color: #{$teal};
   }
 
   &.red {
-    background-image: linear-gradient(to right, transparent, $red);
+    --section-color: #{$red};
   }
 }

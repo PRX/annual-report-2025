@@ -1,17 +1,25 @@
 // inspiration: https://codepen.io/Schepp/pen/WNbQByE
+:root {
+  // scroll-padding-block: 5svh;
+}
+
 .carousel {
   --_carousel--accent--color1: var(--welcome-image--accent--color1, #{$yellow});
   --_carousel--accent--color2: var(--welcome-image--accent--color2, #{$orange});
 
   position: relative;
-  width: 100%;
-  padding-top: 66.67%;
+  display: grid;
+
   perspective: 100px;
   box-sizing: border-box;
+
+  margin-block: 3rem;
+
+  border-radius: 20px;
+
   scrollbar-color: transparent transparent;
   scrollbar-width: 0px;
   -ms-overflow-style: none;
-  border-radius: 20px;
 
   &::-webkit-scrollbar {
     width: 0;
@@ -28,188 +36,180 @@
 
   ol, li {
     list-style: none;
-    margin: 0;
-    padding: 0;
   }
 }
 
 .carousel__viewport {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  overflow-x: scroll;
-  counter-reset: item;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
+
+  position: relative;
+  display: grid;
+  grid-auto-rows: 1fr;
+  height: 80vh;
+  max-width: 100%;
+  overflow: clip;
+  overflow-x: scroll;
+
+  border-radius: 0.5rem;
+
+  filter: drop-shadow(0.25rem 0.5rem 0.5rem rgba($navy, 0.5));
+}
+
+.carousel__slides {
+  container-name: carousel-viewport;
+  container-type: size;
+
+  counter-reset: item;
+
+  display: flex;
+  column-gap: 2rem;
+
+  padding: 0;
+  margin: 0;
 }
 
 .carousel__slide {
-  position: relative;
-  flex: 0 0 100%;
-  width: 100%;
   counter-increment: item;
-}
 
-.carousel__snapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   scroll-snap-align: center;
-}
+  scroll-margin-block-start: 10vh;
 
-.carousel__snapper picture {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
+  position: relative;
 
-.carousel__snapper img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  height: 100cqh;
+  aspect-ratio: 4 / 3;
+  overflow: clip;
 
-}
+  padding: 0;
+  margin: 0;
 
-@media (hover: hover) {
-  .carousel__snapper {
-    animation-name: tonext, snap;
-    animation-timing-function: ease;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
+  border-radius: 0.5rem;
+
+  img {
+    height: 100%;
+    object-fit: cover;
   }
 
-  .carousel__slide:last-child .carousel__snapper {
-    animation-name: tostart, snap;
+  &:focus {
+    outline: none;
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .carousel__snapper {
-    animation-name: none;
-  }
-}
+.carousel__slide-link {
+  position: absolute;
+  inset: 0;
 
-.carousel:hover .carousel__snapper,
-.carousel:focus-within .carousel__snapper {
-  animation-name: none;
+  :target > & {
+    display: none;
+  }
 }
 
 .carousel__navigation {
   position: absolute;
   right: 0;
-  bottom: 0;
+  top: 100%;
   left: 0;
-  text-align: center;
+  padding-block-start: 0.5rem;
 }
 
-.carousel__navigation-list,
+.carousel__navigation-list {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
 .carousel__navigation-item {
-  display: inline-block;
+  display: grid;
+  background-color: $navy;
+  padding: 0.25rem;
+  border-radius: 100vw;
 }
 
 .carousel__navigation-button {
+  transition-property: width, background-color;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+
   display: inline-block;
-  width: 1.5rem;
-  height: 1.5rem;
-  background-color: $cyan;
-  background-clip: content-box;
-  border: 0.25rem solid transparent;
-  border-radius: 50%;
-  font-size: 0;
-  transition: transform 0.1s;
-}
 
-.carousel::before,
-.carousel::after,
-.carousel__prev,
-.carousel__next {
-  position: absolute;
-  top: 0;
-  margin-top: 37.5%;
-  width: 4rem;
-  height: 4rem;
-  transform: translateY(-50%);
-  border-radius: 50%;
-  font-size: 0;
-  outline: 0;
-}
+  width: 1rem;
+  height: 1rem;
 
-.carousel::before,
-.carousel__prev {
-  left: -1rem;
-}
+  border-radius: inherit;
 
-.carousel::after,
-.carousel__next {
-  right: -1rem;
-}
-
-.carousel::before,
-.carousel::after {
-  content: '';
-  z-index: 1;
-  background-color: $cyan;
-  background-size: 1.5rem 1.5rem;
-  background-repeat: no-repeat;
-  background-position: center center;
-  color: $navy;
-  font-size: 2.5rem;
-  line-height: 4rem;
-  text-align: center;
-  pointer-events: none;
-  fill: $navy;
-  box-shadow: 5px -5px 0px 0px var(--_carousel--accent--color1), -5px 5px 0px 0px var(--_carousel--accent--color2);
-}
-
-.carousel::before {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0'/%3E%3C/svg%3E");
-}
-
-.carousel::after {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0'/%3E%3C/svg%3E");
-}
-
-@keyframes tonext {
-  75% {
-    left: 0;
-  }
-  95% {
-    left: 100%;
-  }
-  98% {
-    left: 100%;
-  }
-  99% {
-    left: 0;
+  &:where(:hover, :focus-visible) {
+    background-color: #{rgba($cyan, 0.3)};
   }
 }
 
-@keyframes tostart {
-  75% {
-    left: 0;
+@supports not (scroll-marker-group: after) {
+  $max-carousel-slides: 11; // Change this to the number of slides in he longest carousel.
+
+  @for $i from 1 through $max-carousel-slides {
+    .carousel__viewport:has(.carousel__slide:nth-of-type(#{$i}):target) {
+      & + .carousel__navigation {
+        .carousel__navigation-item:nth-of-type(#{$i}) {
+          .carousel__navigation-button {
+            width: 3rem;
+            background-color: $cyan;
+          }
+        }
+      }
+    }
   }
-  99% {
-    left: 0;
-  }
+
 }
 
-@keyframes snap {
-  96% {
-    scroll-snap-align: center;
+@supports (scroll-marker-group: after) {
+  .carousel__slide-link,
+  .carousel__navigation {
+    display: none;
   }
-  97% {
-    scroll-snap-align: none;
+
+  .carousel__viewport {
+    scroll-marker-group: after;
+
+
+    &::scroll-marker-group {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      top: calc(100% + 1rem);
+      width: 100%;
+    }
   }
-  99% {
-    scroll-snap-align: none;
-  }
-  100% {
-    scroll-snap-align: center;
+
+  .carousel__slide {
+
+    &::scroll-marker {
+      content: "";
+      transition-property: width, background-color;
+      transition-duration: 150ms;
+      transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+
+      display: inline-block;
+
+      width: 1rem;
+      height: 1rem;
+
+      background-color: $navy;
+
+      border-width: 0.25rem;
+      border-style: solid;
+      border-color: $navy;
+      border-radius: 100vw;
+
+      &:hover {
+        background-color: rgba($cyan, 0.5);
+      }
+
+      &:target-current {
+        width: 3rem;
+        background-color: $cyan;
+      }
+    }
+
   }
 }
