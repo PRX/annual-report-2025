@@ -1,5 +1,5 @@
 <section id="{{ content.link.anchor | default: content.slug }}" class="container content {{ content.color }}">
-  <div class="content-content-wrapper">
+  <div class="content-wrapper">
     <div class="content-header">
       <h2 class="content-title">
         {%- if content.link.icon -%}
@@ -70,5 +70,9 @@
     {% include components/financials.html %}
   {%- endif -%}
 
-
+  {%- if content.carousel -%}
+    {% include components/carousel.html
+      carousel=content.carousel
+    %}
+  {%- endif -%}
 </section>
