@@ -1,0 +1,12 @@
+{
+  "entries": [
+    "components/prx-bg-aurora/prx-bg-aurora.js"
+  ],
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "4.38.1",
+    "typescriptVersion": "5.9.3"
+  },
+  "collections": [],
+  "bundles": []
+}
