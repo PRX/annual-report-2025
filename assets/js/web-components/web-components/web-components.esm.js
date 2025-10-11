@@ -1,0 +1,2 @@
+import{p as r,b as p}from"./p-C0pqcqYG.js";export{s as setNonce}from"./p-C0pqcqYG.js";import{g as o}from"./p-DQuL1Twl.js";var t=()=>{const p=import.meta.url;const o={};if(p!==""){o.resourcesUrl=new URL(".",p).href}return r(o)};t().then((async r=>{await o();return p([["p-2639d7cb",[[257,"prx-bg-aurora",{colorStops:[16],amplitude:[2],blend:[2],speed:[2],time:[2]}]]]],r)}));
+//# sourceMappingURL=web-components.esm.js.map

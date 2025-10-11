@@ -21,9 +21,9 @@ presets:
 
   hero-card:
     formats: [webp, original]
-    widths: [600, 700, 800, 900, 1000, 1200, 1600, 2400, 3600]
+    widths: [1200, 1600, 2400, 3600]
     fallback_width: 500 # The default is 800, which is probably too big.
-    size: 100vw
+    size: 200vw
     sizes:
       wide: 2400px
     formats:  [webp, original]
