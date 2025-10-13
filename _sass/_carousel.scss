@@ -48,12 +48,21 @@
   grid-auto-rows: 1fr;
   height: 80vh;
   max-width: 100%;
-  overflow: clip;
+  overflow-y: clip;
   overflow-x: scroll;
+
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 
   border-radius: 0.5rem;
 
   filter: drop-shadow(0.25rem 0.5rem 0.5rem rgba($navy, 0.5));
+
+  &::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+    display: none;
+  }
 }
 
 .carousel__slides {
