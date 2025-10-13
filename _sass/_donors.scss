@@ -4,7 +4,7 @@
 
 .donor-list--level ul {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fill, 150px);
   grid-template-rows: 1fr;
   grid-column-gap: 1.5rem;
   grid-row-gap: 1.5rem;
@@ -19,14 +19,6 @@
     font-size: 0.875rem;
 
     dd {margin: 0;}
-  }
-
-  @media (min-width: 600px) {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  @media (min-width: 960px) {
-    grid-template-columns: repeat(6, 1fr);
   }
 }
 
