@@ -8,5 +8,7 @@ Clone the Github repo
 * `$ gem install bundler jekyll`
 * `$ gem install vips`
 * `$ bundle install`
+* `$ yarn --cwd web-components`
+* `$ yarn --cwd web-components build`
 * `$ bundle exec jekyll serve`
 * Go to [http://127.0.0.1:4000/](http://127.0.0.1:4000/) in your browser
