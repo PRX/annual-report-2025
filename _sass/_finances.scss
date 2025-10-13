@@ -1,8 +1,16 @@
 .financials {
-  display: flex;
-  gap: 3rem;
-  align-items: start;
-  width: 100%;
+  display: grid;
+  column-gap: 4rem;
+  row-gap: 4rem;
+  max-width: 1600px;
+  margin-inline: auto;
+
+  @media (min-width: 768px) {
+    display: flex;
+    gap: 3rem;
+    align-items: start;
+    width: 100%;
+  }
 }
 
 .info-tile-grid {
