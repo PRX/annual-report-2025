@@ -4,11 +4,13 @@
   display: grid;
   grid-template-columns: var(--nav-expanded) 1fr;
   place-content: center;
+  place-items: center;
 
   background-image: linear-gradient(to right, transparent var(--nav-expanded), var(--section-color, transparent));
 
   & .content-wrapper {
     grid-column: 2;
+    max-width: none;
   }
 
   h1 {
@@ -22,8 +24,6 @@
 }
 
 .hero-line {
-
-  display: flex;
   column-gap: 0.25ch;
 
   font-size: clamp(2.5rem, calc(3.2vw + 0.5rem), 3rem);
@@ -41,11 +41,8 @@
   span {
     --text-size: 5rem;
     color: var(--header-text-color);
-    font-size: clamp(3rem, calc(5.5vw + 0.5rem), 5rem);
-    letter-spacing: -0.15em;
-
-    mix-blend-mode: plus-lighter;
-    filter: drop-shadow(0.1em 0.1em 0px color(from currentColor srgb r g b / 0.4));
+    font-size: clamp(3rem, calc(4.2vw + 0.5rem), 5rem);
+    letter-spacing: -0.05em;
 
     &.cyan {
       --header-text-color: #{$cyan};
