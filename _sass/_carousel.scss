@@ -17,23 +17,6 @@
 
   border-radius: 20px;
 
-  scrollbar-color: transparent transparent;
-  scrollbar-width: 0px;
-  -ms-overflow-style: none;
-
-  &::-webkit-scrollbar {
-    width: 0;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: transparent;
-    border: none;
-  }
-
   ol, li {
     list-style: none;
   }
