@@ -5,7 +5,7 @@
   max-width: 1600px;
   margin-inline: auto;
 
-  @media (min-width: 768px) {
+  @container (width > #{map-get($info-tile-grid-breakpoints, 'md')}) {
     display: flex;
     gap: 3rem;
     align-items: start;

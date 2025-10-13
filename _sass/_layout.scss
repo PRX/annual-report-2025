@@ -38,6 +38,9 @@ body {
 }
 
 .container {
+  container-name: container;
+  container-type: inline-size;
+
   isolation: isolate;
   position: relative;
   min-height: 80vh;
