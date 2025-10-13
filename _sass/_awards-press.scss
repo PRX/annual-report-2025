@@ -1,7 +1,9 @@
 .awards-press-wrapper {
-  display: flex;
-  gap: 3rem;
-  align-items: start;
+  @media (min-width: 768px) {
+    display: flex;
+    gap: 3rem;
+    align-items: start;
+  }
 
   .awards-group {
     flex-grow: 1;
