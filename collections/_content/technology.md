@@ -20,6 +20,7 @@ donor-quote:
   audio:
     url: https://replace.me
     title: "Andrew Kuklewicz"
+stats: true
 ---
 
 *PRX has delivered billions of downloads to audiences worldwide.* Stations depend on PRX because we've built our reputation through consistent service and unwavering principles. In an industry where platforms can disappear overnight or change direction without warning, *PRX offers something increasingly rare: stability rooted in mission, not market whims.*

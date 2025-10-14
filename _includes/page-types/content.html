@@ -58,6 +58,12 @@
     {%- endif -%}
   </div>
 
+  {%- if content.stats -%}
+  <div class="stats">
+    {% include page-types/stats.html %}
+  </div>
+  {%- endif -%}
+
   {%- if content.awards -%}
     {% include components/awards.html %}
   {%- endif -%}

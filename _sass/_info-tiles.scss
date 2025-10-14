@@ -81,7 +81,7 @@ $info-tile-grid-columns: 12;
 
   :where(h3, h4) {
     margin-block-start: 2em;
-    font-size: clamp(1.5em, calc(14.5cqi + 0.125rem), 3em);
+    font-size: clamp(1em, calc(12.5cqi + 0.125rem), 3em);
   }
 
   &[data-color="blue"] {
