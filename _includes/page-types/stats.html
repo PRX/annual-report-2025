@@ -1,0 +1,12 @@
+<h2 class="stats--header">Hosted on Dovetail, &hellip;</h2>
+<div class="financials">
+  {% assign info_tiles = site.data.stats | where: 'type', 'this-year' %}
+  {% if info_tiles %}
+    {% include components/info-tiles.html heading="This Year" class="financial-section" %}
+  {% endif %}
+
+  {% assign info_tiles = site.data.stats | where: 'type', 'all-time' %}
+  {% if info_tiles %}
+    {% include components/info-tiles.html heading="All time" class="financial-section" %}
+  {% endif %}
+</div>
