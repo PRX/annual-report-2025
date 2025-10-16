@@ -150,16 +150,12 @@ export class PrxBgAurora {
   @Prop() time: number;
 
   connectedCallback() {
-    console.log('connected');
-
     let canvas = this.el.shadowRoot.querySelector('canvas');
 
     if (!canvas) {
       canvas = document.createElement('canvas');
 
-      console.log( ({...canvas}).width );
-
-      this.el.shadowRoot.appendChild(canvas)
+      this.el.shadowRoot.appendChild(canvas);
     }
 
     this.renderer = new Renderer({
@@ -219,8 +215,6 @@ export class PrxBgAurora {
   }
 
   resize = () => {
-
-    console.log('resize', this.el);
 
     if (!this.el) return;
 

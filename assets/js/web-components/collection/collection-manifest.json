@@ -1,5 +1,6 @@
 {
   "entries": [
+    "components/prx-audio-quote/prx-audio-quote.js",
     "components/prx-bg-aurora/prx-bg-aurora.js"
   ],
   "compiler": {

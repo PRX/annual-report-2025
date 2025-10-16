@@ -131,11 +131,9 @@ export class PrxBgAurora {
      */
     time;
     connectedCallback() {
-        console.log('connected');
         let canvas = this.el.shadowRoot.querySelector('canvas');
         if (!canvas) {
             canvas = document.createElement('canvas');
-            console.log(({ ...canvas }).width);
             this.el.shadowRoot.appendChild(canvas);
         }
         this.renderer = new Renderer({
@@ -184,7 +182,6 @@ export class PrxBgAurora {
         gl.getExtension('WEBGL_lose_context')?.loseContext();
     }
     resize = () => {
-        console.log('resize', this.el);
         if (!this.el)
             return;
         const width = this.el.offsetWidth;
@@ -208,7 +205,7 @@ export class PrxBgAurora {
         renderer.render({ scene: this.mesh });
     };
     render() {
-        return (h(Host, { key: '51a5d3dde06ee00ad00b0feb065316b6b1eae4b7' }));
+        return (h(Host, { key: '03d1ca57920d9c018a244fa02925f471aaf0dd8a' }));
     }
     static get is() { return "prx-bg-aurora"; }
     static get encapsulation() { return "shadow"; }

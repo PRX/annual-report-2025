@@ -43,8 +43,14 @@ $show-tiles--tile-radius: 20px;
     overflow: clip;
 
     @media (min-width: 768px) {
-      border-top-left-radius: $show-tiles--tile-radius;
-      border-bottom-left-radius: $show-tiles--tile-radius;
+      transition-property: border-radius;
+      transition-timing-function: ease;
+      transition-duration: var(--transition-speed);
+
+      [data-menu-open=true] & {
+        border-top-left-radius: $show-tiles--tile-radius;
+        border-bottom-left-radius: $show-tiles--tile-radius;
+      }
     }
   }
 }
@@ -107,6 +113,16 @@ $show-tile--animation-duration--step: $show-tile--animation-duration / ($show-ti
   // Alternate direction of columns movement.
   &:nth-of-type(even) {
     animation-direction: reverse;
+  }
+
+  transition-property: margin-inline-start, padding;
+  transition-timing-function: ease;
+  transition-duration: var(--transition-speed);
+
+  [data-menu-open=true] & {
+    padding-block: $show-tiles--gap;
+    padding-inline-end: $show-tiles--gap;
+    margin-inline-start: $show-tiles--gap / -2;
   }
 
   // Pause animation for those who want reduced motion.
