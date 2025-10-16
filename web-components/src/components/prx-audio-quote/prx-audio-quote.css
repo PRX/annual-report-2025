@@ -1,21 +1,75 @@
-@property --progress {
+@property --prx-audio-quote--progress {
   syntax: '<number>';
   inherits: true;
   initial-value: 0;
+}
+
+@property --prx-audio-quote--word--color {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: unset;
+}
+
+@property --prx-audio-quote--word--color--heard {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: unset;
+}
+
+@property --prx-audio-quote--word--color--playing {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: unset;
+}
+
+@property --prx-audio-quote--word--color--active {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: unset;
+}
+
+@property --prx-audio-quote--cite--color {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: unset;
+}
+
+@property --prx-audio-quote--button--color {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: unset;
+}
+
+@property --prx-audio-quote--button--color--hover {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: unset;
+}
+
+@property --prx-audio-quote--button--color--playing {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: unset;
+}
+
+@property --prx-audio-quote--button--size {
+  syntax: '<length>';
+  inherits: true;
+  initial-value: unset;
 }
 
 :host {
   --_word--color: var(--prx-audio-quote--word--color, currentColor);
   --_word--color--heard: var(--prx-audio-quote--word--color--heard, var(--_word--color));
   --_word--color--playing: var(--prx-audio-quote--word--color--playing, color(from var(--_word--color--heard) srgb r g b / 0.5));
-  --_word--color--active: var(--prx-audio-quote--word--color--active, hsl(calc(var(--progress) * 360) 100% 60%));
+  --_word--color--active: var(--prx-audio-quote--word--color--active, hsl(calc(var(--prx-audio-quote--progress) * 360) 100% 60%));
   --_cite--color: var(--prx-audio-quote--cite--color, currentColor);
-  --_button--bg-color: var(--prx-audio-quote--button--bg-color, var(--_word--color--active));
-  --_button--bg-color--hover: var(--prx-audio-quote--button--bg-color--hover, hsl(from var(--_button--bg-color) h s calc(l / 1.5)));
-  --_button--bg-color--playing: var(--prx-audio-quote--button--bg-color--playing, var(--_button--bg-color));
+  --_button--color: var(--prx-audio-quote--button--color, var(--_word--color--active));
+  --_button--color--hover: var(--prx-audio-quote--button--color--hover, hsl(from var(--_button--color) h s calc(l / 1.5)));
+  --_button--color--playing: var(--prx-audio-quote--button--color--playing, var(--_button--color));
   --_button--size: var(--prx-audio-quote--button--size, 2rem);
 
-  transition: --progress 200ms cubic-bezier(0.47, 0, 0.745, 0.715);
+  transition: --prx-audio-quote--progress 200ms cubic-bezier(0.47, 0, 0.745, 0.715);
 
   display: block;
 }
@@ -73,7 +127,7 @@ prx-audio-quote-controls {
 
   display: grid;
   grid-template-columns: var(--_button--size);
-  grid-template-rows: calc(max(0px, var(--progress) * 100% - var(--_button--size))) var(--_button--size) auto;
+  grid-template-rows: calc(max(0px, var(--prx-audio-quote--progress) * 100% - var(--_button--size))) var(--_button--size) auto;
   grid-template-areas:
     'BEFORE'
     'BUTTON'
@@ -157,7 +211,7 @@ cite {
 
   background: none;
 
-  color: var(--_button--bg-color);
+  color: var(--_button--color);
 
   border: none;
   border-radius: 100vw;
@@ -165,11 +219,11 @@ cite {
   cursor: pointer;
 
   &:is(:hover) {
-    color: var(--_button--bg-color--hover);
+    color: var(--_button--color--hover);
   }
 
   :where([playing]) & {
-    color: var(--_button--bg-color--playing);
+    color: var(--_button--color--playing);
   }
 }
 

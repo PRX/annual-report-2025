@@ -179,7 +179,7 @@ export class PrxAudioQuote {
     const hasTranscript = !!transcriptUrl?.length;
 
     return (
-      <Host playing={playing} highlight={hasTranscript} style={{ '--progress': `${progress}` }}>
+      <Host playing={playing} highlight={hasTranscript} style={{ '--prx-audio-quote--progress': `${progress}` }}>
         <blockquote>
           <prx-quote><slot></slot></prx-quote>
           <cite><slot name='citation'></slot></cite>
