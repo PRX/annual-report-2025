@@ -1,4 +1,153 @@
-import { r as registerInstance, g as getElement, h, H as Host } from './index-C0pqcqYG.js';
+'use strict';
+
+var index = require('./index-B1UH6AUG.js');
+
+const prxAudioQuoteCss = "@property --progress {\n  syntax: '<number>';\n  inherits: true;\n  initial-value: 0;\n}\n\n.sc-prx-audio-quote-h {\n  --_word--color: var(--prx-audio-quote--word--color, currentColor);\n  --_word--color--heard: var(--prx-audio-quote--word--color--heard, var(--_word--color));\n  --_word--color--playing: var(--prx-audio-quote--word--color--playing, color(from var(--_word--color--heard) srgb r g b / 0.5));\n  --_word--color--active: var(--prx-audio-quote--word--color--active, hsl(calc(var(--progress) * 360) 100% 60%));\n  --_cite--color: var(--prx-audio-quote--cite--color, currentColor);\n  --_button--bg-color: var(--prx-audio-quote--button--bg-color, var(--_word--color--active));\n  --_button--bg-color--hover: var(--prx-audio-quote--button--bg-color--hover, hsl(from var(--_button--bg-color) h s calc(l / 1.5)));\n  --_button--bg-color--playing: var(--prx-audio-quote--button--bg-color--playing, var(--_button--bg-color));\n  --_button--size: var(--prx-audio-quote--button--size, 2rem);\n\n  transition: --progress 200ms cubic-bezier(0.47, 0, 0.745, 0.715);\n\n  display: block;\n}\n\nblockquote.sc-prx-audio-quote {\n  display: grid;\n  grid-template-columns: var(--_button--size) 1fr;\n  grid-template-rows: 1fr min-content;\n  grid-template-areas:\n    'QUOTE QUOTE'\n    'CITE CITE';\n  gap: 1rem;\n\n  padding: 0;\n  margin: 0;\n\n  > * {\n    margin: 0;\n  }\n}\n\nprx-quote.sc-prx-audio-quote {\n  grid-area: QUOTE;\n\n  position: relative;\n  isolation: isolate;\n\n  quotes: \"“\" \"”\" \"‘\" \"’\";\n\n  > :first-child::before {\n    content: open-quote;\n    position: absolute;\n    top: 0;\n    right: calc(100% + 0.25ch);\n  }\n\n  > :last-child::after {\n    content: close-quote;\n  }\n\n  > * {\n    margin: 0;\n\n    & + * {\n      margin-block-start: 1.2em;\n    }\n  }\n}\n\nprx-audio-quote-controls.sc-prx-audio-quote {\n  container-name: controls;\n  container-type: size;\n\n  grid-area: CONTROLS;\n\n  display: grid;\n  grid-template-columns: var(--_button--size);\n  grid-template-rows: calc(max(0px, var(--progress) * 100% - var(--_button--size))) var(--_button--size) auto;\n  grid-template-areas:\n    'BEFORE'\n    'BUTTON'\n    'AFTER';\n  justify-items: center;\n\n  &::before,\n  &::after {\n    content: '';\n    display: block;\n    width: 0.25rem;\n\n    border-radius: 100vw;\n  }\n\n  &::before {\n    grid-area: BEFORE;\n\n    margin-block-end: 0.25rem;\n\n    background-color: var(--_word--color--heard);\n  }\n\n  &::after {\n    grid-area: AFTER;\n\n    margin-block-start: 0.25rem;\n\n    background-color: var(--_word--color--playing);\n  }\n}\n\n.word.sc-prx-audio-quote {\n  transition: color 200ms linear;\n  color: var(--_word--color);\n}\n\n.sc-prx-audio-quote-h:has(prx-audio-quote-controls) {\n  blockquote {\n    grid-template-areas:\n      'CONTROLS QUOTE'\n      'CITE CITE';\n  }\n}\n\n.sc-prx-audio-quote-h:where([playing]):where([highlight]) {\n  .word {\n    color: var(--_word--color--heard);\n\n    &.active {\n      color: var(--_word--color--active);\n    }\n\n    &:not(:where(.heard, .active)) {\n      color: var(--_word--color--playing);\n    }\n  }\n}\n\ncite.sc-prx-audio-quote {\n  grid-area: CITE;\n  justify-self: end;\n\n  color: var(--_cite--color);\n\n  &::before {\n    content: '\\2014\\00a0';\n  }\n}\n\n.play-button.sc-prx-audio-quote {\n  grid-area: BUTTON;\n\n  display: grid;\n  align-items: center;\n  width: var(--_button--size);\n  aspect-ratio: 1;\n  z-index: 1;\n\n  padding: 0.5em;\n\n  background: none;\n\n  color: var(--_button--bg-color);\n\n  border: none;\n  border-radius: 100vw;\n\n  cursor: pointer;\n\n  &:is(:hover) {\n    color: var(--_button--bg-color--hover);\n  }\n\n  :where([playing]) & {\n    color: var(--_button--bg-color--playing);\n  }\n}\n\n.play-icon.sc-prx-audio-quote {\n  container-name: icon;\n  container-type: size;\n\n  display: inline-grid;\n  grid-template-rows: 100%; \n  justify-items: center;\n  align-items: center;\n  width: 100%;\n  aspect-ratio: 1;\n\n  &::before,\n  &::after {\n    content: '';\n\n    grid-area: 1 / 1 / -1 / -1;\n    display: block;\n  }\n\n  &::before {\n    width: 0;\n    height: 0;\n\n    border-inline-start: 75cqw solid currentColor;\n    border-inline-end: 0 solid currentColor;\n    border-block: 50cqh solid transparent;\n\n    line-height: 0;\n  }\n\n  &::after {\n    display: none;\n    box-sizing: border-box;\n    width: 100cqw;\n    aspect-ratio: 1;\n\n    border-inline-start: 35cqw solid currentColor;\n    border-inline-end: 35cqw solid currentColor;\n    border-block: 0 solid transparent;\n  }\n\n  [playing] & {\n    &::before {\n      display: none;\n    }\n\n    &::after {\n      display: block;\n    }\n  }\n}\n\n.restart-button.sc-prx-audio-quote {\n  grid-area: BEFORE;\n\n  z-index: 1;\n\n  border: none;\n\n  background: none;\n\n  cursor: n-resize;\n}";
+
+const PrxAudioQuote = class {
+    constructor(hostRef) {
+        index.registerInstance(this, hostRef);
+    }
+    get el() { return index.getElement(this); }
+    src;
+    transcriptUrl;
+    playing = false;
+    progress = 0;
+    audioEl;
+    trackEl;
+    wordSpans = [];
+    currentWordIndex = 0;
+    wrapWordsInSpans = (node) => {
+        const self = this;
+        // If the node is a Text Node
+        if (node.nodeType === Node.TEXT_NODE) {
+            const textContent = node.textContent.trim(); // Get and trim the text content
+            if (textContent.length > 0) { // Only process if there's actual text
+                const words = textContent.split(/\s+/); // Split text into words by whitespace
+                // Create a DocumentFragment to efficiently build the new content
+                const fragment = document.createDocumentFragment();
+                words.forEach((word, index) => {
+                    // Avoid creating spans for empty strings if multiple spaces were present.
+                    if (word.length > 0) {
+                        const span = document.createElement('span');
+                        span.textContent = word;
+                        span.classList.add('word');
+                        // span.addEventListener('click', self.handleWordClick);
+                        fragment.appendChild(span);
+                        self.wordSpans.push(span);
+                        // Add a space after each word except the last one
+                        if (index < words.length - 1 || node.nextSibling) {
+                            fragment.appendChild(document.createTextNode(' '));
+                        }
+                    }
+                });
+                // Replace the original text node with the new fragment
+                node.parentNode.replaceChild(fragment, node);
+            }
+        }
+        else if (node.nodeType === Node.ELEMENT_NODE) {
+            // If the node is an Element Node, iterate through its children
+            // Create a copy of childNodes to avoid issues when modifying the DOM during iteration
+            const children = Array.from(node.childNodes);
+            children.forEach(child => this.wrapWordsInSpans(child)); // Recursively call for each child
+        }
+    };
+    prepareWordForCompare = (word) => word.replaceAll(/[^\w]/g, '').toLowerCase();
+    reset = () => {
+        this.audioEl.currentTime = 0;
+        this.currentWordIndex = 0;
+        this.wordSpans.forEach((span) => span.classList.remove('heard', 'active'));
+    };
+    handleCueChange = (e) => {
+        const cues = e.target.track.activeCues;
+        const cue = cues[0];
+        const { text, startTime } = cue || {};
+        if (!text)
+            return;
+        const word = this.prepareWordForCompare(text);
+        const activeSpan = this.el.querySelector('span.word.active');
+        const currentWordIndex = this.currentWordIndex + this.wordSpans.slice(this.currentWordIndex)
+            .findIndex((span) => {
+            return this.prepareWordForCompare(span.textContent) === word;
+        });
+        if (currentWordIndex < 0 || currentWordIndex > this.currentWordIndex + 3) {
+            console.log(`Transcript word out of sync with quote text. "${text}" @ ${startTime} seconds.`);
+            return;
+        }
+        const currentSpan = this.wordSpans.at(currentWordIndex);
+        activeSpan?.classList.remove('active');
+        this.wordSpans.forEach((span) => { span.classList.remove('heard'); });
+        if (!this.playing)
+            return;
+        currentSpan.classList.add('active');
+        this.wordSpans.slice(0, currentWordIndex).forEach((span) => { span.classList.add('heard'); });
+        this.currentWordIndex = currentWordIndex;
+    };
+    handlePlayToggleClick = () => {
+        const { paused } = this.audioEl;
+        if (paused) {
+            this.audioEl.play();
+        }
+        else {
+            this.audioEl.pause();
+        }
+    };
+    handleRestartClick = () => {
+        this.reset();
+    };
+    connectedCallback() {
+        const { el, src } = this;
+        if (!src)
+            return;
+        // Prepare text content for highlighting.
+        const blockquote = el.querySelector('blockquote');
+        if (!blockquote) {
+            const citeElement = el.querySelector('[slot=citation]');
+            // Temporarily remove citation element so it doesn't get words wrapped.
+            citeElement?.remove();
+            this.wrapWordsInSpans(el);
+            // Restore citation element.
+            el.appendChild(citeElement);
+        }
+        // Initialize audio element.
+        this.audioEl = document.createElement('audio');
+        this.audioEl.crossOrigin = "anonymous";
+        this.audioEl.preload = "none";
+        this.audioEl.src = this.src;
+        this.audioEl.addEventListener('timeupdate', () => {
+            const { currentTime, duration } = this.audioEl;
+            this.progress = currentTime / duration;
+        });
+        this.audioEl.addEventListener('play', () => { this.playing = true; });
+        this.audioEl.addEventListener('pause', () => {
+            this.playing = false;
+            // this.reset();
+        });
+        this.audioEl.addEventListener('ended', () => {
+            this.reset();
+        });
+        // Initialize track element.
+        if (this.transcriptUrl?.length) {
+            this.trackEl = document.createElement('track');
+            this.trackEl.default = true;
+            this.trackEl.kind = 'captions';
+            this.trackEl.src = this.transcriptUrl;
+            this.trackEl.addEventListener('cuechange', this.handleCueChange);
+            this.audioEl.appendChild(this.trackEl);
+        }
+    }
+    disconnectCallback() {
+        this.audioEl = null;
+        this.trackEl = null;
+    }
+    render() {
+        const { playing, progress, src, transcriptUrl, handlePlayToggleClick, handleRestartClick } = this;
+        const hasAudio = !!src?.length;
+        const hasTranscript = !!transcriptUrl?.length;
+        return (index.h(index.Host, { key: '13024a17ccfee09ee321fc47bf5d111bc9f91589', playing: playing, highlight: hasTranscript, style: { '--progress': `${progress}` } }, index.h("blockquote", { key: 'cf97f54cebc3b8ee4d7894f9df062f2cc6d9fc4e' }, index.h("prx-quote", { key: '724d9ec3ec1a03b5ec042c8ceb47ea0350d17cc7' }, index.h("slot", { key: '4fd3bddee7a3bf2843b25fcb96758d5b0e790945' })), index.h("cite", { key: '99132f5ef9b78f489d8c4bcd43ff426a06d24bb3' }, index.h("slot", { key: '08a7856232fba0d4d83df249083de920507abf53', name: 'citation' })), hasAudio && (index.h("prx-audio-quote-controls", { key: 'b04062aa87a69c269b03d8ae09130997b85d92ad' }, index.h("button", { key: '79971c767c58c1c6f7b83a2481da34a168f2e4d6', type: "button", class: "restart-button", onClick: handleRestartClick, "aria-label": "Restart" }), index.h("button", { key: '23c986f9cf7168adaf48e0732f80b2b6c6637afc', type: "button", class: "play-button", onClick: handlePlayToggleClick, "aria-label": playing ? 'Pause' : 'Play' }, index.h("span", { key: 'f7fe95a7beda1bb9847c5ace89deced770bd2a17', class: "play-icon" })))))));
+    }
+};
+PrxAudioQuote.style = prxAudioQuoteCss;
 
 /**
  * Calculates the length of a vec3
@@ -4330,13 +4479,13 @@ void main() {
 `;
 const PrxBgAurora = class {
     constructor(hostRef) {
-        registerInstance(this, hostRef);
+        index.registerInstance(this, hostRef);
     }
     animateId = 0;
     renderer;
     program;
     mesh;
-    get el() { return getElement(this); }
+    get el() { return index.getElement(this); }
     /**
      * An array of three hex colors defining the aurora gradient.
      */
@@ -4358,11 +4507,9 @@ const PrxBgAurora = class {
      */
     time;
     connectedCallback() {
-        console.log('connected');
         let canvas = this.el.shadowRoot.querySelector('canvas');
         if (!canvas) {
             canvas = document.createElement('canvas');
-            console.log(({ ...canvas }).width);
             this.el.shadowRoot.appendChild(canvas);
         }
         this.renderer = new Renderer({
@@ -4411,7 +4558,6 @@ const PrxBgAurora = class {
         gl.getExtension('WEBGL_lose_context')?.loseContext();
     }
     resize = () => {
-        console.log('resize', this.el);
         if (!this.el)
             return;
         const width = this.el.offsetWidth;
@@ -4435,10 +4581,11 @@ const PrxBgAurora = class {
         renderer.render({ scene: this.mesh });
     };
     render() {
-        return (h(Host, { key: '51a5d3dde06ee00ad00b0feb065316b6b1eae4b7' }));
+        return (index.h(index.Host, { key: '03d1ca57920d9c018a244fa02925f471aaf0dd8a' }));
     }
 };
 PrxBgAurora.style = prxBgAuroraCss;
 
-export { PrxBgAurora as prx_bg_aurora };
-//# sourceMappingURL=prx-bg-aurora.entry.js.map
+exports.prx_audio_quote = PrxAudioQuote;
+exports.prx_bg_aurora = PrxBgAurora;
+//# sourceMappingURL=prx-audio-quote.prx-bg-aurora.entry.cjs.js.map
