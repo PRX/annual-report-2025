@@ -96,12 +96,12 @@ const PrxAudioQuote = class {
         this.reset();
     };
     connectedCallback() {
-        const { el, src } = this;
+        const { el, src, transcriptUrl } = this;
         if (!src)
             return;
         // Prepare text content for highlighting.
         const blockquote = el.querySelector('blockquote');
-        if (!blockquote) {
+        if (transcriptUrl && !blockquote) {
             const citeElement = el.querySelector('[slot=citation]');
             // Temporarily remove citation element so it doesn't get words wrapped.
             citeElement?.remove();
@@ -113,7 +113,7 @@ const PrxAudioQuote = class {
         this.audioEl = document.createElement('audio');
         this.audioEl.crossOrigin = "anonymous";
         this.audioEl.preload = "none";
-        this.audioEl.src = this.src;
+        this.audioEl.src = src;
         this.audioEl.addEventListener('timeupdate', () => {
             const { currentTime, duration } = this.audioEl;
             this.progress = currentTime / duration;
@@ -131,7 +131,7 @@ const PrxAudioQuote = class {
             this.trackEl = document.createElement('track');
             this.trackEl.default = true;
             this.trackEl.kind = 'captions';
-            this.trackEl.src = this.transcriptUrl;
+            this.trackEl.src = transcriptUrl;
             this.trackEl.addEventListener('cuechange', this.handleCueChange);
             this.audioEl.appendChild(this.trackEl);
         }
@@ -144,7 +144,7 @@ const PrxAudioQuote = class {
         const { playing, progress, src, transcriptUrl, handlePlayToggleClick, handleRestartClick } = this;
         const hasAudio = !!src?.length;
         const hasTranscript = !!transcriptUrl?.length;
-        return (index.h(index.Host, { key: '55bf54134c09556a5d42ac7c6ed6a5dcc228e9a6', playing: playing, highlight: hasTranscript, style: { '--prx-audio-quote--progress': `${progress}` } }, index.h("blockquote", { key: 'd9ebe5635c853fb166f8da220b2a94d720fec574' }, index.h("prx-quote", { key: 'b322e80779bcb2403cb5d54b05facda9ac95ef41' }, index.h("slot", { key: '3e19d83acbe8c9d02cb08f22670d9787c64e4865' })), index.h("cite", { key: 'b3140384027ae03cd8a562e49fe0598a5c8a9d91' }, index.h("slot", { key: '64ba7622307dcef6673ec8ee92eb06f8434c6511', name: 'citation' })), hasAudio && (index.h("prx-audio-quote-controls", { key: 'a76bea5e220175e0c164b0e0aeaef55431b026fa' }, index.h("button", { key: '1d5ccb4670be9f1f2b2db361fa6635d69247c8bd', type: "button", class: "restart-button", onClick: handleRestartClick, "aria-label": "Restart" }), index.h("button", { key: '485c5435d1d3652278fda359ed52feee353e61de', type: "button", class: "play-button", onClick: handlePlayToggleClick, "aria-label": playing ? 'Pause' : 'Play' }, index.h("span", { key: '578cd34c8da6551947ff98c765c32d3f708df876', class: "play-icon" })))))));
+        return (index.h(index.Host, { key: '8a33b8b8111da99b7eb43a1e386573a66471c315', playing: playing, highlight: hasTranscript, style: { '--prx-audio-quote--progress': `${progress}` } }, index.h("blockquote", { key: '84f08169528edb288686a7d9cc882af69992d7c2' }, index.h("prx-quote", { key: '74f1c3a277de510099bfd4b4dc698ef135ace61d' }, index.h("slot", { key: '0d1d9ed4fe1605e2206ef217d7bd966bbdf3581f' })), index.h("cite", { key: '08dc95fc127720ba596ce255273c9cf8c9ebd709' }, index.h("slot", { key: 'a4133a1e09bdaa26134db5c3da71d628b42524ab', name: 'citation' })), hasAudio && (index.h("prx-audio-quote-controls", { key: '18e5ee9e755c1913e85f1555e4b6f1b42b92a198' }, index.h("button", { key: '7e6535875b81469c7759a50759a107980948a344', type: "button", class: "restart-button", onClick: handleRestartClick, "aria-label": "Restart" }), index.h("button", { key: '649cd0a23c6c63bf4ce20634857882435f61a03d', type: "button", class: "play-button", onClick: handlePlayToggleClick, "aria-label": playing ? 'Pause' : 'Play' }, index.h("span", { key: 'abbff218f81e66f3dbcc25382af93c68939e032e', class: "play-icon" })))))));
     }
 };
 PrxAudioQuote.style = prxAudioQuoteCss;

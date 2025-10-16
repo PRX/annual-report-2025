@@ -120,13 +120,13 @@ export class PrxAudioQuote {
   }
 
   connectedCallback() {
-    const { el, src } = this;
+    const { el, src, transcriptUrl } = this;
 
     if (!src) return;
 
     // Prepare text content for highlighting.
     const blockquote = el.querySelector('blockquote');
-    if (!blockquote) {
+    if (transcriptUrl && !blockquote) {
       const citeElement = el.querySelector('[slot=citation]');
 
       // Temporarily remove citation element so it doesn't get words wrapped.
@@ -142,7 +142,7 @@ export class PrxAudioQuote {
     this.audioEl = document.createElement('audio');
     this.audioEl.crossOrigin = "anonymous";
     this.audioEl.preload = "none";
-    this.audioEl.src = this.src;
+    this.audioEl.src = src;
     this.audioEl.addEventListener('timeupdate', () =>{
       const { currentTime, duration } = this.audioEl;
       this.progress = currentTime / duration;
@@ -161,7 +161,7 @@ export class PrxAudioQuote {
       this.trackEl = document.createElement('track');
       this.trackEl.default = true;
       this.trackEl.kind = 'captions';
-      this.trackEl.src = this.transcriptUrl;
+      this.trackEl.src = transcriptUrl;
       this.trackEl.addEventListener('cuechange', this.handleCueChange);
 
       this.audioEl.appendChild(this.trackEl);
