@@ -72,6 +72,7 @@ const PrxAudioQuote = class {
         });
         if (currentWordIndex < 0 || currentWordIndex > this.currentWordIndex + 3) {
             console.log(`Transcript word out of sync with quote text. "${text}" @ ${startTime} seconds.`);
+            console.log(`"${this.wordSpans.slice(0, this.currentWordIndex).map((span) => span.textContent).join(' ')} (${text})..."`);
             return;
         }
         const currentSpan = this.wordSpans.at(currentWordIndex);
@@ -144,7 +145,7 @@ const PrxAudioQuote = class {
         const { playing, progress, src, transcriptUrl, handlePlayToggleClick, handleRestartClick } = this;
         const hasAudio = !!src?.length;
         const hasTranscript = !!transcriptUrl?.length;
-        return (index.h(index.Host, { key: '8a33b8b8111da99b7eb43a1e386573a66471c315', playing: playing, highlight: hasTranscript, style: { '--prx-audio-quote--progress': `${progress}` } }, index.h("blockquote", { key: '84f08169528edb288686a7d9cc882af69992d7c2' }, index.h("prx-quote", { key: '74f1c3a277de510099bfd4b4dc698ef135ace61d' }, index.h("slot", { key: '0d1d9ed4fe1605e2206ef217d7bd966bbdf3581f' })), index.h("cite", { key: '08dc95fc127720ba596ce255273c9cf8c9ebd709' }, index.h("slot", { key: 'a4133a1e09bdaa26134db5c3da71d628b42524ab', name: 'citation' })), hasAudio && (index.h("prx-audio-quote-controls", { key: '18e5ee9e755c1913e85f1555e4b6f1b42b92a198' }, index.h("button", { key: '7e6535875b81469c7759a50759a107980948a344', type: "button", class: "restart-button", onClick: handleRestartClick, "aria-label": "Restart" }), index.h("button", { key: '649cd0a23c6c63bf4ce20634857882435f61a03d', type: "button", class: "play-button", onClick: handlePlayToggleClick, "aria-label": playing ? 'Pause' : 'Play' }, index.h("span", { key: 'abbff218f81e66f3dbcc25382af93c68939e032e', class: "play-icon" })))))));
+        return (index.h(index.Host, { key: '43d56edbd1e681ad242043b4e0e9e9df0e1c4a0e', playing: playing, highlight: hasTranscript, style: { '--prx-audio-quote--progress': `${progress}` } }, index.h("blockquote", { key: '3cce87e925148885e0a39b084117df78c9577eee' }, index.h("prx-quote", { key: 'd5fc739e38f8d6f3ddb4b3768045b613da58ccad' }, index.h("slot", { key: 'dcff891d3d7903721450e3dfc607d5b91aa57fc2' })), index.h("cite", { key: 'f9dff33aa7e7ae387948cade35149dc0621d220b' }, index.h("slot", { key: 'f4be6e7f04364586a0354b37eb9649330eb8d689', name: 'citation' })), hasAudio && (index.h("prx-audio-quote-controls", { key: '1c9815e1221b2a6f9a28f88d6ba6aec8a061537c' }, index.h("button", { key: '0e380fd29e62608b8198962ac5b10164fdd30e7b', type: "button", class: "restart-button", onClick: handleRestartClick, "aria-label": "Restart" }), index.h("button", { key: 'a69cc7e2e7bba18f3354f0075efca061abd457d6', type: "button", class: "play-button", onClick: handlePlayToggleClick, "aria-label": playing ? 'Pause' : 'Play' }, index.h("span", { key: '39d5adaed4b50a80b19f3ab9c16905563dc43dfc', class: "play-icon" })))))));
     }
 };
 PrxAudioQuote.style = prxAudioQuoteCss;
