@@ -99,6 +99,11 @@ prx-quote {
 
   quotes: "“" "”" "‘" "’";
 
+  & .word {
+    transition: color 125ms linear;
+    color: var(--_word--color);
+  }
+
   > :first-child::before {
     content: open-quote;
     position: absolute;
@@ -160,11 +165,6 @@ prx-audio-quote-controls {
   }
 }
 
-.word {
-  transition: color 200ms linear;
-  color: var(--_word--color);
-}
-
 :host(:has(prx-audio-quote-controls)) {
   blockquote {
     grid-template-areas:
@@ -174,15 +174,18 @@ prx-audio-quote-controls {
 }
 
 :host(:where([playing]):where([highlight])) {
-  .word {
-    color: var(--_word--color--heard);
+  prx-quote {
+    .word {
+      color: var(--_word--color--heard);
 
-    &.active {
-      color: var(--_word--color--active);
-    }
+      &.active {
+        transition-duration: 0ms;
+        color: var(--_word--color--active);
+      }
 
-    &:not(:where(.heard, .active)) {
-      color: var(--_word--color--playing);
+      &:not(:where(.heard, .active)) {
+        color: var(--_word--color--playing);
+      }
     }
   }
 }
