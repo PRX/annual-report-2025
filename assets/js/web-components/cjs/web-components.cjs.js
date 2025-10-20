@@ -1,6 +1,6 @@
 'use strict';
 
-var index = require('./index-C87KoXER.js');
+var index = require('./index-B1UH6AUG.js');
 var appGlobals = require('./app-globals-V2Kpy_OQ.js');
 
 var _documentCurrentScript = typeof document !== 'undefined' ? document.currentScript : null;
@@ -19,7 +19,7 @@ var patchBrowser = () => {
 
 patchBrowser().then(async (options) => {
   await appGlobals.globalScripts();
-  return index.bootstrapLazy([["prx-bg-aurora.cjs",[[257,"prx-bg-aurora",{"colorStops":[16],"amplitude":[2],"blend":[2],"speed":[2],"time":[2]}]]]], options);
+  return index.bootstrapLazy([["prx-audio-quote_2.cjs",[[262,"prx-audio-quote",{"src":[1],"transcriptUrl":[1,"transcript-url"],"playing":[32],"progress":[32]}],[257,"prx-bg-aurora",{"colorStops":[16],"amplitude":[2],"blend":[2],"speed":[2],"time":[2]}]]]], options);
 });
 
 exports.setNonce = index.setNonce;

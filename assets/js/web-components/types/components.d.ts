@@ -6,6 +6,10 @@
  */
 import { HTMLStencilElement, JSXBase } from "./stencil-public-runtime";
 export namespace Components {
+    interface PrxAudioQuote {
+        "src": string;
+        "transcriptUrl": string;
+    }
     interface PrxBgAurora {
         /**
           * Controls the height intensity of the aurora effect.
@@ -34,6 +38,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLPrxAudioQuoteElement extends Components.PrxAudioQuote, HTMLStencilElement {
+    }
+    var HTMLPrxAudioQuoteElement: {
+        prototype: HTMLPrxAudioQuoteElement;
+        new (): HTMLPrxAudioQuoteElement;
+    };
     interface HTMLPrxBgAuroraElement extends Components.PrxBgAurora, HTMLStencilElement {
     }
     var HTMLPrxBgAuroraElement: {
@@ -41,10 +51,15 @@ declare global {
         new (): HTMLPrxBgAuroraElement;
     };
     interface HTMLElementTagNameMap {
+        "prx-audio-quote": HTMLPrxAudioQuoteElement;
         "prx-bg-aurora": HTMLPrxBgAuroraElement;
     }
 }
 declare namespace LocalJSX {
+    interface PrxAudioQuote {
+        "src"?: string;
+        "transcriptUrl"?: string;
+    }
     interface PrxBgAurora {
         /**
           * Controls the height intensity of the aurora effect.
@@ -72,6 +87,7 @@ declare namespace LocalJSX {
         "time"?: number;
     }
     interface IntrinsicElements {
+        "prx-audio-quote": PrxAudioQuote;
         "prx-bg-aurora": PrxBgAurora;
     }
 }
@@ -79,6 +95,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "prx-audio-quote": LocalJSX.PrxAudioQuote & JSXBase.HTMLAttributes<HTMLPrxAudioQuoteElement>;
             "prx-bg-aurora": LocalJSX.PrxBgAurora & JSXBase.HTMLAttributes<HTMLPrxBgAuroraElement>;
         }
     }
