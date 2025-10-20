@@ -89,7 +89,7 @@ export class PrxAudioQuote {
 
     if (currentWordIndex < 0 || currentWordIndex > this.currentWordIndex + 3) {
       console.log(`Transcript word out of sync with quote text. "${text}" @ ${startTime} seconds.`);
-      console.log(`"${this.wordSpans.slice(0, this.currentWordIndex).map((span) => span.textContent ).join(' ')} (${text})..."`);
+      console.log(`"${this.wordSpans.slice(0, this.currentWordIndex + 1).map((span) => span.textContent ).join(' ')} (${text})..."`);
       return;
     }
 
