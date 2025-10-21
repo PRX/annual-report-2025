@@ -35,20 +35,28 @@
   cursor: pointer;
   font-weight: bold;
   transition: all 0.3s ease;
+
+  svg path {stroke: $white;}
 }
 
 .layer-btn:hover {
   background: $blue-200;
   color: $navy;
+
+  svg path {stroke: $navy;}
 }
 
 .layer-btn.active {
   background: $orange;
   color: $navy;
+
+  svg path {stroke: $navy;}
 }
 
 .layer-btn.active:hover {
   background: $orange-200;
+
+  svg path {stroke: $navy;}
 }
 
 .popup-content {
