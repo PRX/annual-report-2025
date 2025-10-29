@@ -4,6 +4,7 @@ $show-tiles--tile-count: $show-tiles--columns * $show-tiles--rows;
 $show-tiles--gap: 8px;
 $show-tiles--tile-min-size: 100px + $show-tiles--gap;
 $show-tiles--tile-size: minmax($show-tiles--tile-min-size, 1fr);
+$show-tiles--tile-radius: 20px;
 
 .show-tiles {
   --_show-tiles--bg--color: var(--show-tiles--bg--color, #{$navy});
@@ -12,13 +13,13 @@ $show-tiles--tile-size: minmax($show-tiles--tile-min-size, 1fr);
   --_show-tiles--screen--opacity--edge: var(--show-tiles--screen--opacity--edge, 70%);
 
   position: absolute;
-  min-height: 100%;
-  width: calc(100vw + 6rem);
+  inset: 0;
+  z-index: -1;
 
   display: grid;
   justify-content: center;
   aspect-ratio: 1;
-  overflow: hidden;
+  overflow: clip;
 
   grid-template-columns: repeat(#{$show-tiles--columns}, #{$show-tiles--tile-size});
   grid-template-rows: repeat(#{$show-tiles--rows}, #{$show-tiles--tile-size});
@@ -37,6 +38,21 @@ $show-tiles--tile-size: minmax($show-tiles--tile-min-size, 1fr);
       color-mix(in oklab, var(--_show-tiles--screen--color) var(--_show-tiles--screen--opacity--edge), transparent) 100%
     );
   }
+
+  :has(> &) {
+    overflow: clip;
+
+    @media (min-width: 768px) {
+      transition-property: border-radius;
+      transition-timing-function: ease;
+      transition-duration: var(--transition-speed);
+
+      [data-menu-open=true] & {
+        border-top-left-radius: $show-tiles--tile-radius;
+        border-bottom-left-radius: $show-tiles--tile-radius;
+      }
+    }
+  }
 }
 
 $show-tile--animation-duration: 180s;
@@ -54,7 +70,7 @@ $show-tile--animation-duration--step: $show-tile--animation-duration / ($show-ti
   margin: 0;
   padding: $show-tiles--gap / 2;
 
-  border-radius: 20px;
+  border-radius: $show-tiles--tile-radius;
 
   animation-name: show-tile--slide-y;
   animation-timing-function: linear;
@@ -70,7 +86,7 @@ $show-tile--animation-duration--step: $show-tile--animation-duration / ($show-ti
     aspect-ratio: 1;
     object-fit: cover;
     width: 100%;
-    border-radius: 20px;
+    border-radius: $show-tiles--tile-radius;
   }
 
   // Lock logos to their columns.
@@ -97,6 +113,16 @@ $show-tile--animation-duration--step: $show-tile--animation-duration / ($show-ti
   // Alternate direction of columns movement.
   &:nth-of-type(even) {
     animation-direction: reverse;
+  }
+
+  transition-property: margin-inline-start, padding;
+  transition-timing-function: ease;
+  transition-duration: var(--transition-speed);
+
+  [data-menu-open=true] & {
+    padding-block: $show-tiles--gap;
+    padding-inline-end: $show-tiles--gap;
+    margin-inline-start: $show-tiles--gap / -2;
   }
 
   // Pause animation for those who want reduced motion.

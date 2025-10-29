@@ -1,6 +1,6 @@
 $info-tile-grid-breakpoints: (
   'xs': '320px',
-  'sm': '600px',
+  'sm': '480px',
   'md': '768px',
   'lg': '1024px',
   'xl': '1440px'
@@ -26,7 +26,7 @@ $info-tile-grid-columns: 12;
     grid-area: 1 / 1 / span 1 / -1;
     place-self: center;
 
-    @container (width >= 600px) {
+    @container (width >= #{map-get($info-tile-grid-breakpoints, 'sm')}) {
       grid-area: 1 / 1 / span 1 / span 6;
     }
   }
@@ -81,7 +81,7 @@ $info-tile-grid-columns: 12;
 
   :where(h3, h4) {
     margin-block-start: 2em;
-    font-size: clamp(1.5em, calc(14.5cqi + 0.125rem), 3em);
+    font-size: clamp(1em, calc(12.5cqi + 0.125rem), 3em);
   }
 
   &[data-color="blue"] {
