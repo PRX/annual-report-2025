@@ -249,10 +249,11 @@ function processCSVData() {
             }
         }
 
-        // Create marker (in processCSVData function, replace the existing marker creation)
+        // Create marker (use heart SVG only when CSV `shape` === 'heart')
         const markerSize = item.size || 'small'; // Get size from CSV, default to small
+        const useHeart = item.shape && String(item.shape).toLowerCase() === 'heart';
         const marker = L.marker([item.lat, item.lng], {
-            icon: layerType === 'voices' ? createHeartMarker(layerType, markerSize) : createMarker(layerType, markerSize)
+            icon: useHeart ? createHeartMarker(layerType, markerSize) : createMarker(layerType, markerSize)
         });
 
         // Create popup content

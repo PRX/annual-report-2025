@@ -62,7 +62,10 @@
 
   {%- if content.stats -%}
   <div class="stats">
-    {% include page-types/stats.html %}
+    {% include page-types/stats.html
+      title=content.stats.title
+      file=content.stats.file
+    %}
   </div>
   {%- endif -%}
 
