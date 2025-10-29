@@ -13,6 +13,10 @@ quotes:
     citation: "— Jocelyn Gonzales, Executive Producer PRX Production"
     audio:
       url: https://f.prxu.org/9003/0d03d678-c4a6-4618-934c-93267091017e/8dbacf37-4a3d-49eb-8371-71b0eb0f03f1.mp3
+stats:
+  file: stats-productions
+  title: "Production Team Stats, &hellip;"
+
 ---
 
 PRX Productions projects are a mix of collaborations with exceptional talent and like-minded organizations. Our recent partners include the National Constitution Center, the Rock and Roll Hall of Fame, _Quanta Magazine_, the New York Botanical Garden, the Aspen Ideas Festival, the Food & Environment Reporting Network and _Smithsonian_ magazine. While completely diverse in content, each aims to expand listener awareness and understanding of an institution’s focus. What distinguishes PRX in the marketplace is our fundamental identity as an organization that prioritizes quality content in the public interest.
