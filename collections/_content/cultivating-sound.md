@@ -11,10 +11,18 @@ intro: "<p>PRX brings radio listeners some of the best examples of public media 
 quotes:
   - text: "“Can we make public media and the public media sensibility a little edgier and a little bit more contemporary and a little bit more in tune with the zeitgeist? And so, what, what do millennials as a generation want then? What do Gen Z as a generation want? Not what do age groups want? What do generations as cultural markers want? The future of public media doesn't have to sound exactly the same. It needs to uphold the same values, but it doesn't have to sound the same.”"
     citation: "Stephanie Kuo, VP Content"
+<<<<<<< HEAD
+=======
+    image: img/staff/steph.webp
+>>>>>>> 8c029d458f024717af033fd7c4b4425158922864
     audio:
       url: https://f.prxu.org/9003/b55bb9fa-3366-42e2-9e4c-f8f942dfbcf1/51bcf4a2-0261-4a35-ae85-a29877089722.mp3
   - text: "“The headline is: We are starting to define the next generation of audio on public radio. We are shaping the sound and the style and the talent that will become the future pillars of public radio. We have this new crop of talent that we're growing and that has been one of our big achievements this year.”"
     citation: "Sean Nesbitt, Senior Director of Industry Partnerships"
+<<<<<<< HEAD
+=======
+    image: img/staff/sean.webp
+>>>>>>> 8c029d458f024717af033fd7c4b4425158922864
     audio:
       url: https://f.prxu.org/9003/d6ea99b4-8e0b-4f93-a219-21e940240de3/e5840f53-5bd2-4cf8-b231-4b100d073e37.mp3
 ---

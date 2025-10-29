@@ -44,6 +44,19 @@
   .red & {
     --prx-audio-quote--word--color--active: #{$yellow};
   }
+
+  cite {
+    display: flex;
+    align-items: center;
+  }
+
+  img {
+    border-radius: 50%;
+    width: 50px;
+    height: auto;
+    margin-left: .25rem;
+    border: 2px solid rgba(255,255,255,0.2);
+  }
 }
 
 .content-interlude {
