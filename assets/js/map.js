@@ -270,9 +270,9 @@ function createPopupContent(item) {
         </div>`;
     }
 
-    // Add all available fields to popup (except lat, lng, name, type, and audio)
+    // Add all available fields to popup (except lat, lng, name, shape, type, and audio)
     Object.keys(item).forEach(key => {
-        if (key !== 'lat' && key !== 'lng' && key !== 'name' && key !== 'type' && key !== 'audio' && key !== 'Primary Market' && key !== 'size' && item[key] !== '' && item[key] !== null) {
+        if (key !== 'lat' && key !== 'lng' && key !== 'name' && key !== 'shape' && key !== 'type' && key !== 'audio' && key !== 'Primary Market' && key !== 'size' && item[key] !== '' && item[key] !== null) {
             const displayKey = key.charAt(0).toUpperCase() + key.slice(1).replace(/_/g, ' ');
             content += `<div class="popup-detail"><strong>${displayKey}:</strong> ${item[key]}</div>`;
         }
