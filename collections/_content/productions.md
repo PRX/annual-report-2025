@@ -10,7 +10,8 @@ menu-group: "1"
 intro: "<p>PRX Productions, our in-house unit, develops and produces among the most intrepid programs in the podcasting space. This year, projects included <a href='https://medium.com/prxofficial/silkroad-and-prx-launch-american-railroad-podcast-hosted-by-rhiannon-giddens-cfecbe629e14'><i>American Railroad</i></a> hosted by acclaimed artist Rhiannon Giddens, highlighting music and voices from the communities that built America’s railway systems, <a href='https://drraychristian.com/the-podcast'><i>What’s Ray Saying</i>, which takes a deeper view of Black life in America through personal stories, and <a href='https://newsnetwork.mayoclinic.org/discussion/mayo-clinic-launches-tomorrows-cure-podcast-to-spotlight-medical-innovations-transforming-healthcare/'><i>Tomorrow’s Cure</i></a> from the Mayo Clinic on the future of healthcare, among many others.</p>"
 quotes:
   - text: "“Our production unit is still oriented in that way of — there's a reason to know these things. It makes us better people, better citizens, better humans to have this knowledge. I still think that's a thread that runs through the production unit and is why we choose the projects we choose to work on. If we can't find that service element, at least to please ourselves as producers, we don't want to do it.”"
-    citation: "— Jocelyn Gonzales, Executive Producer PRX Production"
+    citation: "Jocelyn Gonzales, Executive Producer PRX Production"
+    image: img/staff/jocelyn.webp
     audio:
       url: https://f.prxu.org/9003/0d03d678-c4a6-4618-934c-93267091017e/8dbacf37-4a3d-49eb-8371-71b0eb0f03f1.mp3
 stats:
