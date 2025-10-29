@@ -100,6 +100,7 @@ presets:
     size: calc(100vw - 8rem)
     sizes:
       tablet: 300px
+    class: "quote-image"
     formats:  [webp, original]
     dimension_attributes: true
     format_quality:
