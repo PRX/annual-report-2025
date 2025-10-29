@@ -1,7 +1,7 @@
 [
   {
-    "heading": "332,135,476",
-    "description": "Downloads",
+    "heading": "23",
+    "description": "partner organizations entrusted PRX Productions with their concepts for podcast and radio storytelling",
     "type": "this-year",
     "color": "orange",
     "positions": [
@@ -15,8 +15,8 @@
     ]
   },
   {
-    "heading": "99",
-    "description": "New Podcasts",
+    "heading": "27",
+    "description": "programs were brought to life with PRX Productions over the last year",
     "type": "this-year",
     "color": "cyan",
     "positions": [
@@ -30,8 +30,8 @@
     ]
   },
   {
-    "heading": "503,506,765",
-    "description": "Paid ad impressions generating revenue for Dovetail users",
+    "heading": "10,000,000",
+    "description": "downloads across this year's PRX Productions portfolio",
     "type": "this-year",
     "color": "yellow",
     "positions": [
@@ -45,9 +45,9 @@
     ]
   },
   {
-    "heading": "6,087,294,266",
-    "description": "Downloads",
-    "type": "all-time",
+    "heading": "15",
+    "description": "subject areas were represented by our expert productions team, including music, buisiness, philosophy, technology, medicine, and family",
+    "type": "this-year",
     "color": "orange",
     "positions": [
       {
@@ -56,36 +56,6 @@
       {
         "breakpoint": "sm",
         "value": "1 / 7 / span 4 / -1"
-      }
-    ]
-  },
-  {
-    "heading": "614",
-    "description": "Podcasts",
-    "type": "all-time",
-    "color": "cyan",
-    "positions": [
-      {
-        "value": "auto / 1 / span 3 / -1"
-      },
-      {
-        "breakpoint": "sm",
-        "value": "2 / 1 / span 3 / span 6"
-      }
-    ]
-  },
-  {
-    "heading": "2,471,311,989",
-    "description": "Paid ad impressions generating revenue for Dovetail users",
-    "type": "all-time",
-    "color": "yellow",
-    "positions": [
-      {
-        "value": "auto / 1 / span 2 / -1"
-      },
-      {
-        "breakpoint": "sm",
-        "value": "auto / 1 / span 1 / -1"
       }
     ]
   }
