@@ -11,18 +11,12 @@ intro: "<p>In a year when many organizations retreated from equity work under ex
 quotes:
   - text: "“I think one of the things I'm super proud of is PRX's posture towards the conversation about DEI. We are still committed to our IDEA pursuits and we want to lean in. Like, we're going to continue to forge on boldly saying that we still believe in inclusion, diversity, equity, and accessibility very loudly.”"
     citation: "Dr. Byron Green, VP IDEA"
-<<<<<<< HEAD
-=======
     image: img/staff/byron.webp
->>>>>>> 8c029d458f024717af033fd7c4b4425158922864
     audio:
       url: https://replace.me
   - text: "“I need PRX to hold the line on values and be not just the strength, but the safety of the system as well.”"
     citation: "Stephanie Kuo, VP Content"
-<<<<<<< HEAD
-=======
     image: img/staff/steph.webp
->>>>>>> 8c029d458f024717af033fd7c4b4425158922864
     audio:
       url: https://replace.me
 ---

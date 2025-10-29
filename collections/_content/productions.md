@@ -11,10 +11,7 @@ intro: "<p>PRX Productions, our in-house unit, develops and produces among the m
 quotes:
   - text: "“Our production unit is still oriented in that way of — there's a reason to know these things. It makes us better people, better citizens, better humans to have this knowledge. I still think that's a thread that runs through the production unit and is why we choose the projects we choose to work on. If we can't find that service element, at least to please ourselves as producers, we don't want to do it.”"
     citation: "Jocelyn Gonzales, Executive Producer PRX Production"
-<<<<<<< HEAD
-=======
     image: img/staff/jocelyn.webp
->>>>>>> 8c029d458f024717af033fd7c4b4425158922864
     audio:
       url: https://f.prxu.org/9003/0d03d678-c4a6-4618-934c-93267091017e/8dbacf37-4a3d-49eb-8371-71b0eb0f03f1.mp3
 stats:
