@@ -22,37 +22,37 @@ quotes:
 carousel:
   - image:
       src: img/content/atx/ATXPodcast_Day1_1.JPG
-      alt: "ALT TEXT"
+      alt: "A Black woman with glasses and red earrings (Nikki DaVaughn), Latino man with a hat (Mando Rayo), white woman with glasses and blonde hair (Eleanor Klibanoff) and a white woman with glasses and short hair (Elizabeth McQueen) sit on a panel in front of a projection of their names and images"
   - image:
-      src: img/content/atx/ATXPodcast_Day1_2.JPG
-      alt: "ALT TEXT"
+     src: img/content/atx/ATXPodcast_Day1_2.JPG
+     alt: "A woman with dark hair and a red shirt speaks into a microphone while sitting"
   - image:
-      src: img/content/atx/ATXPodcast_Day1_3.JPG
-      alt: "ALT TEXT"
+     src: img/content/atx/ATXPodcast_Day1_3.JPG
+     alt: "A Latino man with a hat and a Black man with short hair and a beard hold their phones together, standing in front of a projection of reading 'Meet with Mentors'"
   - image:
-      src: img/content/atx/ATXPodcast_Day2_1.JPG
-      alt: "ALT TEXT"
+     src: img/content/atx/ATXPodcast_Day2_1.JPG
+     alt: "On a panel of speakers, a Black woman in a black top smiles and gestures towards a laughing white man in a blue shirt. A white woman in a mask sits next to her."
   - image:
       src: img/content/atx/ATXPodcast_Day2_2.JPG
-      alt: "ALT TEXT"
+      alt: "On a panel of speakers, a white man in glasses gestures as he speaks toward two other men in the foreground"
   - image:
       src: img/content/atx/ATXPodcast_Day2_3.JPG
-      alt: "ALT TEXT"
+      alt: "On a panel of spakers, a Black woman in a Black dress (Amira Rose Davis), a white man with green hair (Landon Cotham) and a Latino man in a white shirt (Juan Garcia) sit looking toward a Black man in a white shirt who is speaking. The screen projection behind them reads 'more than a game.'"
   - image:
       src: img/content/atx/ATXPodcast_Day2_4.JPG
-      alt: "ALT TEXT"
+      alt: "A white man with tatoos on his arm wearing a black and white shirt gestures as he sits on the arm of a couch. In the forground a white woman with a laptop and a hat looks toward him."
   - image:
       src: img/content/atx/ATXPodcast_Day2_5.JPG
-      alt: "ALT TEXT"
+      alt: "A group of seven people sit around a long table with laptops, water bottles and disposable cups."
   - image:
       src: img/content/atx/ATXPodcast_Day3_1.JPG
-      alt: "ALT TEXT"
+      alt: "A white woman with tatoos on her arms and a pink vest gestures as she speaks in front of a screen."
   - image:
       src: img/content/atx/ATXPodcast_Day3_2.JPG
-      alt: "ALT TEXT"
+      alt: "An East Asian woman with long hair in a ponytail and a black jacket stands in front of a screen projecting a timetable of events"
   - image:
       src: img/content/atx/ATXPodcast_Day3_3.JPG
-      alt: "ALT TEXT"
+      alt: "A white man with a mustache wearing an apron speaks toward a seated audience in front of a screen projection of his image."
 ---
 
 In past years, the podcasting industry has swung toward blockbuster names, big money, and mass reach, but audiences are increasingly telling creators they need content that feels authentic, personal, and intimate again — and that they will support meaningful work. This is a pendulum swing back toward the values that have always defined the media for which we stand. PRX works to facilitate the success of the creators that are doing this work without being prescriptive or presumptuous.

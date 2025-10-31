@@ -14,11 +14,6 @@ quotes:
     image: img/staff/byron.webp
     audio:
       url: https://replace.me
-  - text: "“I need PRX to hold the line on values and be not just the strength, but the safety of the system as well.”"
-    citation: "Stephanie Kuo, VP Content"
-    image: img/staff/steph.webp
-    audio:
-      url: https://replace.me
 ---
 
 Beyond the public media system, PRX is supporting institutions resisting misinformation campaigns and efforts to undermine academic integrity. In May, PRX collaborated with Emory University on their inaugural [Public Scholarship Academy](https://publicscholarship.emory.edu/academy/), (and later, with Johns Hopkins University). We developed and facilitated curricula to introduce fellows to the podcast industry and translate academic expertise into podcast settings. PRX has long been a strong advocate of higher learning — our portfolio is home to podcasts that engage the pursuit of knowledge and social impact at the university level and beyond. Helping advance values of truth and diversity within and beyond the system is key to how PRX shows up in partnerships.

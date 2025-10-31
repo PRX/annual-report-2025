@@ -14,11 +14,6 @@ quotes:
     image: img/staff/andrew.webp
     audio:
       url: https://replace.me
-  - text: "“Then there's also sort of well, but can you do it? And the simple answer to that is, for over 10 years, we've delivered at this point billions of downloads to people including some of the biggest shows ever, like Serial, that have been on the Dovetail platform. We have an incredible success rate, an incredible record that we can point to. You can both trust that we have your best interests at heart, and you can also trust that we know what we're doing and we're very more than competent at podcasting and have proven that with a long track record.”"
-    citation: "Andrew Kuklewicz, PRX CTO"
-    image: img/staff/andrew.webp
-    audio:
-      url: https://replace.me
 stats:
   file: stats-tech
   title: "Dovetail Empowers Creators"

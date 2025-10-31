@@ -1,7 +1,7 @@
 [
   {
     "heading": "73,000",
-    "description": "fans subscribed to Radiotopia's The Citizen newsletter",
+    "description": "fans subscribed to Radiotopia's The Citizen newsletter.",
     "type": "this-year",
     "color": "orange",
     "positions": [
@@ -16,7 +16,7 @@
   },
   {
     "heading": "33",
-    "description": "shows were part of the Radiotopia network",
+    "description": "shows were part of the Radiotopia network with 18 season or special series launches.",
     "type": "this-year",
     "color": "cyan",
     "positions": [
@@ -30,8 +30,8 @@
     ]
   },
   {
-    "heading": "47,335,715",
-    "description": "listener downloads across the Radiotopia network",
+    "heading": "47,336,000",
+    "description": "downloads from listeners across the Radiotopia network.",
     "type": "this-year",
     "color": "yellow",
     "positions": [
