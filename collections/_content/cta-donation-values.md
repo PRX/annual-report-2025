@@ -2,7 +2,7 @@
 content-type: "content-interlude"
 color: "teal"
 featured-image:
-  url: img/content/ciw-lab.jpg
+  url: img/content/ear-hustle-team.jpg
   alt: "A diverse group of people pose for a picture in an audio studio"
 ---
 
