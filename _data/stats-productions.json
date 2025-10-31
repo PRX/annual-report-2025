@@ -40,7 +40,7 @@
       },
       {
         "breakpoint": "sm",
-        "value": "auto / 1 / span 6 / -1"
+        "value": "auto / 1 / span 1 / span 6"
       }
     ]
   },
@@ -48,14 +48,10 @@
     "heading": "15",
     "description": "subject areas were represented by our expert productions team, including music, buisiness, philosophy, technology, medicine, and family.",
     "type": "this-year",
-    "color": "orange",
+    "color": "navy",
     "positions": [
       {
-        "value": "auto / 1 / span 4 / -1"
-      },
-      {
-        "breakpoint": "sm",
-        "value": "1 / 7 / span 4 / -1"
+        "value": "auto / auto / span 2 / span 6"
       }
     ]
   }
