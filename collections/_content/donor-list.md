@@ -2,7 +2,7 @@
 title: "Thank you"
 link:
   anchor: "donor-list"
-  label: "Donor List"
+  label: "Donor Acknowledgements"
   icon: "hand-heart"
 menu-group: "2"
 donor-list: true

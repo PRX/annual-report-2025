@@ -1,9 +1,4 @@
-<div{% if include.image %} class="image"{% endif %}>
-
-  {%- if include.image -%}
-    {% picture quote-image {{ include.image }} --alt {{ include.alt }}  %}
-  {%- endif -%}
-
+<div>
   <prx-audio-quote {% if include.audio  -%} src="{{ include.audio.url }}"
     {%- if include.audio.transcript %} transcript-url="{{include.audio.transcript}}"{%- endif -%}
   {%- endif -%}>
@@ -11,7 +6,12 @@
     {{ include.text }}
 
     {%- if include.citation  -%}
-    <span slot="citation">{{ include.citation }}</span>
+    <span slot="citation">
+      {{ include.citation }}
+      {%- if include.image  -%}
+        {% picture quote-image {{ include.image }} --alt Photo of {{ include.citation }} %}
+      {%- endif -%}
+    </span>
     {%- endif -%}
 
   </prx-audio-quote>
