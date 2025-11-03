@@ -89,7 +89,7 @@
     border-bottom-right-radius: 20px;
     padding: 1rem 2rem;
 
-    background-image: linear-gradient(to bottom, transparent, var(--section-color) 25%);
+    background-image: linear-gradient(to bottom, transparent, var(--section-color) 35%);
 
     &.violet {
       --section-color: #{rgba($violet, 0.5)};
