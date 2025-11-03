@@ -345,14 +345,14 @@ function updateDataStats() {
   };
 
   statsDiv.innerHTML = `
-      <p><strong>Data Summary:</strong></p>
-      <ul>
-          <li>Total Locations: ${stats.total}</li>
-          <li>Broadcast Programming: ${stats.broadcast}</li>
-          <li>Podcasts: ${stats.podcast}</li>
-          <li>Technology: ${stats.technology}</li>
-          <li>Voices: ${stats.voices}</li>
-      </ul>
+    <p><strong>Data Summary:</strong></p>
+    <ul>
+        <li>Total Locations: ${stats.total}</li>
+        <li>Broadcast Programming: ${stats.broadcast}</li>
+        <li>Podcasts: ${stats.podcast}</li>
+        <li>Technology: ${stats.technology}</li>
+        <li>Voices: ${stats.voices}</li>
+    </ul>
   `;
 }
 

@@ -36,12 +36,23 @@
     "color": "yellow",
     "positions": [
       {
-        "value": "auto / 1 / span 2 / -1"
+        "value": "auto / 1 / span 6 / -1"
       },
       {
         "breakpoint": "sm",
-        "value": "auto / 1 / span 1 / -1"
+        "value": "auto / 1 / span 1 / span 6"
       }
     ]
-  }
+  },
+  {
+    "heading": "7000+",
+    "description": "supporters helped independent podcasts and extraordinary storytelling flourish.",
+    "type": "this-year",
+    "color": "navy",
+    "positions": [
+      {
+        "value": "auto / auto / span 2 / span 6"
+      }
+    ]
+  },
 ]
