@@ -37,6 +37,8 @@ presets:
     formats: [webp, original]
     widths: [100, 200, 300, 400, 500]
     fallback_width: 400 # The default is 800, which is probably too big.
+    attributes:
+      img: 'loading="lazy"'
     size: calc(10vw - 0.5rem)
     sizes:
       tablet: 100px
@@ -51,6 +53,8 @@ presets:
     formats: [webp, original]
     widths: [250, 300, 360, 416]
     fallback_width: 300 # The default is 800, which is probably too big.
+    attributes:
+      img: 'loading="lazy"'
     size: calc(100vw - 8rem)
     sizes:
       tablet: 250px
@@ -66,6 +70,8 @@ presets:
     formats: [webp, original]
     widths: [200, 300, 400, 500, 600, 700, 800, 900, 1000, 1200, 1600]
     fallback_width: 500 # The default is 800, which is probably too big.
+    attributes:
+      img: 'loading="lazy"'
     size: 100vw
     sizes:
       wide: 1600px
@@ -80,6 +86,8 @@ presets:
     formats: [webp, original]
     widths: [200, 300, 400, 500, 600, 700, 800, 900, 1000, 1200, 1600]
     fallback_width: 500 # The default is 800, which is probably too big.
+    attributes:
+      img: 'loading="lazy"'
     size: 50vw
     sizes:
       mobile: 200px
@@ -97,6 +105,8 @@ presets:
     formats: [webp, original]
     widths: [250, 300, 360, 416]
     fallback_width: 300 # The default is 800, which is probably too big.
+    attributes:
+      img: 'loading="lazy"'
     size: calc(100vw - 8rem)
     sizes:
       tablet: 300px
