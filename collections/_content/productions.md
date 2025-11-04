@@ -13,7 +13,7 @@ quotes:
     citation: "Jocelyn Gonzales, Executive Producer PRX Production"
     image: img/staff/jocelyn.webp
     audio:
-      url: https://f.prxu.org/9003/0d03d678-c4a6-4618-934c-93267091017e/8dbacf37-4a3d-49eb-8371-71b0eb0f03f1.mp3
+      url: https://f.prxu.org/9003/8bb290e5-b9de-4f8e-bc43-9c919539267f/28add821-a392-4548-b53f-3d33d7cc202f.mp3
 stats:
   file: stats-productions
   title: "PRX Productions Crafts Compelling Audio"

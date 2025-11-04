@@ -13,12 +13,12 @@ quotes:
     citation: "Jason Saldanha, Chief Operating Officer"
     image: img/staff/jason.webp
     audio:
-      url: https://replace.me
+      url: https://f.prxu.org/9003/68c38244-bad8-4c4e-8726-b2a7896d5aa8/aeacad93-f199-4b43-84c1-0ba51f456262.mp3
   - text: "“Public radio stations consistently come to PRX and say, 'We love you all,' because we are the antithesis to a massive public media machine. We operate at a much higher level than the size of our staff. We are kind and direct, and we are one-on-one with everybody we work with,  I think it is what sets us apart.”"
     citation: "Stephanie Kuo, VP Content"
     image: img/staff/steph.webp
     audio:
-      url: https://replace.me
+      url: https://f.prxu.org/9003/79d833a4-0091-4d72-bca3-d2e1b99a2dfc/745d0514-0b85-4a27-91fd-f24ffc83ffb5.mp3
 ---
 
 Beyond products and programming, PRX operates as the bridge between what public media is today and what it can become. We strive to serve as a dynamic, responsive organization that amplifies voices, strengthens communities, and safeguards the democratic mission of media in the public interest.

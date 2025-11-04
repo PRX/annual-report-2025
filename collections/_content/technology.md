@@ -13,7 +13,7 @@ quotes:
     citation: "Andrew Kuklewicz, PRX CTO"
     image: img/staff/andrew.webp
     audio:
-      url: https://replace.me
+      url: https://f.prxu.org/9003/2706d3d9-ee7b-42d8-8dc6-58d2708c666a/2905859d-25f7-4e9d-8b57-c7fa30e673d7.mp3
 stats:
   file: stats-tech
   title: "Dovetail Empowers Creators"

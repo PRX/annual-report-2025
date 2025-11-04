@@ -13,10 +13,12 @@ quotes:
     citation: "Ben Cook, Station Services Manager"
     image: img/staff/ben.webp
     audio:
-      url: https://f.prxu.org/9003/0d03d678-c4a6-4618-934c-93267091017e/8dbacf37-4a3d-49eb-8371-71b0eb0f03f1.mp3
+      url: https://f.prxu.org/9003/25d5cfc5-9ad1-4544-a877-bc58f953389c/6fb56ec7-983c-41fd-8677-59dfb95df18c.mp3
   - text: "“Working with the team at PRX has been a true highlight for us at WUSF. It's more than just a partnership; it's a genuine collaboration built on a shared vision. From the initial training offered in a Design Thinking workshop to the hands-on help with launching our first video podcast, PRX has consistently shown up as a supportive and forward-thinking partner. They were also there to help us make our Pop-up Podcast Garage a reality, which brought our community together in a new and exciting way. We deeply value this relationship and look forward to what we'll build together next.”"
     citation: "Leslie Laney, WUSF Station Manager"
     image: img/staff/lucy.jpg
+    audio:
+      url: https://f.prxu.org/9003/bd00eaf3-e1ec-4039-a4ab-aefad5b61b9c/7dcb63ad-4c1c-41ac-8b3f-ba4e178086a4.mp3
 stats:
   file: stats-stations
   title: "PRX on the Airwaves"

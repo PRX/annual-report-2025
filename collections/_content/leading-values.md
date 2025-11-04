@@ -13,7 +13,7 @@ quotes:
     citation: "Dr. Byron Green, VP IDEA"
     image: img/staff/byron.webp
     audio:
-      url: https://replace.me
+      url: https://f.prxu.org/9003/e93c9287-ca85-4559-8838-55fba64863ed/d691e899-584a-4b6f-a537-6884215c4a74.mp3
 ---
 
 Beyond the public media system, PRX is supporting institutions resisting misinformation campaigns and efforts to undermine academic integrity. In May, PRX collaborated with Emory University on their inaugural [Public Scholarship Academy](https://publicscholarship.emory.edu/academy/), (and later, with Johns Hopkins University). We developed and facilitated curricula to introduce fellows to the podcast industry and translate academic expertise into podcast settings. PRX has long been a strong advocate of higher learning — our portfolio is home to podcasts that engage the pursuit of knowledge and social impact at the university level and beyond. Helping advance values of truth and diversity within and beyond the system is key to how PRX shows up in partnerships.
