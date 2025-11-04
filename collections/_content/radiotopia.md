@@ -14,11 +14,13 @@ quotes:
     image: img/staff/rene-albee.jpg
     audio:
       url: https://f.prxu.org/9003/8c095798-57a1-4fd4-bdd3-eeb16d73f0b4/a4ecc292-ad89-4765-8a61-a950618a1fcb.mp3
-  - text: "“Radiotopia — we've created a place where independent artists can be independent, but together. And that by working together we're building sustainability for this kind of work. It's an example of what we can accomplish when we work together and pool our resources and have each other's back.”"
+      transcript: https://f.prxu.org/9003/8c095798-57a1-4fd4-bdd3-eeb16d73f0b4/transcripts/28dfbf85-08fc-42d1-a7f9-5dffdf599d02/III-Radiotopia-Rene-Vacchio-Albee.vtt
+  - text: "Radiotopia — we've created a place where independent artists can be independent, but together. And that by working together we're building sustainability for this kind of work. It's an example of what we can accomplish when we work together and pool our resources and have each other's back."
     citation: "Yooree Losardo"
     image: img/staff/yooree.webp
     audio:
       url: https://f.prxu.org/9003/b12c00a1-b420-40b0-8769-981656ab5f33/54afe38f-8532-4481-a819-5d155582c9f2.mp3
+      transcript: https://f.prxu.org/9003/b12c00a1-b420-40b0-8769-981656ab5f33/transcripts/24e8bfd2-9b0d-4694-97f8-e339d765ad91/III-Radiotopia-Yooree-Losordo.vtt
 stats:
   file: stats-radiotopia
   title: "Radiotopia's Audio with Vision"
