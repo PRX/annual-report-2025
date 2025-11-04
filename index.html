@@ -29,19 +29,15 @@
 <link rel="icon" href="/assets/img/icon-32.ico" sizes="any">
 <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
 <link type="application/atom+xml" rel="alternate" href="https://2025.prx.org/feed.xml" title="2025 PRX Annual Report" /><!-- Stylesheets -->
-<link defer href="assets/css/style.css" rel="stylesheet">
-
-<!-- Map -->
-<link defer rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
-<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
-<script defer type="text/javascript" src="assets/js/map.js"></script>
+<link rel="preload" href="assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="assets/css/style.css"></noscript>
 
 <!-- Audio -->
 <script defer type="text/javascript" src="assets/js/audio.js"></script>
 <script defer type="text/javascript" src="assets/js/show-audio.js"></script>
 
 <!-- Menu -->
-<script defer type="text/javascript" src="assets/js/menu.js?cb=2025-11-04 18:33:25 +0000"></script>
+<script defer type="text/javascript" src="assets/js/menu.js?cb=2025-11-04 22:31:46 +0000"></script>
 
 <!-- Web Components -->
 <script type="module" src="assets/js/web-components/esm/web-components.js"></script>
@@ -59,8 +55,8 @@
 
 <body data-menu-open="true">
   <header class="navbar">
-    <nav>
-      <button id="nav-toggle" class="btn btn-menu text-white" aria-label="Toggle Menu" aria-expanded="true">
+    <nav role="navigation">
+      <button id="nav-toggle" class="btn btn-menu text-white" aria-label="Toggle Menu" aria-expanded="true" aria-controls="nav-drawer">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M4 5H20M4 12H20M4 19H20" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
@@ -77,19 +73,17 @@
 
       </a>
     </nav>
-    <nav class="navbar-buttons">
+    <nav class="navbar-buttons" role="navigation">
       <a
   href="#playlist"
-  class="btn yellow"
-><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  class="btn yellow"aria-label="Playlist"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M21 5H3M10 12H3M10 19H3M15 12.003C14.9995 11.8255 15.0462 11.6511 15.1353 11.4977C15.2245 11.3442 15.3528 11.2172 15.5073 11.1298C15.6617 11.0424 15.8366 10.9976 16.0141 11.0001C16.1915 11.0026 16.3651 11.0522 16.517 11.144L21.514 14.141C21.6628 14.2297 21.786 14.3554 21.8715 14.506C21.957 14.6566 22.002 14.8268 22.002 15C22.002 15.1732 21.957 15.3434 21.8715 15.494C21.786 15.6446 21.6628 15.7703 21.514 15.859L16.517 18.856C16.365 18.9478 16.1913 18.9975 16.0138 18.9999C15.8363 19.0024 15.6613 18.9575 15.5068 18.87C15.3524 18.7824 15.224 18.6553 15.1349 18.5017C15.0459 18.3481 14.9993 18.1736 15 17.996V12.003Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 <span class="label">Playlist</span></a>
 
       <a
   href="?campaign=733266&c_src=AR-2025&c_src2=menu"
-  class="btn cyan"
-><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  class="btn cyan"aria-label="Donate"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M19.414 14.414C21 12.828 22 11.5 22 9.50002C22 8.38722 21.6624 7.30061 21.0319 6.38369C20.4013 5.46677 19.5075 4.76268 18.4684 4.36442C17.4293 3.96616 16.2938 3.89247 15.212 4.15307C14.1301 4.41367 13.1528 4.9963 12.409 5.82402M19.414 14.414C19.2168 14.6113 18.9826 14.7678 18.7249 14.8745C18.4672 14.9813 18.191 15.0362 17.912 15.0362C17.633 15.0362 17.3568 14.9813 17.0991 14.8745C16.8414 14.7678 16.6072 14.6113 16.41 14.414C16.6235 14.6071 16.7956 14.8416 16.9157 15.1033C17.0358 15.3649 17.1015 15.6483 17.1087 15.9361C17.116 16.2239 17.0646 16.5102 16.9578 16.7776C16.851 17.0449 16.6909 17.2878 16.4873 17.4913C16.2837 17.6949 16.0409 17.855 15.7735 17.9618C15.5062 18.0686 15.2199 18.12 14.9321 18.1128C14.6443 18.1055 14.3609 18.0399 14.0993 17.9198C13.8376 17.7996 13.6031 17.6276 13.41 17.414C13.6074 17.6107 13.7641 17.8443 13.8712 18.1015C13.9782 18.3588 14.0335 18.6346 14.0339 18.9132C14.0342 19.1918 13.9797 19.4678 13.8733 19.7253C13.767 19.9828 13.6109 20.2169 13.414 20.414C13.224 20.6041 12.9976 20.7539 12.7484 20.8546C12.4991 20.9552 12.2322 21.0046 11.9635 20.9997C11.6947 20.9948 11.4297 20.9359 11.1843 20.8263C10.9389 20.7168 10.718 20.5588 10.535 20.362L5 15C3.5 13.5 2 11.8 2 9.50002C2.00022 8.38731 2.33794 7.30083 2.96856 6.38407C3.59917 5.4673 4.49303 4.76338 5.53208 4.36524C6.57112 3.96711 7.7065 3.8935 8.78826 4.15412C9.87002 4.41475 10.8473 4.99737 11.591 5.82502C11.7022 5.92836 11.8484 5.98571 12.0002 5.98552C12.152 5.98534 12.2981 5.92763 12.409 5.82402M19.414 14.414C19.7889 14.039 19.9996 13.5304 19.9996 13C19.9996 12.4697 19.7889 11.9611 19.414 11.586L17.533 9.70402C17.3092 9.48012 17.0435 9.30251 16.751 9.18133C16.4585 9.06015 16.1451 8.99778 15.8285 8.99778C15.5119 8.99778 15.1985 9.06015 14.906 9.18133C14.6135 9.30251 14.3478 9.48012 14.124 9.70402L12.414 11.414C12.0389 11.789 11.5303 11.9996 11 11.9996C10.4697 11.9996 9.96106 11.789 9.586 11.414C9.21106 11.039 9.00043 10.5304 9.00043 10C9.00043 9.46969 9.21106 8.96108 9.586 8.58602L12.409 5.82402" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 <span class="label">Donate</span></a>
@@ -97,12 +91,13 @@
     </nav>
 </header>
 
-  <nav id="nav-drawer" class="nav-drawer" aria-hidden="false">
-  <ul class="menu" role="list">
-    <li class="menu-item">
+  <nav id="nav-drawer" class="nav-drawer" aria-hidden="false" aria-labelledby="nav-toggle">
+  <ul class="menu" role="menu">
+    <li class="menu-item" role="presentation">
   <a
     href="#intro"
     class="menu-link"
+    role="menuitem"
   ><span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M18 11V6C18 5.46957 17.7893 4.96086 17.4142 4.58579C17.0391 4.21071 16.5304 4 16 4C15.4696 4 14.9609 4.21071 14.5858 4.58579C14.2107 4.96086 14 5.46957 14 6M14 10V4C14 3.46957 13.7893 2.96086 13.4142 2.58579C13.0391 2.21071 12.5304 2 12 2C11.4696 2 10.9609 2.21071 10.5858 2.58579C10.2107 2.96086 10 3.46957 10 4V6M10 6V10.5M10 6C10 5.46957 9.78929 4.96086 9.41421 4.58579C9.03914 4.21071 8.53043 4 8 4C7.46957 4 6.96086 4.21071 6.58579 4.58579C6.21071 4.96086 6 5.46957 6 6V14M18 8C18 7.46957 18.2107 6.96086 18.5858 6.58579C18.9609 6.21071 19.4696 6 20 6C20.5304 6 21.0391 6.21071 21.4142 6.58579C21.7893 6.96086 22 7.46957 22 8V14C22 16.1217 21.1571 18.1566 19.6569 19.6569C18.1566 21.1571 16.1217 22 14 22H12C9.2 22 7.5 21.14 6.01 19.66L2.41 16.06C2.06594 15.6789 1.88159 15.1802 1.89512 14.6669C1.90866 14.1537 2.11905 13.6653 2.48272 13.303C2.84639 12.9406 3.3355 12.7319 3.84877 12.7202C4.36204 12.7085 4.86016 12.8946 5.24 13.24L7 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
@@ -115,10 +110,11 @@
     
       
       
-      <li class="menu-item">
+      <li class="menu-item" role="presentation">
   <a
     href=""
     class="menu-link"
+    role="menuitem"
   ><span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M22 7L13.009 12.727C12.7039 12.9042 12.3573 12.9976 12.0045 12.9976C11.6517 12.9976 11.3051 12.9042 11 12.727L2 7M4 4H20C21.1046 4 22 4.89543 22 6V18C22 19.1046 21.1046 20 20 20H4C2.89543 20 2 19.1046 2 18V6C2 4.89543 2.89543 4 4 4Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
@@ -129,10 +125,11 @@
 
     
 
-    <li class="menu-item">
+    <li class="menu-item" role="presentation">
   <a
     href="#map-container"
     class="menu-link"
+    role="menuitem"
   ><span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M22 12C22 17.5228 17.5228 22 12 22M22 12C22 6.47715 17.5228 2 12 2M22 12H2M12 22C6.47715 22 2 17.5228 2 12M12 22C9.43223 19.3038 8 15.7233 8 12C8 8.27674 9.43223 4.69615 12 2M12 22C14.5678 19.3038 16 15.7233 16 12C16 8.27674 14.5678 4.69615 12 2M2 12C2 6.47715 6.47715 2 12 2" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
@@ -152,10 +149,11 @@
 
 
 
-<li class="menu-item">
+<li class="menu-item" role="presentation">
   <a
     href="#empowering-stations"
     class="menu-link"
+    role="menuitem"
   ><span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M4.9 16.1C1 12.2 1 5.80002 4.9 1.90002M7.8 4.70002C6.8513 5.683 6.25752 6.95429 6.11262 8.3127C5.96772 9.67111 6.27999 11.0391 7 12.2M12 11C13.1046 11 14 10.1046 14 9.00002C14 7.89545 13.1046 7.00002 12 7.00002C10.8954 7.00002 10 7.89545 10 9.00002C10 10.1046 10.8954 11 12 11ZM12 11L8 22M12 11L16 22M16.2 4.80002C18.2 6.80002 18.46 9.91003 17 12.27M19.1 1.90002C20.027 2.82516 20.7625 3.92405 21.2643 5.13378C21.7661 6.34351 22.0244 7.64034 22.0244 8.95002C22.0244 10.2597 21.7661 11.5565 21.2643 12.7663C20.7625 13.976 20.027 15.0749 19.1 16M9.5 18H14.5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
@@ -174,10 +172,11 @@
 
 
 
-<li class="menu-item">
+<li class="menu-item" role="presentation">
   <a
     href="#cultivating-sound"
     class="menu-link"
+    role="menuitem"
   ><span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M2 10V13M6 6V17M10 3V21M14 8V15M18 5V18M22 10V13" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
@@ -196,10 +195,11 @@
 
 
 
-<li class="menu-item">
+<li class="menu-item" role="presentation">
   <a
     href="#radiotopia"
     class="menu-link"
+    role="menuitem"
   ><span class="icon"><svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_991_1810)">
 <path d="M20.5857 15.0917C20.6597 14.9582 20.8204 14.9148 20.949 14.9872C21.0774 15.0598 21.1284 15.2277 21.0525 15.3651C19.5142 18.1445 16.7288 20.035 13.6053 20.4227L13.6033 20.4237C13.1951 20.4756 12.7863 20.4999 12.3836 20.4999C8.88581 20.4999 5.61451 18.6354 3.82206 15.5243C3.75441 15.4067 3.78079 15.2627 3.8748 15.1776L3.91972 15.1454C4.0461 15.0731 4.20585 15.1133 4.283 15.243V15.244C6.17178 18.5215 9.80644 20.3414 13.5408 19.8768C16.4992 19.5081 19.1315 17.7197 20.5857 15.0927V15.0917Z" fill="black" stroke="black"/>
@@ -228,10 +228,11 @@
 
 
 
-<li class="menu-item">
+<li class="menu-item" role="presentation">
   <a
     href="#productions"
     class="menu-link"
+    role="menuitem"
   ><span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M4 9V5C4 4.46957 4.21071 3.96086 4.58579 3.58579C4.96086 3.21071 5.46957 3 6 3H18C18.5304 3 19.0391 3.21071 19.4142 3.58579C19.7893 3.96086 20 4.46957 20 5V9M4 9H20M4 9C2.89543 9 2 9.89543 2 11V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V11C22 9.89543 21.1046 9 20 9M8 8V9M12 8V9M16 8V9M10 15C10 16.1046 9.10457 17 8 17C6.89543 17 6 16.1046 6 15C6 13.8954 6.89543 13 8 13C9.10457 13 10 13.8954 10 15ZM18 15C18 16.1046 17.1046 17 16 17C14.8954 17 14 16.1046 14 15C14 13.8954 14.8954 13 16 13C17.1046 13 18 13.8954 18 15Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
@@ -248,10 +249,11 @@
 
 
 
-<li class="menu-item">
+<li class="menu-item" role="presentation">
   <a
     href="#building-peer-networks"
     class="menu-link"
+    role="menuitem"
   ><span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 17L13 19C13.197 19.197 13.4308 19.3533 13.6882 19.4599C13.9456 19.5665 14.2214 19.6213 14.5 19.6213C14.7786 19.6213 15.0544 19.5665 15.3118 19.4599C15.5692 19.3533 15.803 19.197 16 19C16.197 18.803 16.3532 18.5692 16.4598 18.3118C16.5665 18.0544 16.6213 17.7786 16.6213 17.5C16.6213 17.2214 16.5665 16.9456 16.4598 16.6882C16.3532 16.4309 16.197 16.197 16 16M14 14L16.5 16.5C16.8978 16.8978 17.4374 17.1213 18 17.1213C18.5626 17.1213 19.1022 16.8978 19.5 16.5C19.8978 16.1022 20.1213 15.5626 20.1213 15C20.1213 14.4374 19.8978 13.8978 19.5 13.5L15.62 9.62002C15.0575 9.05821 14.295 8.74265 13.5 8.74265C12.705 8.74265 11.9425 9.05821 11.38 9.62002L10.5 10.5C10.1022 10.8978 9.56261 11.1213 9 11.1213C8.43739 11.1213 7.89782 10.8978 7.5 10.5C7.10218 10.1022 6.87868 9.56262 6.87868 9.00002C6.87868 8.43741 7.10218 7.89784 7.5 7.50002L10.31 4.69002C11.2222 3.78016 12.4119 3.20057 13.6906 3.04299C14.9694 2.88541 16.2642 3.15885 17.37 3.82002L17.84 4.10002C18.2658 4.357 18.772 4.44613 19.26 4.35002L21 4.00002M21 3.00002L22 14H20M3 3.00002L2 14L8.5 20.5C8.89782 20.8978 9.43739 21.1213 10 21.1213C10.5626 21.1213 11.1022 20.8978 11.5 20.5C11.8978 20.1022 12.1213 19.5626 12.1213 19C12.1213 18.4374 11.8978 17.8978 11.5 17.5M3 4.00002H11" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
@@ -270,10 +272,11 @@
 
 
 
-<li class="menu-item">
+<li class="menu-item" role="presentation">
   <a
     href="#technology"
     class="menu-link"
+    role="menuitem"
   ><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rss-icon lucide-rss"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
     </span><span>Public Interest Technology</span>
   </a>
@@ -287,10 +290,11 @@
 
 
 
-<li class="menu-item">
+<li class="menu-item" role="presentation">
   <a
     href="#leading-values"
     class="menu-link"
+    role="menuitem"
   ><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-spotlight-icon lucide-spotlight"><path d="M15.295 19.562 16 22"/><path d="m17 16 3.758 2.098"/><path d="m19 12.5 3.026-.598"/><path d="M7.61 6.3a3 3 0 0 0-3.92 1.3l-1.38 2.79a3 3 0 0 0 1.3 3.91l6.89 3.597a1 1 0 0 0 1.342-.447l3.106-6.211a1 1 0 0 0-.447-1.341z"/><path d="M8 9V2"/></svg>
     </span><span>Leading with Values</span>
   </a>
@@ -306,10 +310,11 @@
 
 
 
-<li class="menu-item">
+<li class="menu-item" role="presentation">
   <a
     href="#resilience"
     class="menu-link"
+    role="menuitem"
   ><span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M14 9.536V7C14 5.93913 14.4214 4.92172 15.1716 4.17157C15.9217 3.42143 16.9391 3 18 3H19.5C19.6326 3 19.7598 3.05268 19.8536 3.14645C19.9473 3.24021 20 3.36739 20 3.5V5C20 6.06087 19.5786 7.07828 18.8284 7.82843C18.0783 8.57857 17.0609 9 16 9C14.9391 9 13.9217 9.42143 13.1716 10.1716C12.4214 10.9217 12 11.9391 12 13M12 13C12 15 13 16 13 18C13 19.0819 12.6491 20.1345 12 21M12 13C12 12.0714 11.7414 11.1612 11.2533 10.3713C10.7651 9.58146 10.0666 8.94313 9.23607 8.52786C8.40554 8.1126 7.47578 7.93681 6.55097 8.0202C5.62616 8.10359 4.74285 8.44286 4 9C4 9.92856 4.25857 10.8388 4.74675 11.6287C5.23492 12.4185 5.9334 13.0569 6.76393 13.4721C7.59446 13.8874 8.52422 14.0632 9.44903 13.9798C10.3738 13.8964 11.2572 13.5571 12 13ZM5 21H19" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
@@ -368,10 +373,11 @@
 
 
 
-<li class="menu-item">
+<li class="menu-item" role="presentation">
   <a
     href="#awards-press"
     class="menu-link"
+    role="menuitem"
   ><span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M10 14.66V16.286C9.99622 16.6286 9.90448 16.9645 9.73358 17.2615C9.56268 17.5585 9.31834 17.8066 9.024 17.982C8.39914 18.4448 7.89084 19.047 7.53948 19.7407C7.18813 20.4343 7.00341 21.2004 7 21.978M14 14.66V16.286C14.0038 16.6286 14.0955 16.9645 14.2664 17.2615C14.4373 17.5585 14.6817 17.8066 14.976 17.982C15.6009 18.4448 16.1092 19.047 16.4605 19.7407C16.8119 20.4343 16.9966 21.2004 17 21.978M18 9H19.5C20.163 9 20.7989 8.73661 21.2678 8.26777C21.7366 7.79893 22 7.16304 22 6.5C22 5.83696 21.7366 5.20107 21.2678 4.73223C20.7989 4.26339 20.163 4 19.5 4H18M18 9C18 10.5913 17.3679 12.1174 16.2426 13.2426C15.1174 14.3679 13.5913 15 12 15C10.4087 15 8.88258 14.3679 7.75736 13.2426C6.63214 12.1174 6 10.5913 6 9M18 9V3C18 2.73478 17.8946 2.48043 17.7071 2.29289C17.5196 2.10536 17.2652 2 17 2H7C6.73478 2 6.48043 2.10536 6.29289 2.29289C6.10536 2.48043 6 2.73478 6 3V9M4 22H20M6 9H4.5C3.83696 9 3.20107 8.73661 2.73223 8.26777C2.26339 7.79893 2 7.16304 2 6.5C2 5.83696 2.26339 5.20107 2.73223 4.73223C3.20107 4.26339 3.83696 4 4.5 4H6" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
@@ -390,10 +396,11 @@
 
 
 
-<li class="menu-item">
+<li class="menu-item" role="presentation">
   <a
     href="#donor-list"
     class="menu-link"
+    role="menuitem"
   ><span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 14H13C13.5304 14 14.0391 13.7893 14.4142 13.4142C14.7893 13.0392 15 12.5304 15 12C15 11.4696 14.7893 10.9609 14.4142 10.5858C14.0391 10.2107 13.5304 10 13 10H10C9.4 10 8.9 10.2 8.6 10.6L3 16M14.45 13.39L19.5 8.69601C20.196 8.00001 21 6.85001 21 5.75001C21.0001 5.19336 20.8313 4.64978 20.5159 4.19112C20.2005 3.73247 19.7533 3.38033 19.2335 3.18126C18.7136 2.98219 18.1456 2.94556 17.6045 3.07622C17.0634 3.20687 16.5747 3.49866 16.203 3.91301C16.1772 3.94107 16.1458 3.96347 16.1108 3.97879C16.0759 3.99411 16.0382 4.00202 16 4.00202C15.9618 4.00202 15.9241 3.99411 15.8892 3.97879C15.8542 3.96347 15.8228 3.94107 15.797 3.91301C15.4253 3.49866 14.9366 3.20687 14.3955 3.07622C13.8544 2.94556 13.2864 2.98219 12.7665 3.18126C12.2467 3.38033 11.7995 3.73247 11.4841 4.19112C11.1687 4.64978 10.9999 5.19336 11 5.75001C11 6.95001 11.802 7.99801 12.5 8.69601L16 11.95M2 15L8 21M7 20L8.6 18.6C8.9 18.2 9.4 18 10 18H14C15.1 18 16.1 17.6 16.8 16.8L21.4 12.4C21.7859 12.0353 22.0111 11.5323 22.0261 11.0016C22.0411 10.4709 21.8447 9.9559 21.48 9.57001C21.1153 9.18412 20.6123 8.9589 20.0816 8.9439C19.5508 8.9289 19.0359 9.12534 18.65 9.49001" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
@@ -410,10 +417,11 @@
 
 
 
-<li class="menu-item">
+<li class="menu-item" role="presentation">
   <a
     href="#finances"
     class="menu-link"
+    role="menuitem"
   ><span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M16 8H10C9.46957 8 8.96086 8.21071 8.58579 8.58579C8.21071 8.96086 8 9.46957 8 10C8 10.5304 8.21071 11.0391 8.58579 11.4142C8.96086 11.7893 9.46957 12 10 12H14C14.5304 12 15.0391 12.2107 15.4142 12.5858C15.7893 12.9609 16 13.4696 16 14C16 14.5304 15.7893 15.0391 15.4142 15.4142C15.0391 15.7893 14.5304 16 14 16H8M12 18V6M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
@@ -430,10 +438,11 @@
 
     <hr>
 
-    <li class="menu-item">
+    <li class="menu-item" role="presentation">
   <a
     href="#playlist"
     class="menu-link"
+    role="menuitem"
   ><span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M21 5H3M10 12H3M10 19H3M15 12.003C14.9995 11.8255 15.0462 11.6511 15.1353 11.4977C15.2245 11.3442 15.3528 11.2172 15.5073 11.1298C15.6617 11.0424 15.8366 10.9976 16.0141 11.0001C16.1915 11.0026 16.3651 11.0522 16.517 11.144L21.514 14.141C21.6628 14.2297 21.786 14.3554 21.8715 14.506C21.957 14.6566 22.002 14.8268 22.002 15C22.002 15.1732 21.957 15.3434 21.8715 15.494C21.786 15.6446 21.6628 15.7703 21.514 15.859L16.517 18.856C16.365 18.9478 16.1913 18.9975 16.0138 18.9999C15.8363 19.0024 15.6613 18.9575 15.5068 18.87C15.3524 18.7824 15.224 18.6553 15.1349 18.5017C15.0459 18.3481 14.9993 18.1736 15 17.996V12.003Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
@@ -443,10 +452,11 @@
 </li>
 
 
-    <li class="menu-item">
+    <li class="menu-item" role="presentation">
   <a
     href="?campaign=733266&c_src=AR-2025&c_src2=menu"
     class="menu-link"
+    role="menuitem"
   ><span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M19.414 14.414C21 12.828 22 11.5 22 9.50002C22 8.38722 21.6624 7.30061 21.0319 6.38369C20.4013 5.46677 19.5075 4.76268 18.4684 4.36442C17.4293 3.96616 16.2938 3.89247 15.212 4.15307C14.1301 4.41367 13.1528 4.9963 12.409 5.82402M19.414 14.414C19.2168 14.6113 18.9826 14.7678 18.7249 14.8745C18.4672 14.9813 18.191 15.0362 17.912 15.0362C17.633 15.0362 17.3568 14.9813 17.0991 14.8745C16.8414 14.7678 16.6072 14.6113 16.41 14.414C16.6235 14.6071 16.7956 14.8416 16.9157 15.1033C17.0358 15.3649 17.1015 15.6483 17.1087 15.9361C17.116 16.2239 17.0646 16.5102 16.9578 16.7776C16.851 17.0449 16.6909 17.2878 16.4873 17.4913C16.2837 17.6949 16.0409 17.855 15.7735 17.9618C15.5062 18.0686 15.2199 18.12 14.9321 18.1128C14.6443 18.1055 14.3609 18.0399 14.0993 17.9198C13.8376 17.7996 13.6031 17.6276 13.41 17.414C13.6074 17.6107 13.7641 17.8443 13.8712 18.1015C13.9782 18.3588 14.0335 18.6346 14.0339 18.9132C14.0342 19.1918 13.9797 19.4678 13.8733 19.7253C13.767 19.9828 13.6109 20.2169 13.414 20.414C13.224 20.6041 12.9976 20.7539 12.7484 20.8546C12.4991 20.9552 12.2322 21.0046 11.9635 20.9997C11.6947 20.9948 11.4297 20.9359 11.1843 20.8263C10.9389 20.7168 10.718 20.5588 10.535 20.362L5 15C3.5 13.5 2 11.8 2 9.50002C2.00022 8.38731 2.33794 7.30083 2.96856 6.38407C3.59917 5.4673 4.49303 4.76338 5.53208 4.36524C6.57112 3.96711 7.7065 3.8935 8.78826 4.15412C9.87002 4.41475 10.8473 4.99737 11.591 5.82502C11.7022 5.92836 11.8484 5.98571 12.0002 5.98552C12.152 5.98534 12.2981 5.92763 12.409 5.82402M19.414 14.414C19.7889 14.039 19.9996 13.5304 19.9996 13C19.9996 12.4697 19.7889 11.9611 19.414 11.586L17.533 9.70402C17.3092 9.48012 17.0435 9.30251 16.751 9.18133C16.4585 9.06015 16.1451 8.99778 15.8285 8.99778C15.5119 8.99778 15.1985 9.06015 14.906 9.18133C14.6135 9.30251 14.3478 9.48012 14.124 9.70402L12.414 11.414C12.0389 11.789 11.5303 11.9996 11 11.9996C10.4697 11.9996 9.96106 11.789 9.586 11.414C9.21106 11.039 9.00043 10.5304 9.00043 10C9.00043 9.46969 9.21106 8.96108 9.586 8.58602L12.409 5.82402" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
@@ -461,9 +471,9 @@
   <div id="top" class="hero container violet">
   <figure class="hero-image">
     <picture>
-  <source sizes="(min-width: 1201px) 2400px, 200vw" srcset="/assets/generated/img/hero/hero-map-dark-ultrawide-1200-4f7d3e886.webp 1200w, /assets/generated/img/hero/hero-map-dark-ultrawide-1600-4f7d3e886.webp 1600w, /assets/generated/img/hero/hero-map-dark-ultrawide-2400-4f7d3e886.webp 2400w, /assets/generated/img/hero/hero-map-dark-ultrawide-3600-4f7d3e886.webp 3600w" type="image/webp">
-  <source sizes="(min-width: 1201px) 2400px, 200vw" srcset="/assets/generated/img/hero/hero-map-dark-ultrawide-1200-dc658c877.png 1200w, /assets/generated/img/hero/hero-map-dark-ultrawide-1600-dc658c877.png 1600w, /assets/generated/img/hero/hero-map-dark-ultrawide-2400-dc658c877.png 2400w, /assets/generated/img/hero/hero-map-dark-ultrawide-3600-dc658c877.png 3600w" type="image/png">
-  <img src="/assets/generated/img/hero/hero-map-dark-ultrawide-500-dc658c877.png" alt=""Map of the United States with pinpoints showing services provided to public media stations"" width="5030" height="1345">
+  <source sizes="(min-width: 1201px) 2400px, 200vw" srcset="/assets/generated/img/hero/hero-map-dark-ultrawide-1200-724bdd5ac.webp 1200w, /assets/generated/img/hero/hero-map-dark-ultrawide-1600-724bdd5ac.webp 1600w, /assets/generated/img/hero/hero-map-dark-ultrawide-2400-724bdd5ac.webp 2400w, /assets/generated/img/hero/hero-map-dark-ultrawide-3600-724bdd5ac.webp 3600w" type="image/webp">
+  <source sizes="(min-width: 1201px) 2400px, 200vw" srcset="/assets/generated/img/hero/hero-map-dark-ultrawide-1200-6b3f94c82.png 1200w, /assets/generated/img/hero/hero-map-dark-ultrawide-1600-6b3f94c82.png 1600w, /assets/generated/img/hero/hero-map-dark-ultrawide-2400-6b3f94c82.png 2400w, /assets/generated/img/hero/hero-map-dark-ultrawide-3600-6b3f94c82.png 3600w" type="image/png">
+  <img src="/assets/generated/img/hero/hero-map-dark-ultrawide-500-6b3f94c82.png" alt=""Map of the United States with pinpoints showing services provided to public media stations"" width="5030" height="1345">
 </picture>
 
     <div id="hero-aurora">
@@ -516,9 +526,9 @@
       <div class="welcome-sidebar">
         <div class="welcome-sidebar--layout"><div class="welcome-image">
             <picture>
-  <source srcset="/assets/generated/img/staff/kerri-200-17f42268b.webp 200w, /assets/generated/img/staff/kerri-400-17f42268b.webp 400w, /assets/generated/img/staff/kerri-800-17f42268b.webp 800w, /assets/generated/img/staff/kerri-1200-17f42268b.webp 1200w, /assets/generated/img/staff/kerri-1600-17f42268b.webp 1600w" type="image/webp">
-  <source srcset="/assets/generated/img/staff/kerri-200-98b404943.jpg 200w, /assets/generated/img/staff/kerri-400-98b404943.jpg 400w, /assets/generated/img/staff/kerri-800-98b404943.jpg 800w, /assets/generated/img/staff/kerri-1200-98b404943.jpg 1200w, /assets/generated/img/staff/kerri-1600-98b404943.jpg 1600w" type="image/jpeg">
-  <img src="/assets/generated/img/staff/kerri-800-98b404943.jpg" alt="Kerri Hoffman speaking at a conference while holding a PRX branded note card.">
+  <source srcset="/assets/generated/img/staff/kerri-resized-200-6d8dd9ff7.webp 200w, /assets/generated/img/staff/kerri-resized-400-6d8dd9ff7.webp 400w" type="image/webp">
+  <source srcset="/assets/generated/img/staff/kerri-resized-200-9cc2099b5.jpg 200w, /assets/generated/img/staff/kerri-resized-400-9cc2099b5.jpg 400w" type="image/jpeg">
+  <img src="/assets/generated/img/staff/kerri-resized-400-9cc2099b5.jpg" alt="Kerri Hoffman speaking at a conference while holding a PRX branded note card.">
 </picture>
 
           </div></div>
@@ -576,7 +586,7 @@ Supporters</button>
     <picture>
   <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/carolyn-beeler-200-15d63f453.webp 200w, /assets/generated/img/content/carolyn-beeler-300-15d63f453.webp 300w, /assets/generated/img/content/carolyn-beeler-400-15d63f453.webp 400w, /assets/generated/img/content/carolyn-beeler-500-15d63f453.webp 500w, /assets/generated/img/content/carolyn-beeler-600-15d63f453.webp 600w, /assets/generated/img/content/carolyn-beeler-700-15d63f453.webp 700w, /assets/generated/img/content/carolyn-beeler-800-15d63f453.webp 800w, /assets/generated/img/content/carolyn-beeler-900-15d63f453.webp 900w, /assets/generated/img/content/carolyn-beeler-1000-15d63f453.webp 1000w, /assets/generated/img/content/carolyn-beeler-1200-15d63f453.webp 1200w, /assets/generated/img/content/carolyn-beeler-1600-15d63f453.webp 1600w" type="image/webp">
   <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/carolyn-beeler-200-dda159fb9.jpg 200w, /assets/generated/img/content/carolyn-beeler-300-dda159fb9.jpg 300w, /assets/generated/img/content/carolyn-beeler-400-dda159fb9.jpg 400w, /assets/generated/img/content/carolyn-beeler-500-dda159fb9.jpg 500w, /assets/generated/img/content/carolyn-beeler-600-dda159fb9.jpg 600w, /assets/generated/img/content/carolyn-beeler-700-dda159fb9.jpg 700w, /assets/generated/img/content/carolyn-beeler-800-dda159fb9.jpg 800w, /assets/generated/img/content/carolyn-beeler-900-dda159fb9.jpg 900w, /assets/generated/img/content/carolyn-beeler-1000-dda159fb9.jpg 1000w, /assets/generated/img/content/carolyn-beeler-1200-dda159fb9.jpg 1200w, /assets/generated/img/content/carolyn-beeler-1600-dda159fb9.jpg 1600w" type="image/jpeg">
-  <img src="/assets/generated/img/content/carolyn-beeler-500-dda159fb9.jpg" alt="Carolyn Beeler, a redheaded woman wearing headphones, speaks into a recording studio microphone" width="999999" height="999999">
+  <img loading="lazy" src="/assets/generated/img/content/carolyn-beeler-500-dda159fb9.jpg" alt="Carolyn Beeler, a redheaded woman wearing headphones, speaks into a recording studio microphone" width="999999" height="999999">
 </picture>
 
   </figure><div class="content-wrapper red">
@@ -610,7 +620,7 @@ Supporters</button>
       Ben Cook, Station Services Manager<picture>
   <source sizes="(max-width: 768px) 300px, calc(100vw - 8rem)" srcset="/assets/generated/img/staff/ben-245-b3b934672.webp 245w" type="image/webp">
   <source sizes="(max-width: 768px) 300px, calc(100vw - 8rem)" srcset="/assets/generated/img/staff/ben-245-b3b934672.webp 245w" type="image/webp">
-  <img src="/assets/generated/img/staff/ben-245-b3b934672.webp" alt="Photo of Ben Cook, Station Services Manager" width="245" height="245">
+  <img loading="lazy" src="/assets/generated/img/staff/ben-245-b3b934672.webp" alt="Photo of Ben Cook, Station Services Manager" width="245" height="245">
 </picture>
 </span></prx-audio-quote>
 </div>
@@ -629,7 +639,7 @@ Supporters</button>
       Leslie Laney, WUSF Station Manager<picture>
   <source sizes="(max-width: 768px) 300px, calc(100vw - 8rem)" srcset="/assets/generated/img/staff/lucy-250-ead7f4f73.webp 250w, /assets/generated/img/staff/lucy-300-ead7f4f73.webp 300w" type="image/webp">
   <source sizes="(max-width: 768px) 300px, calc(100vw - 8rem)" srcset="/assets/generated/img/staff/lucy-250-5ffc239ee.jpg 250w, /assets/generated/img/staff/lucy-300-5ffc239ee.jpg 300w" type="image/jpeg">
-  <img src="/assets/generated/img/staff/lucy-300-5ffc239ee.jpg" alt="Photo of Leslie Laney, WUSF Station Manager" width="300" height="300">
+  <img loading="lazy" src="/assets/generated/img/staff/lucy-300-5ffc239ee.jpg" alt="Photo of Leslie Laney, WUSF Station Manager" width="300" height="300">
 </picture>
 </span></prx-audio-quote>
 </div>
@@ -675,9 +685,9 @@ Supporters</button>
           
             <section class="container content-interlude-image"><figure class="content-interlude-bg">
     <picture>
-  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/ira-3-200-699c0229e.webp 200w, /assets/generated/img/content/ira-3-300-699c0229e.webp 300w, /assets/generated/img/content/ira-3-400-699c0229e.webp 400w, /assets/generated/img/content/ira-3-500-699c0229e.webp 500w, /assets/generated/img/content/ira-3-600-699c0229e.webp 600w, /assets/generated/img/content/ira-3-700-699c0229e.webp 700w, /assets/generated/img/content/ira-3-800-699c0229e.webp 800w, /assets/generated/img/content/ira-3-900-699c0229e.webp 900w, /assets/generated/img/content/ira-3-1000-699c0229e.webp 1000w, /assets/generated/img/content/ira-3-1200-699c0229e.webp 1200w, /assets/generated/img/content/ira-3-1600-699c0229e.webp 1600w" type="image/webp">
-  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/ira-3-200-67fd56680.jpg 200w, /assets/generated/img/content/ira-3-300-67fd56680.jpg 300w, /assets/generated/img/content/ira-3-400-67fd56680.jpg 400w, /assets/generated/img/content/ira-3-500-67fd56680.jpg 500w, /assets/generated/img/content/ira-3-600-67fd56680.jpg 600w, /assets/generated/img/content/ira-3-700-67fd56680.jpg 700w, /assets/generated/img/content/ira-3-800-67fd56680.jpg 800w, /assets/generated/img/content/ira-3-900-67fd56680.jpg 900w, /assets/generated/img/content/ira-3-1000-67fd56680.jpg 1000w, /assets/generated/img/content/ira-3-1200-67fd56680.jpg 1200w, /assets/generated/img/content/ira-3-1600-67fd56680.jpg 1600w" type="image/jpeg">
-  <img src="/assets/generated/img/content/ira-3-500-67fd56680.jpg" alt="Ira Glass being interviewed on a stage at the Tribeca Festival" width="1600" height="900">
+  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/ira-3-200-c311e77d8.webp 200w, /assets/generated/img/content/ira-3-300-c311e77d8.webp 300w, /assets/generated/img/content/ira-3-400-c311e77d8.webp 400w, /assets/generated/img/content/ira-3-500-c311e77d8.webp 500w, /assets/generated/img/content/ira-3-600-c311e77d8.webp 600w, /assets/generated/img/content/ira-3-700-c311e77d8.webp 700w, /assets/generated/img/content/ira-3-800-c311e77d8.webp 800w, /assets/generated/img/content/ira-3-900-c311e77d8.webp 900w, /assets/generated/img/content/ira-3-1000-c311e77d8.webp 1000w, /assets/generated/img/content/ira-3-1200-c311e77d8.webp 1200w, /assets/generated/img/content/ira-3-1600-c311e77d8.webp 1600w" type="image/webp">
+  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/ira-3-200-1d4417b19.jpg 200w, /assets/generated/img/content/ira-3-300-1d4417b19.jpg 300w, /assets/generated/img/content/ira-3-400-1d4417b19.jpg 400w, /assets/generated/img/content/ira-3-500-1d4417b19.jpg 500w, /assets/generated/img/content/ira-3-600-1d4417b19.jpg 600w, /assets/generated/img/content/ira-3-700-1d4417b19.jpg 700w, /assets/generated/img/content/ira-3-800-1d4417b19.jpg 800w, /assets/generated/img/content/ira-3-900-1d4417b19.jpg 900w, /assets/generated/img/content/ira-3-1000-1d4417b19.jpg 1000w, /assets/generated/img/content/ira-3-1200-1d4417b19.jpg 1200w, /assets/generated/img/content/ira-3-1600-1d4417b19.jpg 1600w" type="image/jpeg">
+  <img loading="lazy" src="/assets/generated/img/content/ira-3-500-1d4417b19.jpg" alt="Ira Glass being interviewed on a stage at the Tribeca Festival" width="1600" height="900">
 </picture>
 
   </figure><div class="content-wrapper teal">
@@ -711,7 +721,7 @@ Supporters</button>
       Stephanie Kuo, VP Content<picture>
   <source sizes="(max-width: 768px) 300px, calc(100vw - 8rem)" srcset="/assets/generated/img/staff/steph-250-b83d92e13.webp 250w, /assets/generated/img/staff/steph-300-b83d92e13.webp 300w" type="image/webp">
   <source sizes="(max-width: 768px) 300px, calc(100vw - 8rem)" srcset="/assets/generated/img/staff/steph-250-b83d92e13.webp 250w, /assets/generated/img/staff/steph-300-b83d92e13.webp 300w" type="image/webp">
-  <img src="/assets/generated/img/staff/steph-300-b83d92e13.webp" alt="Photo of Stephanie Kuo, VP Content" width="300" height="300">
+  <img loading="lazy" src="/assets/generated/img/staff/steph-300-b83d92e13.webp" alt="Photo of Stephanie Kuo, VP Content" width="300" height="300">
 </picture>
 </span></prx-audio-quote>
 </div>
@@ -729,7 +739,7 @@ Supporters</button>
       Sean Nesbitt, Senior Director of Industry Partnerships<picture>
   <source sizes="(max-width: 768px) 300px, calc(100vw - 8rem)" srcset="/assets/generated/img/staff/sean-250-d42f82cc5.webp 250w, /assets/generated/img/staff/sean-300-d42f82cc5.webp 300w" type="image/webp">
   <source sizes="(max-width: 768px) 300px, calc(100vw - 8rem)" srcset="/assets/generated/img/staff/sean-250-d42f82cc5.webp 250w, /assets/generated/img/staff/sean-300-d42f82cc5.webp 300w" type="image/webp">
-  <img src="/assets/generated/img/staff/sean-300-d42f82cc5.webp" alt="Photo of Sean Nesbitt, Senior Director of Industry Partnerships" width="300" height="300">
+  <img loading="lazy" src="/assets/generated/img/staff/sean-300-d42f82cc5.webp" alt="Photo of Sean Nesbitt, Senior Director of Industry Partnerships" width="300" height="300">
 </picture>
 </span></prx-audio-quote>
 </div>
@@ -741,9 +751,9 @@ Supporters</button>
           
             <section class="container content-interlude-image"><figure class="content-interlude-bg">
     <picture>
-  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/radiotopia-200-dc52840d9.webp 200w, /assets/generated/img/content/radiotopia-300-dc52840d9.webp 300w, /assets/generated/img/content/radiotopia-400-dc52840d9.webp 400w, /assets/generated/img/content/radiotopia-500-dc52840d9.webp 500w, /assets/generated/img/content/radiotopia-600-dc52840d9.webp 600w, /assets/generated/img/content/radiotopia-700-dc52840d9.webp 700w, /assets/generated/img/content/radiotopia-800-dc52840d9.webp 800w, /assets/generated/img/content/radiotopia-900-dc52840d9.webp 900w, /assets/generated/img/content/radiotopia-1000-dc52840d9.webp 1000w, /assets/generated/img/content/radiotopia-1200-dc52840d9.webp 1200w, /assets/generated/img/content/radiotopia-1600-dc52840d9.webp 1600w" type="image/webp">
-  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/radiotopia-200-974a97c91.jpg 200w, /assets/generated/img/content/radiotopia-300-974a97c91.jpg 300w, /assets/generated/img/content/radiotopia-400-974a97c91.jpg 400w, /assets/generated/img/content/radiotopia-500-974a97c91.jpg 500w, /assets/generated/img/content/radiotopia-600-974a97c91.jpg 600w, /assets/generated/img/content/radiotopia-700-974a97c91.jpg 700w, /assets/generated/img/content/radiotopia-800-974a97c91.jpg 800w, /assets/generated/img/content/radiotopia-900-974a97c91.jpg 900w, /assets/generated/img/content/radiotopia-1000-974a97c91.jpg 1000w, /assets/generated/img/content/radiotopia-1200-974a97c91.jpg 1200w, /assets/generated/img/content/radiotopia-1600-974a97c91.jpg 1600w" type="image/jpeg">
-  <img src="/assets/generated/img/content/radiotopia-500-974a97c91.jpg" alt="A woman and a man are seated in conversation on a stage in an auditorium." width="2048" height="1365">
+  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/radiotopia-200-6b526255a.webp 200w, /assets/generated/img/content/radiotopia-300-6b526255a.webp 300w, /assets/generated/img/content/radiotopia-400-6b526255a.webp 400w, /assets/generated/img/content/radiotopia-500-6b526255a.webp 500w, /assets/generated/img/content/radiotopia-600-6b526255a.webp 600w, /assets/generated/img/content/radiotopia-700-6b526255a.webp 700w, /assets/generated/img/content/radiotopia-800-6b526255a.webp 800w, /assets/generated/img/content/radiotopia-900-6b526255a.webp 900w, /assets/generated/img/content/radiotopia-1000-6b526255a.webp 1000w, /assets/generated/img/content/radiotopia-1200-6b526255a.webp 1200w, /assets/generated/img/content/radiotopia-1600-6b526255a.webp 1600w" type="image/webp">
+  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/radiotopia-200-5d5a53e80.jpg 200w, /assets/generated/img/content/radiotopia-300-5d5a53e80.jpg 300w, /assets/generated/img/content/radiotopia-400-5d5a53e80.jpg 400w, /assets/generated/img/content/radiotopia-500-5d5a53e80.jpg 500w, /assets/generated/img/content/radiotopia-600-5d5a53e80.jpg 600w, /assets/generated/img/content/radiotopia-700-5d5a53e80.jpg 700w, /assets/generated/img/content/radiotopia-800-5d5a53e80.jpg 800w, /assets/generated/img/content/radiotopia-900-5d5a53e80.jpg 900w, /assets/generated/img/content/radiotopia-1000-5d5a53e80.jpg 1000w, /assets/generated/img/content/radiotopia-1200-5d5a53e80.jpg 1200w, /assets/generated/img/content/radiotopia-1600-5d5a53e80.jpg 1600w" type="image/jpeg">
+  <img loading="lazy" src="/assets/generated/img/content/radiotopia-500-5d5a53e80.jpg" alt="A woman and a man are seated in conversation on a stage in an auditorium." width="2048" height="1365">
 </picture>
 
   </figure><div class="content-wrapper violet">
@@ -787,7 +797,7 @@ Supporters</button>
       René Vacchio Albee, <i>Ear Hustle</i> supporter<picture>
   <source sizes="(max-width: 768px) 300px, calc(100vw - 8rem)" srcset="/assets/generated/img/staff/rene-albee-250-2ed6a45c4.webp 250w, /assets/generated/img/staff/rene-albee-300-2ed6a45c4.webp 300w" type="image/webp">
   <source sizes="(max-width: 768px) 300px, calc(100vw - 8rem)" srcset="/assets/generated/img/staff/rene-albee-250-622eab633.jpg 250w, /assets/generated/img/staff/rene-albee-300-622eab633.jpg 300w" type="image/jpeg">
-  <img src="/assets/generated/img/staff/rene-albee-300-622eab633.jpg" alt="Photo of René Vacchio Albee, <i>Ear Hustle</i> supporter" width="300" height="300">
+  <img loading="lazy" src="/assets/generated/img/staff/rene-albee-300-622eab633.jpg" alt="Photo of René Vacchio Albee, <i>Ear Hustle</i> supporter" width="300" height="300">
 </picture>
 </span></prx-audio-quote>
 </div>
@@ -807,7 +817,7 @@ Supporters</button>
       Yooree Losardo<picture>
   <source sizes="(max-width: 768px) 300px, calc(100vw - 8rem)" srcset="/assets/generated/img/staff/yooree-250-a185ef709.webp 250w, /assets/generated/img/staff/yooree-300-a185ef709.webp 300w" type="image/webp">
   <source sizes="(max-width: 768px) 300px, calc(100vw - 8rem)" srcset="/assets/generated/img/staff/yooree-250-a185ef709.webp 250w, /assets/generated/img/staff/yooree-300-a185ef709.webp 300w" type="image/webp">
-  <img src="/assets/generated/img/staff/yooree-300-a185ef709.webp" alt="Photo of Yooree Losardo" width="300" height="300">
+  <img loading="lazy" src="/assets/generated/img/staff/yooree-300-a185ef709.webp" alt="Photo of Yooree Losardo" width="300" height="300">
 </picture>
 </span></prx-audio-quote>
 </div>
@@ -859,7 +869,7 @@ Supporters</button>
   <picture>
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/altered-states-100-e5b3a9541.webp 100w, /assets/generated/img/shows/altered-states-200-e5b3a9541.webp 200w, /assets/generated/img/shows/altered-states-300-e5b3a9541.webp 300w, /assets/generated/img/shows/altered-states-400-e5b3a9541.webp 400w, /assets/generated/img/shows/altered-states-500-e5b3a9541.webp 500w" type="image/webp">
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/altered-states-100-e5b3a9541.webp 100w, /assets/generated/img/shows/altered-states-200-e5b3a9541.webp 200w, /assets/generated/img/shows/altered-states-300-e5b3a9541.webp 300w, /assets/generated/img/shows/altered-states-400-e5b3a9541.webp 400w, /assets/generated/img/shows/altered-states-500-e5b3a9541.webp 500w" type="image/webp">
-  <img src="/assets/generated/img/shows/altered-states-400-e5b3a9541.webp" alt="Logo for Altered States - Berkeley Center for the Science of Psychedelics" width="500" height="500">
+  <img loading="lazy" src="/assets/generated/img/shows/altered-states-400-e5b3a9541.webp" alt="Logo for Altered States - Berkeley Center for the Science of Psychedelics" width="500" height="500">
 </picture>
 
 </figure>
@@ -867,7 +877,7 @@ Supporters</button>
   <picture>
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/american-railroad-100-fce7d4e79.webp 100w, /assets/generated/img/shows/american-railroad-200-fce7d4e79.webp 200w, /assets/generated/img/shows/american-railroad-300-fce7d4e79.webp 300w, /assets/generated/img/shows/american-railroad-400-fce7d4e79.webp 400w, /assets/generated/img/shows/american-railroad-500-fce7d4e79.webp 500w" type="image/webp">
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/american-railroad-100-fce7d4e79.webp 100w, /assets/generated/img/shows/american-railroad-200-fce7d4e79.webp 200w, /assets/generated/img/shows/american-railroad-300-fce7d4e79.webp 300w, /assets/generated/img/shows/american-railroad-400-fce7d4e79.webp 400w, /assets/generated/img/shows/american-railroad-500-fce7d4e79.webp 500w" type="image/webp">
-  <img src="/assets/generated/img/shows/american-railroad-400-fce7d4e79.webp" alt="Logo for American Railroad - Silkroad" width="500" height="500">
+  <img loading="lazy" src="/assets/generated/img/shows/american-railroad-400-fce7d4e79.webp" alt="Logo for American Railroad - Silkroad" width="500" height="500">
 </picture>
 
 </figure>
@@ -875,7 +885,7 @@ Supporters</button>
   <picture>
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/apathy-100-41efc39e8.webp 100w, /assets/generated/img/shows/apathy-200-41efc39e8.webp 200w, /assets/generated/img/shows/apathy-300-41efc39e8.webp 300w, /assets/generated/img/shows/apathy-400-41efc39e8.webp 400w, /assets/generated/img/shows/apathy-500-41efc39e8.webp 500w" type="image/webp">
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/apathy-100-41efc39e8.webp 100w, /assets/generated/img/shows/apathy-200-41efc39e8.webp 200w, /assets/generated/img/shows/apathy-300-41efc39e8.webp 300w, /assets/generated/img/shows/apathy-400-41efc39e8.webp 400w, /assets/generated/img/shows/apathy-500-41efc39e8.webp 500w" type="image/webp">
-  <img src="/assets/generated/img/shows/apathy-400-41efc39e8.webp" alt="Logo for Apathy is Not an Option - Southern Poverty Law Center" width="500" height="500">
+  <img loading="lazy" src="/assets/generated/img/shows/apathy-400-41efc39e8.webp" alt="Logo for Apathy is Not an Option - Southern Poverty Law Center" width="500" height="500">
 </picture>
 
 </figure>
@@ -883,7 +893,7 @@ Supporters</button>
   <picture>
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/built-100-20eb7ba64.webp 100w, /assets/generated/img/shows/built-200-20eb7ba64.webp 200w, /assets/generated/img/shows/built-300-20eb7ba64.webp 300w, /assets/generated/img/shows/built-400-20eb7ba64.webp 400w, /assets/generated/img/shows/built-500-20eb7ba64.webp 500w" type="image/webp">
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/built-100-20eb7ba64.webp 100w, /assets/generated/img/shows/built-200-20eb7ba64.webp 200w, /assets/generated/img/shows/built-300-20eb7ba64.webp 300w, /assets/generated/img/shows/built-400-20eb7ba64.webp 400w, /assets/generated/img/shows/built-500-20eb7ba64.webp 500w" type="image/webp">
-  <img src="/assets/generated/img/shows/built-400-20eb7ba64.webp" alt="Logo for Built - Fidelity National Financial" width="500" height="500">
+  <img loading="lazy" src="/assets/generated/img/shows/built-400-20eb7ba64.webp" alt="Logo for Built - Fidelity National Financial" width="500" height="500">
 </picture>
 
 </figure>
@@ -891,7 +901,7 @@ Supporters</button>
   <picture>
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/how-god-works-100-63a7ed3cf.webp 100w, /assets/generated/img/shows/how-god-works-200-63a7ed3cf.webp 200w, /assets/generated/img/shows/how-god-works-300-63a7ed3cf.webp 300w, /assets/generated/img/shows/how-god-works-400-63a7ed3cf.webp 400w, /assets/generated/img/shows/how-god-works-500-63a7ed3cf.webp 500w" type="image/webp">
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/how-god-works-100-63a7ed3cf.webp 100w, /assets/generated/img/shows/how-god-works-200-63a7ed3cf.webp 200w, /assets/generated/img/shows/how-god-works-300-63a7ed3cf.webp 300w, /assets/generated/img/shows/how-god-works-400-63a7ed3cf.webp 400w, /assets/generated/img/shows/how-god-works-500-63a7ed3cf.webp 500w" type="image/webp">
-  <img src="/assets/generated/img/shows/how-god-works-400-63a7ed3cf.webp" alt="Logo for How God Works - David DeSteno" width="500" height="500">
+  <img loading="lazy" src="/assets/generated/img/shows/how-god-works-400-63a7ed3cf.webp" alt="Logo for How God Works - David DeSteno" width="500" height="500">
 </picture>
 
 </figure>
@@ -899,7 +909,7 @@ Supporters</button>
   <picture>
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/irl-100-1eebaf397.webp 100w, /assets/generated/img/shows/irl-200-1eebaf397.webp 200w, /assets/generated/img/shows/irl-300-1eebaf397.webp 300w, /assets/generated/img/shows/irl-400-1eebaf397.webp 400w, /assets/generated/img/shows/irl-500-1eebaf397.webp 500w" type="image/webp">
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/irl-100-1eebaf397.webp 100w, /assets/generated/img/shows/irl-200-1eebaf397.webp 200w, /assets/generated/img/shows/irl-300-1eebaf397.webp 300w, /assets/generated/img/shows/irl-400-1eebaf397.webp 400w, /assets/generated/img/shows/irl-500-1eebaf397.webp 500w" type="image/webp">
-  <img src="/assets/generated/img/shows/irl-400-1eebaf397.webp" alt="Logo for IRL - Mozilla Foundation" width="500" height="500">
+  <img loading="lazy" src="/assets/generated/img/shows/irl-400-1eebaf397.webp" alt="Logo for IRL - Mozilla Foundation" width="500" height="500">
 </picture>
 
 </figure>
@@ -907,7 +917,7 @@ Supporters</button>
   <picture>
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/joy-of-why-100-013256de5.webp 100w, /assets/generated/img/shows/joy-of-why-200-013256de5.webp 200w, /assets/generated/img/shows/joy-of-why-300-013256de5.webp 300w" type="image/webp">
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/joy-of-why-100-013256de5.webp 100w, /assets/generated/img/shows/joy-of-why-200-013256de5.webp 200w, /assets/generated/img/shows/joy-of-why-300-013256de5.webp 300w" type="image/webp">
-  <img src="/assets/generated/img/shows/joy-of-why-300-013256de5.webp" alt="Logo for Joy of Why - Quanta Magazine" width="300" height="300">
+  <img loading="lazy" src="/assets/generated/img/shows/joy-of-why-300-013256de5.webp" alt="Logo for Joy of Why - Quanta Magazine" width="300" height="300">
 </picture>
 
 </figure>
@@ -915,7 +925,7 @@ Supporters</button>
   <picture>
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/know-what-you-see-100-d7379ae0b.webp 100w, /assets/generated/img/shows/know-what-you-see-200-d7379ae0b.webp 200w, /assets/generated/img/shows/know-what-you-see-300-d7379ae0b.webp 300w, /assets/generated/img/shows/know-what-you-see-400-d7379ae0b.webp 400w, /assets/generated/img/shows/know-what-you-see-500-d7379ae0b.webp 500w" type="image/webp">
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/know-what-you-see-100-d7379ae0b.webp 100w, /assets/generated/img/shows/know-what-you-see-200-d7379ae0b.webp 200w, /assets/generated/img/shows/know-what-you-see-300-d7379ae0b.webp 300w, /assets/generated/img/shows/know-what-you-see-400-d7379ae0b.webp 400w, /assets/generated/img/shows/know-what-you-see-500-d7379ae0b.webp 500w" type="image/webp">
-  <img src="/assets/generated/img/shows/know-what-you-see-400-d7379ae0b.webp" alt="Logo for Know What You See - Brian Lowery and Stanford Graduate School of Business" width="500" height="500">
+  <img loading="lazy" src="/assets/generated/img/shows/know-what-you-see-400-d7379ae0b.webp" alt="Logo for Know What You See - Brian Lowery and Stanford Graduate School of Business" width="500" height="500">
 </picture>
 
 </figure>
@@ -923,7 +933,7 @@ Supporters</button>
   <picture>
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/magic-us-100-a4268691a.webp 100w, /assets/generated/img/shows/magic-us-200-a4268691a.webp 200w, /assets/generated/img/shows/magic-us-300-a4268691a.webp 300w" type="image/webp">
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/magic-us-100-a4268691a.webp 100w, /assets/generated/img/shows/magic-us-200-a4268691a.webp 200w, /assets/generated/img/shows/magic-us-300-a4268691a.webp 300w" type="image/webp">
-  <img src="/assets/generated/img/shows/magic-us-300-a4268691a.webp" alt="Logo for Magic in the US - Heather Freeman and UNC Charlotte" width="300" height="300">
+  <img loading="lazy" src="/assets/generated/img/shows/magic-us-300-a4268691a.webp" alt="Logo for Magic in the US - Heather Freeman and UNC Charlotte" width="300" height="300">
 </picture>
 
 </figure>
@@ -931,7 +941,7 @@ Supporters</button>
   <picture>
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/moral-repair-100-623c70a5b.webp 100w, /assets/generated/img/shows/moral-repair-200-623c70a5b.webp 200w, /assets/generated/img/shows/moral-repair-300-623c70a5b.webp 300w" type="image/webp">
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/moral-repair-100-623c70a5b.webp 100w, /assets/generated/img/shows/moral-repair-200-623c70a5b.webp 200w, /assets/generated/img/shows/moral-repair-300-623c70a5b.webp 300w" type="image/webp">
-  <img src="/assets/generated/img/shows/moral-repair-300-623c70a5b.webp" alt="Logo for Moral Repair - Big Questions" width="300" height="300">
+  <img loading="lazy" src="/assets/generated/img/shows/moral-repair-300-623c70a5b.webp" alt="Logo for Moral Repair - Big Questions" width="300" height="300">
 </picture>
 
 </figure>
@@ -939,7 +949,7 @@ Supporters</button>
   <picture>
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/mother-question-100-5e021f480.webp 100w, /assets/generated/img/shows/mother-question-200-5e021f480.webp 200w, /assets/generated/img/shows/mother-question-300-5e021f480.webp 300w, /assets/generated/img/shows/mother-question-400-5e021f480.webp 400w, /assets/generated/img/shows/mother-question-500-5e021f480.webp 500w" type="image/webp">
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/mother-question-100-5e021f480.webp 100w, /assets/generated/img/shows/mother-question-200-5e021f480.webp 200w, /assets/generated/img/shows/mother-question-300-5e021f480.webp 300w, /assets/generated/img/shows/mother-question-400-5e021f480.webp 400w, /assets/generated/img/shows/mother-question-500-5e021f480.webp 500w" type="image/webp">
-  <img src="/assets/generated/img/shows/mother-question-400-5e021f480.webp" alt="Logo for Mother is a Question - Big Questions" width="500" height="500">
+  <img loading="lazy" src="/assets/generated/img/shows/mother-question-400-5e021f480.webp" alt="Logo for Mother is a Question - Big Questions" width="500" height="500">
 </picture>
 
 </figure>
@@ -947,7 +957,7 @@ Supporters</button>
   <picture>
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/one-by-willie-100-f496eedfa.webp 100w, /assets/generated/img/shows/one-by-willie-200-f496eedfa.webp 200w, /assets/generated/img/shows/one-by-willie-300-f496eedfa.webp 300w, /assets/generated/img/shows/one-by-willie-400-f496eedfa.webp 400w, /assets/generated/img/shows/one-by-willie-500-f496eedfa.webp 500w" type="image/webp">
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/one-by-willie-100-f496eedfa.webp 100w, /assets/generated/img/shows/one-by-willie-200-f496eedfa.webp 200w, /assets/generated/img/shows/one-by-willie-300-f496eedfa.webp 300w, /assets/generated/img/shows/one-by-willie-400-f496eedfa.webp 400w, /assets/generated/img/shows/one-by-willie-500-f496eedfa.webp 500w" type="image/webp">
-  <img src="/assets/generated/img/shows/one-by-willie-400-f496eedfa.webp" alt="Logo for One by Willie - John Spong and Texas Monthly" width="500" height="500">
+  <img loading="lazy" src="/assets/generated/img/shows/one-by-willie-400-f496eedfa.webp" alt="Logo for One by Willie - John Spong and Texas Monthly" width="500" height="500">
 </picture>
 
 </figure>
@@ -955,7 +965,7 @@ Supporters</button>
   <picture>
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/plant-people-100-e752f40fd.webp 100w, /assets/generated/img/shows/plant-people-200-e752f40fd.webp 200w, /assets/generated/img/shows/plant-people-300-e752f40fd.webp 300w, /assets/generated/img/shows/plant-people-400-e752f40fd.webp 400w, /assets/generated/img/shows/plant-people-500-e752f40fd.webp 500w" type="image/webp">
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/plant-people-100-e752f40fd.webp 100w, /assets/generated/img/shows/plant-people-200-e752f40fd.webp 200w, /assets/generated/img/shows/plant-people-300-e752f40fd.webp 300w, /assets/generated/img/shows/plant-people-400-e752f40fd.webp 400w, /assets/generated/img/shows/plant-people-500-e752f40fd.webp 500w" type="image/webp">
-  <img src="/assets/generated/img/shows/plant-people-400-e752f40fd.webp" alt="Logo for Plant People - New York Botanical Gardens" width="500" height="500">
+  <img loading="lazy" src="/assets/generated/img/shows/plant-people-400-e752f40fd.webp" alt="Logo for Plant People - New York Botanical Gardens" width="500" height="500">
 </picture>
 
 </figure>
@@ -963,7 +973,7 @@ Supporters</button>
   <picture>
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/rock-that-doesnt-roll-100-643717583.webp 100w, /assets/generated/img/shows/rock-that-doesnt-roll-200-643717583.webp 200w, /assets/generated/img/shows/rock-that-doesnt-roll-300-643717583.webp 300w, /assets/generated/img/shows/rock-that-doesnt-roll-400-643717583.webp 400w, /assets/generated/img/shows/rock-that-doesnt-roll-500-643717583.webp 500w" type="image/webp">
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/rock-that-doesnt-roll-100-643717583.webp 100w, /assets/generated/img/shows/rock-that-doesnt-roll-200-643717583.webp 200w, /assets/generated/img/shows/rock-that-doesnt-roll-300-643717583.webp 300w, /assets/generated/img/shows/rock-that-doesnt-roll-400-643717583.webp 400w, /assets/generated/img/shows/rock-that-doesnt-roll-500-643717583.webp 500w" type="image/webp">
-  <img src="/assets/generated/img/shows/rock-that-doesnt-roll-400-643717583.webp" alt="Logo for Rock That Doesn't Roll - Big Questions" width="500" height="500">
+  <img loading="lazy" src="/assets/generated/img/shows/rock-that-doesnt-roll-400-643717583.webp" alt="Logo for Rock That Doesn't Roll - Big Questions" width="500" height="500">
 </picture>
 
 </figure>
@@ -971,7 +981,7 @@ Supporters</button>
   <picture>
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/second-sunday-100-669b1e886.webp 100w, /assets/generated/img/shows/second-sunday-200-669b1e886.webp 200w, /assets/generated/img/shows/second-sunday-300-669b1e886.webp 300w, /assets/generated/img/shows/second-sunday-400-669b1e886.webp 400w, /assets/generated/img/shows/second-sunday-500-669b1e886.webp 500w" type="image/webp">
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/second-sunday-100-669b1e886.webp 100w, /assets/generated/img/shows/second-sunday-200-669b1e886.webp 200w, /assets/generated/img/shows/second-sunday-300-669b1e886.webp 300w, /assets/generated/img/shows/second-sunday-400-669b1e886.webp 400w, /assets/generated/img/shows/second-sunday-500-669b1e886.webp 500w" type="image/webp">
-  <img src="/assets/generated/img/shows/second-sunday-400-669b1e886.webp" alt="Logo for Second Sunday - Big Questions" width="500" height="500">
+  <img loading="lazy" src="/assets/generated/img/shows/second-sunday-400-669b1e886.webp" alt="Logo for Second Sunday - Big Questions" width="500" height="500">
 </picture>
 
 </figure>
@@ -979,7 +989,7 @@ Supporters</button>
   <picture>
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/special-sauce-100-139f3a625.webp 100w, /assets/generated/img/shows/special-sauce-200-139f3a625.webp 200w, /assets/generated/img/shows/special-sauce-300-139f3a625.webp 300w, /assets/generated/img/shows/special-sauce-400-139f3a625.webp 400w, /assets/generated/img/shows/special-sauce-500-139f3a625.webp 500w" type="image/webp">
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/special-sauce-100-139f3a625.webp 100w, /assets/generated/img/shows/special-sauce-200-139f3a625.webp 200w, /assets/generated/img/shows/special-sauce-300-139f3a625.webp 300w, /assets/generated/img/shows/special-sauce-400-139f3a625.webp 400w, /assets/generated/img/shows/special-sauce-500-139f3a625.webp 500w" type="image/webp">
-  <img src="/assets/generated/img/shows/special-sauce-400-139f3a625.webp" alt="Logo for Special Sauce - Ed Levine" width="500" height="500">
+  <img loading="lazy" src="/assets/generated/img/shows/special-sauce-400-139f3a625.webp" alt="Logo for Special Sauce - Ed Levine" width="500" height="500">
 </picture>
 
 </figure>
@@ -987,7 +997,7 @@ Supporters</button>
   <picture>
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/plate-show-100-55da76407.webp 100w, /assets/generated/img/shows/plate-show-200-55da76407.webp 200w, /assets/generated/img/shows/plate-show-300-55da76407.webp 300w, /assets/generated/img/shows/plate-show-400-55da76407.webp 400w, /assets/generated/img/shows/plate-show-500-55da76407.webp 500w" type="image/webp">
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/plate-show-100-55da76407.webp 100w, /assets/generated/img/shows/plate-show-200-55da76407.webp 200w, /assets/generated/img/shows/plate-show-300-55da76407.webp 300w, /assets/generated/img/shows/plate-show-400-55da76407.webp 400w, /assets/generated/img/shows/plate-show-500-55da76407.webp 500w" type="image/webp">
-  <img src="/assets/generated/img/shows/plate-show-400-55da76407.webp" alt="Logo for The Plate Show - WNET" width="500" height="500">
+  <img loading="lazy" src="/assets/generated/img/shows/plate-show-400-55da76407.webp" alt="Logo for The Plate Show - WNET" width="500" height="500">
 </picture>
 
 </figure>
@@ -995,7 +1005,7 @@ Supporters</button>
   <picture>
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/recipe-100-1eac3d67a.webp 100w, /assets/generated/img/shows/recipe-200-1eac3d67a.webp 200w, /assets/generated/img/shows/recipe-300-1eac3d67a.webp 300w, /assets/generated/img/shows/recipe-400-1eac3d67a.webp 400w, /assets/generated/img/shows/recipe-500-1eac3d67a.webp 500w" type="image/webp">
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/recipe-100-1eac3d67a.webp 100w, /assets/generated/img/shows/recipe-200-1eac3d67a.webp 200w, /assets/generated/img/shows/recipe-300-1eac3d67a.webp 300w, /assets/generated/img/shows/recipe-400-1eac3d67a.webp 400w, /assets/generated/img/shows/recipe-500-1eac3d67a.webp 500w" type="image/webp">
-  <img src="/assets/generated/img/shows/recipe-400-1eac3d67a.webp" alt="Logo for The Recipe - Radiotopia" width="500" height="500">
+  <img loading="lazy" src="/assets/generated/img/shows/recipe-400-1eac3d67a.webp" alt="Logo for The Recipe - Radiotopia" width="500" height="500">
 </picture>
 
 </figure>
@@ -1003,7 +1013,7 @@ Supporters</button>
   <picture>
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/more-to-that-100-f027d9878.webp 100w, /assets/generated/img/shows/more-to-that-200-f027d9878.webp 200w, /assets/generated/img/shows/more-to-that-300-f027d9878.webp 300w, /assets/generated/img/shows/more-to-that-400-f027d9878.webp 400w, /assets/generated/img/shows/more-to-that-500-f027d9878.webp 500w" type="image/webp">
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/more-to-that-100-f027d9878.webp 100w, /assets/generated/img/shows/more-to-that-200-f027d9878.webp 200w, /assets/generated/img/shows/more-to-that-300-f027d9878.webp 300w, /assets/generated/img/shows/more-to-that-400-f027d9878.webp 400w, /assets/generated/img/shows/more-to-that-500-f027d9878.webp 500w" type="image/webp">
-  <img src="/assets/generated/img/shows/more-to-that-400-f027d9878.webp" alt="Logo for There's More to That - Smithsonian Magazine" width="500" height="500">
+  <img loading="lazy" src="/assets/generated/img/shows/more-to-that-400-f027d9878.webp" alt="Logo for There's More to That - Smithsonian Magazine" width="500" height="500">
 </picture>
 
 </figure>
@@ -1011,7 +1021,7 @@ Supporters</button>
   <picture>
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/tomorrows-cure-100-7e2c8eabc.webp 100w, /assets/generated/img/shows/tomorrows-cure-200-7e2c8eabc.webp 200w, /assets/generated/img/shows/tomorrows-cure-300-7e2c8eabc.webp 300w" type="image/webp">
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/tomorrows-cure-100-7e2c8eabc.webp 100w, /assets/generated/img/shows/tomorrows-cure-200-7e2c8eabc.webp 200w, /assets/generated/img/shows/tomorrows-cure-300-7e2c8eabc.webp 300w" type="image/webp">
-  <img src="/assets/generated/img/shows/tomorrows-cure-300-7e2c8eabc.webp" alt="Logo for Tomorrow's Cure - Mayo Clinic" width="300" height="300">
+  <img loading="lazy" src="/assets/generated/img/shows/tomorrows-cure-300-7e2c8eabc.webp" alt="Logo for Tomorrow's Cure - Mayo Clinic" width="300" height="300">
 </picture>
 
 </figure>
@@ -1019,7 +1029,7 @@ Supporters</button>
   <picture>
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/unseen-upside-100-68fc38cba.webp 100w, /assets/generated/img/shows/unseen-upside-200-68fc38cba.webp 200w, /assets/generated/img/shows/unseen-upside-300-68fc38cba.webp 300w, /assets/generated/img/shows/unseen-upside-400-68fc38cba.webp 400w, /assets/generated/img/shows/unseen-upside-500-68fc38cba.webp 500w" type="image/webp">
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/unseen-upside-100-68fc38cba.webp 100w, /assets/generated/img/shows/unseen-upside-200-68fc38cba.webp 200w, /assets/generated/img/shows/unseen-upside-300-68fc38cba.webp 300w, /assets/generated/img/shows/unseen-upside-400-68fc38cba.webp 400w, /assets/generated/img/shows/unseen-upside-500-68fc38cba.webp 500w" type="image/webp">
-  <img src="/assets/generated/img/shows/unseen-upside-400-68fc38cba.webp" alt="Logo for Unseen Upside - Cambridge Associates" width="500" height="500">
+  <img loading="lazy" src="/assets/generated/img/shows/unseen-upside-400-68fc38cba.webp" alt="Logo for Unseen Upside - Cambridge Associates" width="500" height="500">
 </picture>
 
 </figure>
@@ -1027,7 +1037,7 @@ Supporters</button>
   <picture>
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/disrupt-100-0c6f364fe.webp 100w, /assets/generated/img/shows/disrupt-200-0c6f364fe.webp 200w, /assets/generated/img/shows/disrupt-300-0c6f364fe.webp 300w, /assets/generated/img/shows/disrupt-400-0c6f364fe.webp 400w, /assets/generated/img/shows/disrupt-500-0c6f364fe.webp 500w" type="image/webp">
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/disrupt-100-0c6f364fe.webp 100w, /assets/generated/img/shows/disrupt-200-0c6f364fe.webp 200w, /assets/generated/img/shows/disrupt-300-0c6f364fe.webp 300w, /assets/generated/img/shows/disrupt-400-0c6f364fe.webp 400w, /assets/generated/img/shows/disrupt-500-0c6f364fe.webp 500w" type="image/webp">
-  <img src="/assets/generated/img/shows/disrupt-400-0c6f364fe.webp" alt="Logo for We Disrupt This Broadcast - Peabody Awards and The Center for Media and Social Impact at American University" width="500" height="500">
+  <img loading="lazy" src="/assets/generated/img/shows/disrupt-400-0c6f364fe.webp" alt="Logo for We Disrupt This Broadcast - Peabody Awards and The Center for Media and Social Impact at American University" width="500" height="500">
 </picture>
 
 </figure>
@@ -1035,7 +1045,7 @@ Supporters</button>
   <picture>
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/ray-saying-100-d7d34d009.webp 100w, /assets/generated/img/shows/ray-saying-200-d7d34d009.webp 200w, /assets/generated/img/shows/ray-saying-300-d7d34d009.webp 300w, /assets/generated/img/shows/ray-saying-400-d7d34d009.webp 400w, /assets/generated/img/shows/ray-saying-500-d7d34d009.webp 500w" type="image/webp">
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/ray-saying-100-d7d34d009.webp 100w, /assets/generated/img/shows/ray-saying-200-d7d34d009.webp 200w, /assets/generated/img/shows/ray-saying-300-d7d34d009.webp 300w, /assets/generated/img/shows/ray-saying-400-d7d34d009.webp 400w, /assets/generated/img/shows/ray-saying-500-d7d34d009.webp 500w" type="image/webp">
-  <img src="/assets/generated/img/shows/ray-saying-400-d7d34d009.webp" alt="Logo for What's Ray Saying - Dr. Ray Christian" width="500" height="500">
+  <img loading="lazy" src="/assets/generated/img/shows/ray-saying-400-d7d34d009.webp" alt="Logo for What's Ray Saying - Dr. Ray Christian" width="500" height="500">
 </picture>
 
 </figure>
@@ -1043,7 +1053,7 @@ Supporters</button>
   <picture>
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/wisdom-practice-100-1af3e7043.webp 100w, /assets/generated/img/shows/wisdom-practice-200-1af3e7043.webp 200w, /assets/generated/img/shows/wisdom-practice-300-1af3e7043.webp 300w, /assets/generated/img/shows/wisdom-practice-400-1af3e7043.webp 400w, /assets/generated/img/shows/wisdom-practice-500-1af3e7043.webp 500w" type="image/webp">
   <source sizes="(max-width: 768px) 100px, calc(10vw - 0.5rem)" srcset="/assets/generated/img/shows/wisdom-practice-100-1af3e7043.webp 100w, /assets/generated/img/shows/wisdom-practice-200-1af3e7043.webp 200w, /assets/generated/img/shows/wisdom-practice-300-1af3e7043.webp 300w, /assets/generated/img/shows/wisdom-practice-400-1af3e7043.webp 400w, /assets/generated/img/shows/wisdom-practice-500-1af3e7043.webp 500w" type="image/webp">
-  <img src="/assets/generated/img/shows/wisdom-practice-400-1af3e7043.webp" alt="Logo for Wisdom and Practice - Simran Jeet Singh" width="500" height="500">
+  <img loading="lazy" src="/assets/generated/img/shows/wisdom-practice-400-1af3e7043.webp" alt="Logo for Wisdom and Practice - Simran Jeet Singh" width="500" height="500">
 </picture>
 
 </figure>
@@ -1080,7 +1090,7 @@ Supporters</button>
       Jocelyn Gonzales, Executive Producer PRX Production<picture>
   <source sizes="(max-width: 768px) 300px, calc(100vw - 8rem)" srcset="/assets/generated/img/staff/jocelyn-250-fabc5323c.webp 250w, /assets/generated/img/staff/jocelyn-300-fabc5323c.webp 300w" type="image/webp">
   <source sizes="(max-width: 768px) 300px, calc(100vw - 8rem)" srcset="/assets/generated/img/staff/jocelyn-250-fabc5323c.webp 250w, /assets/generated/img/staff/jocelyn-300-fabc5323c.webp 300w" type="image/webp">
-  <img src="/assets/generated/img/staff/jocelyn-300-fabc5323c.webp" alt="Photo of Jocelyn Gonzales, Executive Producer PRX Production" width="300" height="300">
+  <img loading="lazy" src="/assets/generated/img/staff/jocelyn-300-fabc5323c.webp" alt="Photo of Jocelyn Gonzales, Executive Producer PRX Production" width="300" height="300">
 </picture>
 </span></prx-audio-quote>
 </div>
@@ -1154,7 +1164,7 @@ Supporters</button>
       Gabe Wardell, Content Strategist & Summit attendee<picture>
   <source sizes="(max-width: 768px) 300px, calc(100vw - 8rem)" srcset="/assets/generated/img/staff/gabe-250-fccb4a3ea.webp 250w, /assets/generated/img/staff/gabe-300-fccb4a3ea.webp 300w" type="image/webp">
   <source sizes="(max-width: 768px) 300px, calc(100vw - 8rem)" srcset="/assets/generated/img/staff/gabe-250-434a2bf22.jpg 250w, /assets/generated/img/staff/gabe-300-434a2bf22.jpg 300w" type="image/jpeg">
-  <img src="/assets/generated/img/staff/gabe-300-434a2bf22.jpg" alt="Photo of Gabe Wardell, Content Strategist & Summit attendee" width="300" height="300">
+  <img loading="lazy" src="/assets/generated/img/staff/gabe-300-434a2bf22.jpg" alt="Photo of Gabe Wardell, Content Strategist & Summit attendee" width="300" height="300">
 </picture>
 </span></prx-audio-quote>
 </div>
@@ -1172,7 +1182,7 @@ Supporters</button>
       Stephanie Kuo, PRX VP of Content<picture>
   <source sizes="(max-width: 768px) 300px, calc(100vw - 8rem)" srcset="/assets/generated/img/staff/steph-250-b83d92e13.webp 250w, /assets/generated/img/staff/steph-300-b83d92e13.webp 300w" type="image/webp">
   <source sizes="(max-width: 768px) 300px, calc(100vw - 8rem)" srcset="/assets/generated/img/staff/steph-250-b83d92e13.webp 250w, /assets/generated/img/staff/steph-300-b83d92e13.webp 300w" type="image/webp">
-  <img src="/assets/generated/img/staff/steph-300-b83d92e13.webp" alt="Photo of Stephanie Kuo, PRX VP of Content" width="300" height="300">
+  <img loading="lazy" src="/assets/generated/img/staff/steph-300-b83d92e13.webp" alt="Photo of Stephanie Kuo, PRX VP of Content" width="300" height="300">
 </picture>
 </span></prx-audio-quote>
 </div>
@@ -1187,9 +1197,9 @@ Supporters</button>
           <a href="#carousel__slide1"
            class="carousel__slide-link" aria-label="Go to slide 1"></a>
           <picture>
-  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day1_1-200-96ecce830.webp 200w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-300-96ecce830.webp 300w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-400-96ecce830.webp 400w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-500-96ecce830.webp 500w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-600-96ecce830.webp 600w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-700-96ecce830.webp 700w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-800-96ecce830.webp 800w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-900-96ecce830.webp 900w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-1000-96ecce830.webp 1000w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-1200-96ecce830.webp 1200w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-1600-96ecce830.webp 1600w" type="image/webp">
-  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day1_1-200-422d6f68f.jpg 200w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-300-422d6f68f.jpg 300w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-400-422d6f68f.jpg 400w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-500-422d6f68f.jpg 500w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-600-422d6f68f.jpg 600w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-700-422d6f68f.jpg 700w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-800-422d6f68f.jpg 800w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-900-422d6f68f.jpg 900w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-1000-422d6f68f.jpg 1000w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-1200-422d6f68f.jpg 1200w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-1600-422d6f68f.jpg 1600w" type="image/jpeg">
-  <img src="/assets/generated/img/content/atx/ATXPodcast_Day1_1-500-422d6f68f.jpg" alt="A Black woman with glasses and red earrings (Nikki DaVaughn), Latino man with a hat (Mando Rayo), white woman with glasses and blonde hair (Eleanor Klibanoff) and a white woman with glasses and short hair (Elizabeth McQueen) sit on a panel in front of a projection of their names and images" width="3000" height="2000">
+  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day1_1-200-d780bc4a9.webp 200w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-300-d780bc4a9.webp 300w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-400-d780bc4a9.webp 400w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-500-d780bc4a9.webp 500w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-600-d780bc4a9.webp 600w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-700-d780bc4a9.webp 700w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-800-d780bc4a9.webp 800w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-900-d780bc4a9.webp 900w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-1000-d780bc4a9.webp 1000w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-1200-d780bc4a9.webp 1200w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-1600-d780bc4a9.webp 1600w" type="image/webp">
+  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day1_1-200-d529f93d8.jpg 200w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-300-d529f93d8.jpg 300w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-400-d529f93d8.jpg 400w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-500-d529f93d8.jpg 500w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-600-d529f93d8.jpg 600w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-700-d529f93d8.jpg 700w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-800-d529f93d8.jpg 800w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-900-d529f93d8.jpg 900w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-1000-d529f93d8.jpg 1000w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-1200-d529f93d8.jpg 1200w, /assets/generated/img/content/atx/ATXPodcast_Day1_1-1600-d529f93d8.jpg 1600w" type="image/jpeg">
+  <img loading="lazy" src="/assets/generated/img/content/atx/ATXPodcast_Day1_1-500-d529f93d8.jpg" alt="A Black woman with glasses and red earrings (Nikki DaVaughn), Latino man with a hat (Mando Rayo), white woman with glasses and blonde hair (Eleanor Klibanoff) and a white woman with glasses and short hair (Elizabeth McQueen) sit on a panel in front of a projection of their names and images" width="3000" height="2000">
 </picture>
 
       </li>
@@ -1200,9 +1210,9 @@ Supporters</button>
           <a href="#carousel__slide2"
            class="carousel__slide-link" aria-label="Go to slide 2"></a>
           <picture>
-  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day1_2-200-eee28a06c.webp 200w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-300-eee28a06c.webp 300w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-400-eee28a06c.webp 400w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-500-eee28a06c.webp 500w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-600-eee28a06c.webp 600w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-700-eee28a06c.webp 700w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-800-eee28a06c.webp 800w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-900-eee28a06c.webp 900w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-1000-eee28a06c.webp 1000w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-1200-eee28a06c.webp 1200w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-1600-eee28a06c.webp 1600w" type="image/webp">
-  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day1_2-200-730ccb580.jpg 200w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-300-730ccb580.jpg 300w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-400-730ccb580.jpg 400w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-500-730ccb580.jpg 500w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-600-730ccb580.jpg 600w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-700-730ccb580.jpg 700w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-800-730ccb580.jpg 800w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-900-730ccb580.jpg 900w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-1000-730ccb580.jpg 1000w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-1200-730ccb580.jpg 1200w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-1600-730ccb580.jpg 1600w" type="image/jpeg">
-  <img src="/assets/generated/img/content/atx/ATXPodcast_Day1_2-500-730ccb580.jpg" alt="A woman with dark hair and a red shirt speaks into a microphone while sitting" width="3000" height="2000">
+  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day1_2-200-1453b7889.webp 200w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-300-1453b7889.webp 300w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-400-1453b7889.webp 400w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-500-1453b7889.webp 500w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-600-1453b7889.webp 600w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-700-1453b7889.webp 700w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-800-1453b7889.webp 800w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-900-1453b7889.webp 900w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-1000-1453b7889.webp 1000w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-1200-1453b7889.webp 1200w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-1600-1453b7889.webp 1600w" type="image/webp">
+  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day1_2-200-fbf409532.jpg 200w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-300-fbf409532.jpg 300w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-400-fbf409532.jpg 400w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-500-fbf409532.jpg 500w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-600-fbf409532.jpg 600w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-700-fbf409532.jpg 700w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-800-fbf409532.jpg 800w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-900-fbf409532.jpg 900w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-1000-fbf409532.jpg 1000w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-1200-fbf409532.jpg 1200w, /assets/generated/img/content/atx/ATXPodcast_Day1_2-1600-fbf409532.jpg 1600w" type="image/jpeg">
+  <img loading="lazy" src="/assets/generated/img/content/atx/ATXPodcast_Day1_2-500-fbf409532.jpg" alt="A woman with dark hair and a red shirt speaks into a microphone while sitting" width="3000" height="2000">
 </picture>
 
       </li>
@@ -1213,9 +1223,9 @@ Supporters</button>
           <a href="#carousel__slide3"
            class="carousel__slide-link" aria-label="Go to slide 3"></a>
           <picture>
-  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day1_3-200-2b887406f.webp 200w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-300-2b887406f.webp 300w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-400-2b887406f.webp 400w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-500-2b887406f.webp 500w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-600-2b887406f.webp 600w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-700-2b887406f.webp 700w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-800-2b887406f.webp 800w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-900-2b887406f.webp 900w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-1000-2b887406f.webp 1000w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-1200-2b887406f.webp 1200w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-1600-2b887406f.webp 1600w" type="image/webp">
-  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day1_3-200-7385f5630.jpg 200w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-300-7385f5630.jpg 300w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-400-7385f5630.jpg 400w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-500-7385f5630.jpg 500w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-600-7385f5630.jpg 600w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-700-7385f5630.jpg 700w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-800-7385f5630.jpg 800w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-900-7385f5630.jpg 900w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-1000-7385f5630.jpg 1000w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-1200-7385f5630.jpg 1200w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-1600-7385f5630.jpg 1600w" type="image/jpeg">
-  <img src="/assets/generated/img/content/atx/ATXPodcast_Day1_3-500-7385f5630.jpg" alt="A Latino man with a hat and a Black man with short hair and a beard hold their phones together, standing in front of a projection of reading 'Meet with Mentors'" width="3000" height="2000">
+  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day1_3-200-fa00bbc7e.webp 200w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-300-fa00bbc7e.webp 300w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-400-fa00bbc7e.webp 400w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-500-fa00bbc7e.webp 500w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-600-fa00bbc7e.webp 600w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-700-fa00bbc7e.webp 700w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-800-fa00bbc7e.webp 800w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-900-fa00bbc7e.webp 900w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-1000-fa00bbc7e.webp 1000w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-1200-fa00bbc7e.webp 1200w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-1600-fa00bbc7e.webp 1600w" type="image/webp">
+  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day1_3-200-70cd12ef0.jpg 200w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-300-70cd12ef0.jpg 300w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-400-70cd12ef0.jpg 400w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-500-70cd12ef0.jpg 500w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-600-70cd12ef0.jpg 600w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-700-70cd12ef0.jpg 700w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-800-70cd12ef0.jpg 800w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-900-70cd12ef0.jpg 900w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-1000-70cd12ef0.jpg 1000w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-1200-70cd12ef0.jpg 1200w, /assets/generated/img/content/atx/ATXPodcast_Day1_3-1600-70cd12ef0.jpg 1600w" type="image/jpeg">
+  <img loading="lazy" src="/assets/generated/img/content/atx/ATXPodcast_Day1_3-500-70cd12ef0.jpg" alt="A Latino man with a hat and a Black man with short hair and a beard hold their phones together, standing in front of a projection of reading 'Meet with Mentors'" width="3000" height="2000">
 </picture>
 
       </li>
@@ -1226,9 +1236,9 @@ Supporters</button>
           <a href="#carousel__slide4"
            class="carousel__slide-link" aria-label="Go to slide 4"></a>
           <picture>
-  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day2_1-200-57d69255b.webp 200w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-300-57d69255b.webp 300w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-400-57d69255b.webp 400w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-500-57d69255b.webp 500w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-600-57d69255b.webp 600w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-700-57d69255b.webp 700w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-800-57d69255b.webp 800w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-900-57d69255b.webp 900w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-1000-57d69255b.webp 1000w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-1200-57d69255b.webp 1200w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-1600-57d69255b.webp 1600w" type="image/webp">
-  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day2_1-200-f4d62947d.jpg 200w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-300-f4d62947d.jpg 300w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-400-f4d62947d.jpg 400w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-500-f4d62947d.jpg 500w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-600-f4d62947d.jpg 600w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-700-f4d62947d.jpg 700w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-800-f4d62947d.jpg 800w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-900-f4d62947d.jpg 900w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-1000-f4d62947d.jpg 1000w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-1200-f4d62947d.jpg 1200w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-1600-f4d62947d.jpg 1600w" type="image/jpeg">
-  <img src="/assets/generated/img/content/atx/ATXPodcast_Day2_1-500-f4d62947d.jpg" alt="On a panel of speakers, a Black woman in a black top smiles and gestures towards a laughing white man in a blue shirt. A white woman in a mask sits next to her." width="3000" height="2000">
+  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day2_1-200-8922cd90e.webp 200w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-300-8922cd90e.webp 300w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-400-8922cd90e.webp 400w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-500-8922cd90e.webp 500w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-600-8922cd90e.webp 600w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-700-8922cd90e.webp 700w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-800-8922cd90e.webp 800w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-900-8922cd90e.webp 900w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-1000-8922cd90e.webp 1000w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-1200-8922cd90e.webp 1200w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-1600-8922cd90e.webp 1600w" type="image/webp">
+  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day2_1-200-e97dcf9b6.jpg 200w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-300-e97dcf9b6.jpg 300w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-400-e97dcf9b6.jpg 400w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-500-e97dcf9b6.jpg 500w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-600-e97dcf9b6.jpg 600w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-700-e97dcf9b6.jpg 700w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-800-e97dcf9b6.jpg 800w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-900-e97dcf9b6.jpg 900w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-1000-e97dcf9b6.jpg 1000w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-1200-e97dcf9b6.jpg 1200w, /assets/generated/img/content/atx/ATXPodcast_Day2_1-1600-e97dcf9b6.jpg 1600w" type="image/jpeg">
+  <img loading="lazy" src="/assets/generated/img/content/atx/ATXPodcast_Day2_1-500-e97dcf9b6.jpg" alt="On a panel of speakers, a Black woman in a black top smiles and gestures towards a laughing white man in a blue shirt. A white woman in a mask sits next to her." width="3000" height="2000">
 </picture>
 
       </li>
@@ -1239,9 +1249,9 @@ Supporters</button>
           <a href="#carousel__slide5"
            class="carousel__slide-link" aria-label="Go to slide 5"></a>
           <picture>
-  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day2_2-200-93d42e563.webp 200w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-300-93d42e563.webp 300w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-400-93d42e563.webp 400w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-500-93d42e563.webp 500w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-600-93d42e563.webp 600w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-700-93d42e563.webp 700w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-800-93d42e563.webp 800w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-900-93d42e563.webp 900w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-1000-93d42e563.webp 1000w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-1200-93d42e563.webp 1200w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-1600-93d42e563.webp 1600w" type="image/webp">
-  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day2_2-200-3d08c0107.jpg 200w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-300-3d08c0107.jpg 300w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-400-3d08c0107.jpg 400w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-500-3d08c0107.jpg 500w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-600-3d08c0107.jpg 600w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-700-3d08c0107.jpg 700w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-800-3d08c0107.jpg 800w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-900-3d08c0107.jpg 900w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-1000-3d08c0107.jpg 1000w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-1200-3d08c0107.jpg 1200w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-1600-3d08c0107.jpg 1600w" type="image/jpeg">
-  <img src="/assets/generated/img/content/atx/ATXPodcast_Day2_2-500-3d08c0107.jpg" alt="On a panel of speakers, a white man in glasses gestures as he speaks toward two other men in the foreground" width="3000" height="2000">
+  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day2_2-200-1ce7365c2.webp 200w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-300-1ce7365c2.webp 300w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-400-1ce7365c2.webp 400w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-500-1ce7365c2.webp 500w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-600-1ce7365c2.webp 600w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-700-1ce7365c2.webp 700w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-800-1ce7365c2.webp 800w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-900-1ce7365c2.webp 900w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-1000-1ce7365c2.webp 1000w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-1200-1ce7365c2.webp 1200w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-1600-1ce7365c2.webp 1600w" type="image/webp">
+  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day2_2-200-ca7086f47.jpg 200w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-300-ca7086f47.jpg 300w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-400-ca7086f47.jpg 400w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-500-ca7086f47.jpg 500w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-600-ca7086f47.jpg 600w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-700-ca7086f47.jpg 700w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-800-ca7086f47.jpg 800w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-900-ca7086f47.jpg 900w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-1000-ca7086f47.jpg 1000w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-1200-ca7086f47.jpg 1200w, /assets/generated/img/content/atx/ATXPodcast_Day2_2-1600-ca7086f47.jpg 1600w" type="image/jpeg">
+  <img loading="lazy" src="/assets/generated/img/content/atx/ATXPodcast_Day2_2-500-ca7086f47.jpg" alt="On a panel of speakers, a white man in glasses gestures as he speaks toward two other men in the foreground" width="3000" height="2000">
 </picture>
 
       </li>
@@ -1252,9 +1262,9 @@ Supporters</button>
           <a href="#carousel__slide6"
            class="carousel__slide-link" aria-label="Go to slide 6"></a>
           <picture>
-  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day2_3-200-c7da58281.webp 200w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-300-c7da58281.webp 300w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-400-c7da58281.webp 400w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-500-c7da58281.webp 500w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-600-c7da58281.webp 600w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-700-c7da58281.webp 700w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-800-c7da58281.webp 800w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-900-c7da58281.webp 900w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-1000-c7da58281.webp 1000w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-1200-c7da58281.webp 1200w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-1600-c7da58281.webp 1600w" type="image/webp">
-  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day2_3-200-47346e614.jpg 200w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-300-47346e614.jpg 300w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-400-47346e614.jpg 400w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-500-47346e614.jpg 500w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-600-47346e614.jpg 600w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-700-47346e614.jpg 700w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-800-47346e614.jpg 800w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-900-47346e614.jpg 900w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-1000-47346e614.jpg 1000w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-1200-47346e614.jpg 1200w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-1600-47346e614.jpg 1600w" type="image/jpeg">
-  <img src="/assets/generated/img/content/atx/ATXPodcast_Day2_3-500-47346e614.jpg" alt="On a panel of spakers, a Black woman in a Black dress (Amira Rose Davis), a white man with green hair (Landon Cotham) and a Latino man in a white shirt (Juan Garcia) sit looking toward a Black man in a white shirt who is speaking. The screen projection behind them reads 'more than a game.'" width="3000" height="2000">
+  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day2_3-200-37891ddd0.webp 200w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-300-37891ddd0.webp 300w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-400-37891ddd0.webp 400w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-500-37891ddd0.webp 500w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-600-37891ddd0.webp 600w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-700-37891ddd0.webp 700w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-800-37891ddd0.webp 800w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-900-37891ddd0.webp 900w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-1000-37891ddd0.webp 1000w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-1200-37891ddd0.webp 1200w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-1600-37891ddd0.webp 1600w" type="image/webp">
+  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day2_3-200-9be3fd6c4.jpg 200w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-300-9be3fd6c4.jpg 300w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-400-9be3fd6c4.jpg 400w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-500-9be3fd6c4.jpg 500w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-600-9be3fd6c4.jpg 600w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-700-9be3fd6c4.jpg 700w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-800-9be3fd6c4.jpg 800w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-900-9be3fd6c4.jpg 900w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-1000-9be3fd6c4.jpg 1000w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-1200-9be3fd6c4.jpg 1200w, /assets/generated/img/content/atx/ATXPodcast_Day2_3-1600-9be3fd6c4.jpg 1600w" type="image/jpeg">
+  <img loading="lazy" src="/assets/generated/img/content/atx/ATXPodcast_Day2_3-500-9be3fd6c4.jpg" alt="On a panel of spakers, a Black woman in a Black dress (Amira Rose Davis), a white man with green hair (Landon Cotham) and a Latino man in a white shirt (Juan Garcia) sit looking toward a Black man in a white shirt who is speaking. The screen projection behind them reads 'more than a game.'" width="3000" height="2000">
 </picture>
 
       </li>
@@ -1265,9 +1275,9 @@ Supporters</button>
           <a href="#carousel__slide7"
            class="carousel__slide-link" aria-label="Go to slide 7"></a>
           <picture>
-  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day2_4-200-988fedc59.webp 200w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-300-988fedc59.webp 300w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-400-988fedc59.webp 400w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-500-988fedc59.webp 500w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-600-988fedc59.webp 600w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-700-988fedc59.webp 700w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-800-988fedc59.webp 800w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-900-988fedc59.webp 900w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-1000-988fedc59.webp 1000w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-1200-988fedc59.webp 1200w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-1600-988fedc59.webp 1600w" type="image/webp">
-  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day2_4-200-440715dc4.jpg 200w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-300-440715dc4.jpg 300w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-400-440715dc4.jpg 400w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-500-440715dc4.jpg 500w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-600-440715dc4.jpg 600w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-700-440715dc4.jpg 700w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-800-440715dc4.jpg 800w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-900-440715dc4.jpg 900w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-1000-440715dc4.jpg 1000w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-1200-440715dc4.jpg 1200w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-1600-440715dc4.jpg 1600w" type="image/jpeg">
-  <img src="/assets/generated/img/content/atx/ATXPodcast_Day2_4-500-440715dc4.jpg" alt="A white man with tatoos on his arm wearing a black and white shirt gestures as he sits on the arm of a couch. In the forground a white woman with a laptop and a hat looks toward him." width="3000" height="2000">
+  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day2_4-200-df3629d22.webp 200w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-300-df3629d22.webp 300w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-400-df3629d22.webp 400w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-500-df3629d22.webp 500w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-600-df3629d22.webp 600w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-700-df3629d22.webp 700w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-800-df3629d22.webp 800w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-900-df3629d22.webp 900w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-1000-df3629d22.webp 1000w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-1200-df3629d22.webp 1200w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-1600-df3629d22.webp 1600w" type="image/webp">
+  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day2_4-200-58f81b0a5.jpg 200w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-300-58f81b0a5.jpg 300w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-400-58f81b0a5.jpg 400w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-500-58f81b0a5.jpg 500w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-600-58f81b0a5.jpg 600w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-700-58f81b0a5.jpg 700w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-800-58f81b0a5.jpg 800w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-900-58f81b0a5.jpg 900w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-1000-58f81b0a5.jpg 1000w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-1200-58f81b0a5.jpg 1200w, /assets/generated/img/content/atx/ATXPodcast_Day2_4-1600-58f81b0a5.jpg 1600w" type="image/jpeg">
+  <img loading="lazy" src="/assets/generated/img/content/atx/ATXPodcast_Day2_4-500-58f81b0a5.jpg" alt="A white man with tatoos on his arm wearing a black and white shirt gestures as he sits on the arm of a couch. In the forground a white woman with a laptop and a hat looks toward him." width="3000" height="2000">
 </picture>
 
       </li>
@@ -1278,9 +1288,9 @@ Supporters</button>
           <a href="#carousel__slide8"
            class="carousel__slide-link" aria-label="Go to slide 8"></a>
           <picture>
-  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day2_5-200-8cdc761fc.webp 200w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-300-8cdc761fc.webp 300w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-400-8cdc761fc.webp 400w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-500-8cdc761fc.webp 500w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-600-8cdc761fc.webp 600w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-700-8cdc761fc.webp 700w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-800-8cdc761fc.webp 800w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-900-8cdc761fc.webp 900w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-1000-8cdc761fc.webp 1000w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-1200-8cdc761fc.webp 1200w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-1600-8cdc761fc.webp 1600w" type="image/webp">
-  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day2_5-200-521d8532b.jpg 200w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-300-521d8532b.jpg 300w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-400-521d8532b.jpg 400w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-500-521d8532b.jpg 500w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-600-521d8532b.jpg 600w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-700-521d8532b.jpg 700w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-800-521d8532b.jpg 800w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-900-521d8532b.jpg 900w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-1000-521d8532b.jpg 1000w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-1200-521d8532b.jpg 1200w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-1600-521d8532b.jpg 1600w" type="image/jpeg">
-  <img src="/assets/generated/img/content/atx/ATXPodcast_Day2_5-500-521d8532b.jpg" alt="A group of seven people sit around a long table with laptops, water bottles and disposable cups." width="3000" height="2000">
+  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day2_5-200-5219a2ad5.webp 200w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-300-5219a2ad5.webp 300w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-400-5219a2ad5.webp 400w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-500-5219a2ad5.webp 500w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-600-5219a2ad5.webp 600w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-700-5219a2ad5.webp 700w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-800-5219a2ad5.webp 800w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-900-5219a2ad5.webp 900w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-1000-5219a2ad5.webp 1000w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-1200-5219a2ad5.webp 1200w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-1600-5219a2ad5.webp 1600w" type="image/webp">
+  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day2_5-200-261431153.jpg 200w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-300-261431153.jpg 300w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-400-261431153.jpg 400w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-500-261431153.jpg 500w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-600-261431153.jpg 600w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-700-261431153.jpg 700w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-800-261431153.jpg 800w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-900-261431153.jpg 900w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-1000-261431153.jpg 1000w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-1200-261431153.jpg 1200w, /assets/generated/img/content/atx/ATXPodcast_Day2_5-1600-261431153.jpg 1600w" type="image/jpeg">
+  <img loading="lazy" src="/assets/generated/img/content/atx/ATXPodcast_Day2_5-500-261431153.jpg" alt="A group of seven people sit around a long table with laptops, water bottles and disposable cups." width="3000" height="2000">
 </picture>
 
       </li>
@@ -1291,9 +1301,9 @@ Supporters</button>
           <a href="#carousel__slide9"
            class="carousel__slide-link" aria-label="Go to slide 9"></a>
           <picture>
-  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day3_1-200-b32b41658.webp 200w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-300-b32b41658.webp 300w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-400-b32b41658.webp 400w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-500-b32b41658.webp 500w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-600-b32b41658.webp 600w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-700-b32b41658.webp 700w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-800-b32b41658.webp 800w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-900-b32b41658.webp 900w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-1000-b32b41658.webp 1000w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-1200-b32b41658.webp 1200w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-1600-b32b41658.webp 1600w" type="image/webp">
-  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day3_1-200-0d9723fbf.jpg 200w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-300-0d9723fbf.jpg 300w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-400-0d9723fbf.jpg 400w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-500-0d9723fbf.jpg 500w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-600-0d9723fbf.jpg 600w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-700-0d9723fbf.jpg 700w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-800-0d9723fbf.jpg 800w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-900-0d9723fbf.jpg 900w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-1000-0d9723fbf.jpg 1000w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-1200-0d9723fbf.jpg 1200w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-1600-0d9723fbf.jpg 1600w" type="image/jpeg">
-  <img src="/assets/generated/img/content/atx/ATXPodcast_Day3_1-500-0d9723fbf.jpg" alt="A white woman with tatoos on her arms and a pink vest gestures as she speaks in front of a screen." width="3000" height="2000">
+  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day3_1-200-db29e848c.webp 200w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-300-db29e848c.webp 300w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-400-db29e848c.webp 400w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-500-db29e848c.webp 500w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-600-db29e848c.webp 600w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-700-db29e848c.webp 700w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-800-db29e848c.webp 800w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-900-db29e848c.webp 900w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-1000-db29e848c.webp 1000w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-1200-db29e848c.webp 1200w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-1600-db29e848c.webp 1600w" type="image/webp">
+  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day3_1-200-cdf34a8c5.jpg 200w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-300-cdf34a8c5.jpg 300w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-400-cdf34a8c5.jpg 400w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-500-cdf34a8c5.jpg 500w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-600-cdf34a8c5.jpg 600w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-700-cdf34a8c5.jpg 700w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-800-cdf34a8c5.jpg 800w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-900-cdf34a8c5.jpg 900w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-1000-cdf34a8c5.jpg 1000w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-1200-cdf34a8c5.jpg 1200w, /assets/generated/img/content/atx/ATXPodcast_Day3_1-1600-cdf34a8c5.jpg 1600w" type="image/jpeg">
+  <img loading="lazy" src="/assets/generated/img/content/atx/ATXPodcast_Day3_1-500-cdf34a8c5.jpg" alt="A white woman with tatoos on her arms and a pink vest gestures as she speaks in front of a screen." width="3000" height="2000">
 </picture>
 
       </li>
@@ -1304,9 +1314,9 @@ Supporters</button>
           <a href="#carousel__slide10"
            class="carousel__slide-link" aria-label="Go to slide 10"></a>
           <picture>
-  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day3_2-200-5225612bd.webp 200w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-300-5225612bd.webp 300w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-400-5225612bd.webp 400w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-500-5225612bd.webp 500w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-600-5225612bd.webp 600w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-700-5225612bd.webp 700w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-800-5225612bd.webp 800w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-900-5225612bd.webp 900w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-1000-5225612bd.webp 1000w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-1200-5225612bd.webp 1200w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-1600-5225612bd.webp 1600w" type="image/webp">
-  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day3_2-200-b8c95d920.jpg 200w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-300-b8c95d920.jpg 300w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-400-b8c95d920.jpg 400w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-500-b8c95d920.jpg 500w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-600-b8c95d920.jpg 600w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-700-b8c95d920.jpg 700w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-800-b8c95d920.jpg 800w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-900-b8c95d920.jpg 900w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-1000-b8c95d920.jpg 1000w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-1200-b8c95d920.jpg 1200w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-1600-b8c95d920.jpg 1600w" type="image/jpeg">
-  <img src="/assets/generated/img/content/atx/ATXPodcast_Day3_2-500-b8c95d920.jpg" alt="An East Asian woman with long hair in a ponytail and a black jacket stands in front of a screen projecting a timetable of events" width="3000" height="2000">
+  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day3_2-200-e11c61320.webp 200w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-300-e11c61320.webp 300w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-400-e11c61320.webp 400w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-500-e11c61320.webp 500w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-600-e11c61320.webp 600w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-700-e11c61320.webp 700w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-800-e11c61320.webp 800w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-900-e11c61320.webp 900w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-1000-e11c61320.webp 1000w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-1200-e11c61320.webp 1200w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-1600-e11c61320.webp 1600w" type="image/webp">
+  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day3_2-200-81b035f5e.jpg 200w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-300-81b035f5e.jpg 300w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-400-81b035f5e.jpg 400w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-500-81b035f5e.jpg 500w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-600-81b035f5e.jpg 600w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-700-81b035f5e.jpg 700w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-800-81b035f5e.jpg 800w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-900-81b035f5e.jpg 900w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-1000-81b035f5e.jpg 1000w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-1200-81b035f5e.jpg 1200w, /assets/generated/img/content/atx/ATXPodcast_Day3_2-1600-81b035f5e.jpg 1600w" type="image/jpeg">
+  <img loading="lazy" src="/assets/generated/img/content/atx/ATXPodcast_Day3_2-500-81b035f5e.jpg" alt="An East Asian woman with long hair in a ponytail and a black jacket stands in front of a screen projecting a timetable of events" width="3000" height="2000">
 </picture>
 
       </li>
@@ -1317,9 +1327,9 @@ Supporters</button>
           <a href="#carousel__slide11"
            class="carousel__slide-link" aria-label="Go to slide 11"></a>
           <picture>
-  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day3_3-200-90725aa79.webp 200w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-300-90725aa79.webp 300w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-400-90725aa79.webp 400w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-500-90725aa79.webp 500w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-600-90725aa79.webp 600w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-700-90725aa79.webp 700w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-800-90725aa79.webp 800w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-900-90725aa79.webp 900w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-1000-90725aa79.webp 1000w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-1200-90725aa79.webp 1200w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-1600-90725aa79.webp 1600w" type="image/webp">
-  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day3_3-200-6aead61f5.jpg 200w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-300-6aead61f5.jpg 300w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-400-6aead61f5.jpg 400w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-500-6aead61f5.jpg 500w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-600-6aead61f5.jpg 600w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-700-6aead61f5.jpg 700w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-800-6aead61f5.jpg 800w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-900-6aead61f5.jpg 900w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-1000-6aead61f5.jpg 1000w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-1200-6aead61f5.jpg 1200w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-1600-6aead61f5.jpg 1600w" type="image/jpeg">
-  <img src="/assets/generated/img/content/atx/ATXPodcast_Day3_3-500-6aead61f5.jpg" alt="A white man with a mustache wearing an apron speaks toward a seated audience in front of a screen projection of his image." width="3000" height="2000">
+  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day3_3-200-85b83cd30.webp 200w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-300-85b83cd30.webp 300w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-400-85b83cd30.webp 400w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-500-85b83cd30.webp 500w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-600-85b83cd30.webp 600w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-700-85b83cd30.webp 700w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-800-85b83cd30.webp 800w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-900-85b83cd30.webp 900w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-1000-85b83cd30.webp 1000w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-1200-85b83cd30.webp 1200w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-1600-85b83cd30.webp 1600w" type="image/webp">
+  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx/ATXPodcast_Day3_3-200-c6a0af9d1.jpg 200w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-300-c6a0af9d1.jpg 300w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-400-c6a0af9d1.jpg 400w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-500-c6a0af9d1.jpg 500w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-600-c6a0af9d1.jpg 600w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-700-c6a0af9d1.jpg 700w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-800-c6a0af9d1.jpg 800w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-900-c6a0af9d1.jpg 900w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-1000-c6a0af9d1.jpg 1000w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-1200-c6a0af9d1.jpg 1200w, /assets/generated/img/content/atx/ATXPodcast_Day3_3-1600-c6a0af9d1.jpg 1600w" type="image/jpeg">
+  <img loading="lazy" src="/assets/generated/img/content/atx/ATXPodcast_Day3_3-500-c6a0af9d1.jpg" alt="A white man with a mustache wearing an apron speaks toward a seated audience in front of a screen projection of his image." width="3000" height="2000">
 </picture>
 
       </li>
@@ -1396,7 +1406,7 @@ Supporters</button>
     <picture>
   <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/design-thinking-200-ce05be812.webp 200w, /assets/generated/img/content/design-thinking-300-ce05be812.webp 300w, /assets/generated/img/content/design-thinking-400-ce05be812.webp 400w, /assets/generated/img/content/design-thinking-500-ce05be812.webp 500w, /assets/generated/img/content/design-thinking-600-ce05be812.webp 600w, /assets/generated/img/content/design-thinking-700-ce05be812.webp 700w, /assets/generated/img/content/design-thinking-800-ce05be812.webp 800w, /assets/generated/img/content/design-thinking-900-ce05be812.webp 900w, /assets/generated/img/content/design-thinking-1000-ce05be812.webp 1000w, /assets/generated/img/content/design-thinking-1200-ce05be812.webp 1200w, /assets/generated/img/content/design-thinking-1600-ce05be812.webp 1600w" type="image/webp">
   <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/design-thinking-200-a9fb0db38.jpg 200w, /assets/generated/img/content/design-thinking-300-a9fb0db38.jpg 300w, /assets/generated/img/content/design-thinking-400-a9fb0db38.jpg 400w, /assets/generated/img/content/design-thinking-500-a9fb0db38.jpg 500w, /assets/generated/img/content/design-thinking-600-a9fb0db38.jpg 600w, /assets/generated/img/content/design-thinking-700-a9fb0db38.jpg 700w, /assets/generated/img/content/design-thinking-800-a9fb0db38.jpg 800w, /assets/generated/img/content/design-thinking-900-a9fb0db38.jpg 900w, /assets/generated/img/content/design-thinking-1000-a9fb0db38.jpg 1000w, /assets/generated/img/content/design-thinking-1200-a9fb0db38.jpg 1200w, /assets/generated/img/content/design-thinking-1600-a9fb0db38.jpg 1600w" type="image/jpeg">
-  <img src="/assets/generated/img/content/design-thinking-500-a9fb0db38.jpg" alt="A diverse group of people sits around whiteboard containing sticky notes as one member talks" width="5712" height="4284">
+  <img loading="lazy" src="/assets/generated/img/content/design-thinking-500-a9fb0db38.jpg" alt="A diverse group of people sits around whiteboard containing sticky notes as one member talks" width="5712" height="4284">
 </picture>
 
   </figure><div class="content-wrapper violet">
@@ -1427,7 +1437,7 @@ Supporters</button>
       Andrew Kuklewicz, PRX CTO<picture>
   <source sizes="(max-width: 768px) 300px, calc(100vw - 8rem)" srcset="/assets/generated/img/staff/andrew-250-71d82193b.webp 250w, /assets/generated/img/staff/andrew-300-71d82193b.webp 300w" type="image/webp">
   <source sizes="(max-width: 768px) 300px, calc(100vw - 8rem)" srcset="/assets/generated/img/staff/andrew-250-71d82193b.webp 250w, /assets/generated/img/staff/andrew-300-71d82193b.webp 300w" type="image/webp">
-  <img src="/assets/generated/img/staff/andrew-300-71d82193b.webp" alt="Photo of Andrew Kuklewicz, PRX CTO" width="300" height="300">
+  <img loading="lazy" src="/assets/generated/img/staff/andrew-300-71d82193b.webp" alt="Photo of Andrew Kuklewicz, PRX CTO" width="300" height="300">
 </picture>
 </span></prx-audio-quote>
 </div>
@@ -1508,7 +1518,7 @@ Supporters</button>
       Dr. Byron Green, VP IDEA<picture>
   <source sizes="(max-width: 768px) 300px, calc(100vw - 8rem)" srcset="/assets/generated/img/staff/byron-250-427541f8c.webp 250w, /assets/generated/img/staff/byron-300-427541f8c.webp 300w" type="image/webp">
   <source sizes="(max-width: 768px) 300px, calc(100vw - 8rem)" srcset="/assets/generated/img/staff/byron-250-427541f8c.webp 250w, /assets/generated/img/staff/byron-300-427541f8c.webp 300w" type="image/webp">
-  <img src="/assets/generated/img/staff/byron-300-427541f8c.webp" alt="Photo of Dr. Byron Green, VP IDEA" width="300" height="300">
+  <img loading="lazy" src="/assets/generated/img/staff/byron-300-427541f8c.webp" alt="Photo of Dr. Byron Green, VP IDEA" width="300" height="300">
 </picture>
 </span></prx-audio-quote>
 </div>
@@ -1525,9 +1535,9 @@ Supporters</button>
           
             <section class="container content-interlude-image"><figure class="content-interlude-bg">
     <picture>
-  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/ear-hustle-team-200-634a88d60.webp 200w, /assets/generated/img/content/ear-hustle-team-300-634a88d60.webp 300w, /assets/generated/img/content/ear-hustle-team-400-634a88d60.webp 400w, /assets/generated/img/content/ear-hustle-team-500-634a88d60.webp 500w, /assets/generated/img/content/ear-hustle-team-600-634a88d60.webp 600w, /assets/generated/img/content/ear-hustle-team-700-634a88d60.webp 700w, /assets/generated/img/content/ear-hustle-team-800-634a88d60.webp 800w, /assets/generated/img/content/ear-hustle-team-900-634a88d60.webp 900w, /assets/generated/img/content/ear-hustle-team-1000-634a88d60.webp 1000w, /assets/generated/img/content/ear-hustle-team-1200-634a88d60.webp 1200w, /assets/generated/img/content/ear-hustle-team-1518-634a88d60.webp 1518w" type="image/webp">
-  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/ear-hustle-team-200-e3790df3c.jpg 200w, /assets/generated/img/content/ear-hustle-team-300-e3790df3c.jpg 300w, /assets/generated/img/content/ear-hustle-team-400-e3790df3c.jpg 400w, /assets/generated/img/content/ear-hustle-team-500-e3790df3c.jpg 500w, /assets/generated/img/content/ear-hustle-team-600-e3790df3c.jpg 600w, /assets/generated/img/content/ear-hustle-team-700-e3790df3c.jpg 700w, /assets/generated/img/content/ear-hustle-team-800-e3790df3c.jpg 800w, /assets/generated/img/content/ear-hustle-team-900-e3790df3c.jpg 900w, /assets/generated/img/content/ear-hustle-team-1000-e3790df3c.jpg 1000w, /assets/generated/img/content/ear-hustle-team-1200-e3790df3c.jpg 1200w, /assets/generated/img/content/ear-hustle-team-1518-e3790df3c.jpg 1518w" type="image/jpeg">
-  <img src="/assets/generated/img/content/ear-hustle-team-500-e3790df3c.jpg" alt="A diverse group of people pose for a picture in an audio studio" width="1518" height="1148">
+  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/ear-hustle-team-200-3d96364fe.webp 200w, /assets/generated/img/content/ear-hustle-team-300-3d96364fe.webp 300w, /assets/generated/img/content/ear-hustle-team-400-3d96364fe.webp 400w, /assets/generated/img/content/ear-hustle-team-500-3d96364fe.webp 500w, /assets/generated/img/content/ear-hustle-team-600-3d96364fe.webp 600w, /assets/generated/img/content/ear-hustle-team-700-3d96364fe.webp 700w, /assets/generated/img/content/ear-hustle-team-800-3d96364fe.webp 800w, /assets/generated/img/content/ear-hustle-team-900-3d96364fe.webp 900w, /assets/generated/img/content/ear-hustle-team-1000-3d96364fe.webp 1000w, /assets/generated/img/content/ear-hustle-team-1200-3d96364fe.webp 1200w, /assets/generated/img/content/ear-hustle-team-1518-3d96364fe.webp 1518w" type="image/webp">
+  <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/ear-hustle-team-200-54467e188.jpg 200w, /assets/generated/img/content/ear-hustle-team-300-54467e188.jpg 300w, /assets/generated/img/content/ear-hustle-team-400-54467e188.jpg 400w, /assets/generated/img/content/ear-hustle-team-500-54467e188.jpg 500w, /assets/generated/img/content/ear-hustle-team-600-54467e188.jpg 600w, /assets/generated/img/content/ear-hustle-team-700-54467e188.jpg 700w, /assets/generated/img/content/ear-hustle-team-800-54467e188.jpg 800w, /assets/generated/img/content/ear-hustle-team-900-54467e188.jpg 900w, /assets/generated/img/content/ear-hustle-team-1000-54467e188.jpg 1000w, /assets/generated/img/content/ear-hustle-team-1200-54467e188.jpg 1200w, /assets/generated/img/content/ear-hustle-team-1518-54467e188.jpg 1518w" type="image/jpeg">
+  <img loading="lazy" src="/assets/generated/img/content/ear-hustle-team-500-54467e188.jpg" alt="A diverse group of people pose for a picture in an audio studio" width="1518" height="1148">
 </picture>
 
   </figure><div class="content-wrapper teal">
@@ -1561,7 +1571,7 @@ Supporters</button>
       Jason Saldanha, Chief Operating Officer<picture>
   <source sizes="(max-width: 768px) 300px, calc(100vw - 8rem)" srcset="/assets/generated/img/staff/jason-250-0699b553e.webp 250w, /assets/generated/img/staff/jason-300-0699b553e.webp 300w" type="image/webp">
   <source sizes="(max-width: 768px) 300px, calc(100vw - 8rem)" srcset="/assets/generated/img/staff/jason-250-0699b553e.webp 250w, /assets/generated/img/staff/jason-300-0699b553e.webp 300w" type="image/webp">
-  <img src="/assets/generated/img/staff/jason-300-0699b553e.webp" alt="Photo of Jason Saldanha, Chief Operating Officer" width="300" height="300">
+  <img loading="lazy" src="/assets/generated/img/staff/jason-300-0699b553e.webp" alt="Photo of Jason Saldanha, Chief Operating Officer" width="300" height="300">
 </picture>
 </span></prx-audio-quote>
 </div>
@@ -1579,7 +1589,7 @@ Supporters</button>
       Stephanie Kuo, VP Content<picture>
   <source sizes="(max-width: 768px) 300px, calc(100vw - 8rem)" srcset="/assets/generated/img/staff/steph-250-b83d92e13.webp 250w, /assets/generated/img/staff/steph-300-b83d92e13.webp 300w" type="image/webp">
   <source sizes="(max-width: 768px) 300px, calc(100vw - 8rem)" srcset="/assets/generated/img/staff/steph-250-b83d92e13.webp 250w, /assets/generated/img/staff/steph-300-b83d92e13.webp 300w" type="image/webp">
-  <img src="/assets/generated/img/staff/steph-300-b83d92e13.webp" alt="Photo of Stephanie Kuo, VP Content" width="300" height="300">
+  <img loading="lazy" src="/assets/generated/img/staff/steph-300-b83d92e13.webp" alt="Photo of Stephanie Kuo, VP Content" width="300" height="300">
 </picture>
 </span></prx-audio-quote>
 </div>
@@ -1805,7 +1815,7 @@ Supporters</button>
   <cite class="sc-prx-audio-quote sc-prx-audio-quote-s">
     <span slot="citation">
       Betsy Lehman
-      <picture><source sizes="(max-width: 768px) 300px, calc(100vw - 8rem)" srcset="/assets/generated/img/staff/betsy-250-925690dc1.webp 250w, /assets/generated/img/staff/betsy-300-925690dc1.webp 300w" type="image/webp" /><source sizes="(max-width: 768px) 300px, calc(100vw - 8rem)" srcset="/assets/generated/img/staff/betsy-250-39c8a909d.jpg 250w, /assets/generated/img/staff/betsy-300-39c8a909d.jpg 300w" type="image/jpeg" /><img src="/assets/generated/img/staff/betsy-300-39c8a909d.jpg" alt="Photo of Betsy Lehman" width="300" height="300" /></picture>
+      <picture><source sizes="(max-width: 768px) 300px, calc(100vw - 8rem)" srcset="/assets/generated/img/staff/betsy-250-925690dc1.webp 250w, /assets/generated/img/staff/betsy-300-925690dc1.webp 300w" type="image/webp" /><source sizes="(max-width: 768px) 300px, calc(100vw - 8rem)" srcset="/assets/generated/img/staff/betsy-250-39c8a909d.jpg 250w, /assets/generated/img/staff/betsy-300-39c8a909d.jpg 300w" type="image/jpeg" /><img loading="lazy" src="/assets/generated/img/staff/betsy-300-39c8a909d.jpg" alt="Photo of Betsy Lehman" width="300" height="300" /></picture>
 
     </span>
   </cite>
@@ -2477,7 +2487,7 @@ Supporters</button>
     <picture>
   <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx-podcast-day-200-15d63f453.webp 200w, /assets/generated/img/content/atx-podcast-day-300-15d63f453.webp 300w, /assets/generated/img/content/atx-podcast-day-400-15d63f453.webp 400w, /assets/generated/img/content/atx-podcast-day-500-15d63f453.webp 500w, /assets/generated/img/content/atx-podcast-day-600-15d63f453.webp 600w, /assets/generated/img/content/atx-podcast-day-700-15d63f453.webp 700w, /assets/generated/img/content/atx-podcast-day-800-15d63f453.webp 800w, /assets/generated/img/content/atx-podcast-day-900-15d63f453.webp 900w, /assets/generated/img/content/atx-podcast-day-1000-15d63f453.webp 1000w, /assets/generated/img/content/atx-podcast-day-1200-15d63f453.webp 1200w, /assets/generated/img/content/atx-podcast-day-1600-15d63f453.webp 1600w" type="image/webp">
   <source sizes="(min-width: 1201px) 1600px, 100vw" srcset="/assets/generated/img/content/atx-podcast-day-200-dda159fb9.jpg 200w, /assets/generated/img/content/atx-podcast-day-300-dda159fb9.jpg 300w, /assets/generated/img/content/atx-podcast-day-400-dda159fb9.jpg 400w, /assets/generated/img/content/atx-podcast-day-500-dda159fb9.jpg 500w, /assets/generated/img/content/atx-podcast-day-600-dda159fb9.jpg 600w, /assets/generated/img/content/atx-podcast-day-700-dda159fb9.jpg 700w, /assets/generated/img/content/atx-podcast-day-800-dda159fb9.jpg 800w, /assets/generated/img/content/atx-podcast-day-900-dda159fb9.jpg 900w, /assets/generated/img/content/atx-podcast-day-1000-dda159fb9.jpg 1000w, /assets/generated/img/content/atx-podcast-day-1200-dda159fb9.jpg 1200w, /assets/generated/img/content/atx-podcast-day-1600-dda159fb9.jpg 1600w" type="image/jpeg">
-  <img src="/assets/generated/img/content/atx-podcast-day-500-dda159fb9.jpg" alt="a presentation or workshop setting in an auditorium or conference room. Three speakers are seated at a table on stage at the right side, with audience members visible in the foreground seated in rows. The large projection screen displays three sticky notes with different colored borders (red, blue, and green) containing the phrases 'I LIKE,' 'I WISH,' and 'I WONDER WHAT IF' respectively." width="999999" height="999999">
+  <img loading="lazy" src="/assets/generated/img/content/atx-podcast-day-500-dda159fb9.jpg" alt="a presentation or workshop setting in an auditorium or conference room. Three speakers are seated at a table on stage at the right side, with audience members visible in the foreground seated in rows. The large projection screen displays three sticky notes with different colored borders (red, blue, and green) containing the phrases 'I LIKE,' 'I WISH,' and 'I WONDER WHAT IF' respectively." width="999999" height="999999">
 </picture>
 
   </figure><div class="content-wrapper ">
@@ -2555,6 +2565,12 @@ Supporters</button>
     <p>&copy; Copyright 2003-2025 <a href="https://www.prx.org/">PRX</a><br />PRX is a 501(c)(3) organization recognized by the IRS: #263347402.</p><p><a href="https://prx.org/terms-of-service">Terms of Use</a> and <a href="http://exchange.prx.org/privacy-policy">Privacy Policy</a></p>
   </div>
 </footer>
+
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css"></noscript>
+
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script defer src="assets/js/map.js"></script>
 
   </div>
 </body>
