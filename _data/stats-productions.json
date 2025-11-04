@@ -6,11 +6,11 @@
     "color": "orange",
     "positions": [
       {
-        "value": "auto / 1 / span 4 / -1"
+        "value": "auto / 1 / span  / -1"
       },
       {
         "breakpoint": "sm",
-        "value": "1 / 7 / span 4 / -1"
+        "value": "1 / 7 / span 2 / -1"
       }
     ]
   },
@@ -40,7 +40,7 @@
       },
       {
         "breakpoint": "sm",
-        "value": "auto / 1 / span 1 / span 6"
+        "value": "auto / 1 / span 1 / -1"
       }
     ]
   },
@@ -51,7 +51,11 @@
     "color": "navy",
     "positions": [
       {
-        "value": "auto / auto / span 2 / span 6"
+        "value": "auto / auto / auto / span 6"
+      },
+      {
+        "breakpoint": "sm",
+        "value": "3 / 7 / span 2 / -1"
       }
     ]
   }
