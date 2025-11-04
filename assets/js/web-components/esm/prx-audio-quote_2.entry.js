@@ -34,7 +34,8 @@ const PrxAudioQuote = class {
                         fragment.appendChild(span);
                         self.wordSpans.push(span);
                         // Add a space after each word except the last one
-                        if (index < words.length - 1 || node.nextSibling) {
+                        const nextSibling = node.nextSibling || node.parentNode.nextSibling;
+                        if (index < words.length - 1 || nextSibling?.textContent.trim().length && !/^[,.;:]/.test(nextSibling.textContent.trim())) {
                             fragment.appendChild(document.createTextNode(' '));
                         }
                     }
@@ -47,14 +48,14 @@ const PrxAudioQuote = class {
             // If the node is an Element Node, iterate through its children
             // Create a copy of childNodes to avoid issues when modifying the DOM during iteration
             const children = Array.from(node.childNodes);
-            children.forEach(child => this.wrapWordsInSpans(child)); // Recursively call for each child
+            children.forEach(child => { this.wrapWordsInSpans(child); }); // Recursively call for each child
         }
     };
     prepareWordForCompare = (word) => word.replaceAll(/[^\w]/g, '').toLowerCase();
     reset = () => {
         this.audioEl.currentTime = 0;
         this.currentWordIndex = 0;
-        this.wordSpans.forEach((span) => span.classList.remove('heard', 'active'));
+        this.wordSpans.forEach((span) => { span.classList.remove('heard', 'active'); });
     };
     handleCueChange = (e) => {
         const cues = e.target.track.activeCues;
@@ -143,7 +144,7 @@ const PrxAudioQuote = class {
         const { playing, progress, src, transcriptUrl, handlePlayToggleClick, handleRestartClick } = this;
         const hasAudio = !!src?.length;
         const hasTranscript = !!transcriptUrl?.length;
-        return (h(Host, { key: '74f06bf3650cb6aef2d9a475861360c8478f3af7', playing: playing, highlight: hasTranscript, style: { '--prx-audio-quote--progress': `${progress}` } }, h("blockquote", { key: '95b07959051fa81768d6847af828b75de9447c4a' }, h("prx-quote", { key: 'd7873dcf4513ec1cefe25cfac30e25768da9550a' }, h("slot", { key: 'a7a5930c5311c1173a0f6abedca3ca05c9e4a1fe' })), h("cite", { key: '22a9e2ed15e369a373f552461c0412e03d3b5a0d' }, h("slot", { key: '4069a921dbf7bd7696aebd5d06a3bfa619dd1ce3', name: 'citation' })), hasAudio && (h("prx-audio-quote-controls", { key: '98cfa6ba1083002a9c37bc2fb5b16b508a43f11a' }, h("button", { key: 'fe9e35661eef8dd7cccb4b376050b55548d15d95', type: "button", class: "restart-button", onClick: handleRestartClick, "aria-label": "Restart" }), h("button", { key: '708798bd751ab6494bf7e1968b72837ef744b0ed', type: "button", class: "play-button", onClick: handlePlayToggleClick, "aria-label": playing ? 'Pause' : 'Play' }, h("span", { key: 'f3e256f4a18b9fc05c71809b06eaa0ffc1ad6b23', class: "play-icon" })))))));
+        return (h(Host, { key: 'cac4fdda0e220903856671a9f5a6c09d76c75769', playing: playing, highlight: hasTranscript, style: { '--prx-audio-quote--progress': `${progress}` } }, h("blockquote", { key: '5ef7386c58efe26e1a12aacfd6060de694bc068f' }, h("prx-quote", { key: '2e7778385b3bcf1c149071a12eda5570b7460db9' }, h("slot", { key: 'efe4e950976d1b53d92a3361b03a3e18e2321a4f' })), h("cite", { key: '05587e4a9cf31b0dfff482bae3f6ffc54804c6f9' }, h("slot", { key: 'de36fe8a0cd4a9f1f41251473167141dc1ed93e7', name: 'citation' })), hasAudio && (h("prx-audio-quote-controls", { key: '03c6bccb80bfabb996909a830ce6b97aec19fc6c' }, h("button", { key: '007ecc3b88312ef1672e1b8ebc13bf6d75a8e1ee', type: "button", class: "restart-button", onClick: handleRestartClick, "aria-label": "Restart" }), h("button", { key: '4f2905647873481df209c24331a194d08bdf4e67', type: "button", class: "play-button", onClick: handlePlayToggleClick, "aria-label": playing ? 'Pause' : 'Play' }, h("span", { key: 'b05eb4976bf7ac66e2d7c0a913a12f315730ec3b', class: "play-icon" })))))));
     }
 };
 PrxAudioQuote.style = prxAudioQuoteCss;
