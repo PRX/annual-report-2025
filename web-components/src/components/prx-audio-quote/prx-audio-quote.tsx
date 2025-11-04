@@ -48,7 +48,8 @@ export class PrxAudioQuote {
             fragment.appendChild(span);
             self.wordSpans.push(span);
             // Add a space after each word except the last one
-            if (index < words.length - 1 || node.nextSibling) {
+            const nextSibling = node.nextSibling || node.parentNode.nextSibling;
+            if (index < words.length - 1 || nextSibling?.textContent.trim().length && !/^[,.;:]/.test(nextSibling.textContent.trim())) {
               fragment.appendChild(document.createTextNode(' '));
             }
           }
@@ -61,7 +62,7 @@ export class PrxAudioQuote {
       // If the node is an Element Node, iterate through its children
       // Create a copy of childNodes to avoid issues when modifying the DOM during iteration
       const children = Array.from(node.childNodes);
-      children.forEach(child => this.wrapWordsInSpans(child)); // Recursively call for each child
+      children.forEach(child => { this.wrapWordsInSpans(child) }); // Recursively call for each child
     }
   }
 
@@ -70,7 +71,7 @@ export class PrxAudioQuote {
   private reset = () => {
     this.audioEl.currentTime = 0;
     this.currentWordIndex = 0;
-    this.wordSpans.forEach((span) => span.classList.remove('heard', 'active'));
+    this.wordSpans.forEach((span) => { span.classList.remove('heard', 'active') });
   }
 
   private handleCueChange = (e: Event) => {

@@ -9,11 +9,12 @@ color: "red"
 menu-group: "1"
 intro: "<p>PRX Productions, our in-house unit, develops and produces among the most intrepid programs in the podcasting space. This year, our many projects included <a href='https://medium.com/prxofficial/silkroad-and-prx-launch-american-railroad-podcast-hosted-by-rhiannon-giddens-cfecbe629e14'><i>American Railroad</i></a> hosted by acclaimed artist Rhiannon Giddens, which highlights music and voices from the communities that built America’s railway systems, <a href='https://drraychristian.com/the-podcast'><i>What’s Ray Saying</i></a>, a show that  takes a deeper view of Black life in America through personal stories, and <a href='https://newsnetwork.mayoclinic.org/discussion/mayo-clinic-launches-tomorrows-cure-podcast-to-spotlight-medical-innovations-transforming-healthcare/'><i>Tomorrow’s Cure</i></a> from the Mayo Clinic on the future of healthcare.</p>"
 quotes:
-  - text: "“Our production unit is still oriented in that way of — there's a reason to know these things. It makes us better people, better citizens, better humans to have this knowledge. I still think that's a thread that runs through the production unit and is why we choose the projects we choose to work on. If we can't find that service element, at least to please ourselves as producers, we don't want to do it.”"
+  - text: "<p>Our production unit is still oriented in that way of — there's a reason to know these things. You know, it makes us a better people, better citizens, better humans to have this knowledge. I still think that that's a thread that runs through the production unit and is why we choose the projects we choose to work on. If we can't find that service element, at least to please ourselves as producers, like, we don't wanna do it.</p>"
     citation: "Jocelyn Gonzales, Executive Producer PRX Production"
     image: img/staff/jocelyn.webp
     audio:
-      url: https://f.prxu.org/9003/0d03d678-c4a6-4618-934c-93267091017e/8dbacf37-4a3d-49eb-8371-71b0eb0f03f1.mp3
+      url: https://f.prxu.org/9003/8bb290e5-b9de-4f8e-bc43-9c919539267f/28add821-a392-4548-b53f-3d33d7cc202f.mp3
+      transcript: https://f.prxu.org/9003/8bb290e5-b9de-4f8e-bc43-9c919539267f/transcripts/a4e39304-cd1a-4173-9189-e20a84a46f32/IV-Mission-Driven-Production-Jocelyn-Gonzales.vtt
 stats:
   file: stats-productions
   title: "PRX Productions Crafts Compelling Audio"
