@@ -3,11 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const body = document.body;
   const main = document.getElementById('layout-content');
   const navDrawer = document.getElementById('nav-drawer');
+  let isDesktop = window.innerWidth >= 768;
 
   // set initial state
-  const setInitialState = () => {
-    const isMenuOpen = body.dataset.menuOpen === 'true';
-    if (isMenuOpen && window.innerWidth < 768) {
+  const updateMenuState = () => {
+    const isMenuOpen = getIsMenuOpen();
+    if (isMenuOpen && !isDesktop) {
       main.setAttribute('inert', ''); // desktop default open
     } else {
       main.removeAttribute('inert'); // mobile default closed
@@ -22,25 +23,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  function getIsMenuOpen() {
+    return isDesktop ? body.dataset.menuOpen !== 'false' : body.dataset.menuOpen === 'true';
+  }
+
   function handleResize(){
-    setInitialState();
+    isDesktop = window.innerWidth >= 768;
+    updateMenuState();
   };
 
-  setInitialState();
+  updateMenuState();
   window.addEventListener('resize', handleResize);
 
   // toggle handler
   toggleBtn.addEventListener('click', () => {
-    const isOpen = body.getAttribute('data-menu-open') === 'true';
+    const isOpen = getIsMenuOpen();
     const newOpen = !isOpen;
     body.setAttribute('data-menu-open', String(newOpen));
 
-    // update ARIA states
-    if (toggleBtn) {
-      toggleBtn.setAttribute('aria-expanded', String(newOpen));
-    }
-    if (navDrawer) {
-      navDrawer.setAttribute('aria-hidden', String(!newOpen));
-    }
+    updateMenuState();
   });
 });
