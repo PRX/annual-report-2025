@@ -45,13 +45,18 @@
     --prx-audio-quote--word--color--active: #{$yellow};
   }
 
-  cite {
+  cite, cite [slot=citation] {
     display: flex;
     align-items: center;
+    column-gap: 0.25rem;
   }
 
+  picture, img {
+    max-width: unset;
+  }
   img {
     border-radius: 50%;
+    aspect-ratio: 1;
     width: 50px;
     height: auto;
     margin-left: .25rem;
