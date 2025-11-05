@@ -31,7 +31,7 @@
   },
   {
     "heading": "10,000,000",
-    "description": "downloads across this year's PRX Productions portfolio.",
+    "description": "episodes were downloaded across this year's PRX Productions portfolio.",
     "type": "this-year",
     "color": "yellow",
     "positions": [
@@ -46,7 +46,7 @@
   },
   {
     "heading": "15",
-    "description": "subject areas were represented by our expert productions team, including music, business, philosophy, technology, medicine, and family.",
+    "description": "subject areas were represented in our programming, including music, business, philosophy, technology, family, and medicine.",
     "type": "this-year",
     "color": "navy",
     "positions": [

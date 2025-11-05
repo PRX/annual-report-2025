@@ -1,7 +1,7 @@
 [
   {
     "heading": "332,135,476",
-    "description": "downloads across Dovetail-hosted shows",
+    "description": "episodes were downloaded across Dovetail-hosted shows.",
     "type": "this-year",
     "color": "orange",
     "positions": [
@@ -16,7 +16,7 @@
   },
   {
     "heading": "99",
-    "description": "new podcasts added to Dovetail",
+    "description": "new podcasts were added to Dovetail.",
     "type": "this-year",
     "color": "cyan",
     "positions": [
@@ -31,7 +31,7 @@
   },
   {
     "heading": "503,506,765",
-    "description": "paid ad impressions generating revenue for Dovetail users",
+    "description": "paid ad impressions were delivered by Dovetail, generating revenue for Dovetail users.",
     "type": "this-year",
     "color": "yellow",
     "positions": [
@@ -46,7 +46,7 @@
   },
   {
     "heading": "6,087,294,266",
-    "description": "downloads across Dovetail-hosted shows",
+    "description": "episodes have been downloaded across Dovetail-hosted shows.",
     "type": "all-time",
     "color": "orange",
     "positions": [
@@ -61,7 +61,7 @@
   },
   {
     "heading": "614",
-    "description": "podcasts hosted on Dovetail",
+    "description": "podcasts have been hosted on Dovetail.",
     "type": "all-time",
     "color": "cyan",
     "positions": [
@@ -76,7 +76,7 @@
   },
   {
     "heading": "2,471,311,989",
-    "description": "paid ad impressions generating revenue for Dovetail users",
+    "description": "paid ad impressions have been delivered by Dovetail, generating revenue for Dovetail users.",
     "type": "all-time",
     "color": "yellow",
     "positions": [
