@@ -2,7 +2,7 @@
 content-type: "content-interlude"
 color: "red"
 featured-image:
-  url: img/content/carolyn2.jpg
+  url: img/content/carolyn-beeler-resize.jpg
   alt: "Carolyn Beeler, a redheaded woman wearing headphones, speaks into a recording studio microphone"
 ---
 

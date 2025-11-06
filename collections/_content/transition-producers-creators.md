@@ -2,7 +2,7 @@
 content-type: "content-interlude"
 color: "violet"
 featured-image:
-  url: img/content/design-thinking.jpg
+  url: img/content/design-thinking-resize.jpg
   alt: "A diverse group of people sits around whiteboard containing sticky notes as one member talks"
 ---
 
