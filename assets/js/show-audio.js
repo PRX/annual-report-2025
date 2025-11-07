@@ -57,10 +57,10 @@
         requestAnimationFrame(renderFrame);
         // update data in frequencyData
         analyser.getByteTimeDomainData(frequencyData);
-        var high = frequencyData.reduce((a, v, i) => v > a ? v : a, 128);
-        var low = frequencyData.reduce((a, v, i) => v < a ? v : a, 128);
-        var offsetHigh = high / 128;
-        var offsetLow = (128 - low + 128) / 128;
+        const high = frequencyData.reduce((a, v, i) => v > a ? v : a, 128);
+        const low = frequencyData.reduce((a, v, i) => v < a ? v : a, 128);
+        const offsetHigh = high / 128;
+        const offsetLow = (128 - low + 128) / 128;
 
         wrapper.style.setProperty('--offset--high', offsetHigh);
         wrapper.style.setProperty('--offset--low', offsetLow);
@@ -96,7 +96,7 @@
 
     function handleClick(evt) {
       if (audio.paused) {
-        win.prx.pauseAllAudio();
+        win.prx?.pausePlayingAudio(evt.target);
         audio.play();
       } else {
         audio.pause();
