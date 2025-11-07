@@ -137,16 +137,17 @@ const PrxAudioQuote = class {
             this.trackEl.addEventListener('cuechange', this.handleCueChange);
             this.audioEl.appendChild(this.trackEl);
         }
+        this.el.appendChild(this.audioEl);
     }
     disconnectCallback() {
         this.audioEl = null;
         this.trackEl = null;
     }
     render() {
-        const { playing, progress, src, transcriptUrl, handlePlayToggleClick, handleRestartClick } = this;
+        const { playing, progress, src, transcriptUrl } = this;
         const hasAudio = !!src?.length;
         const hasTranscript = !!transcriptUrl?.length;
-        return (index.h(index.Host, { key: 'cac4fdda0e220903856671a9f5a6c09d76c75769', playing: playing, highlight: hasTranscript, style: { '--prx-audio-quote--progress': `${progress}` } }, index.h("blockquote", { key: '5ef7386c58efe26e1a12aacfd6060de694bc068f' }, index.h("prx-quote", { key: '2e7778385b3bcf1c149071a12eda5570b7460db9' }, index.h("slot", { key: 'efe4e950976d1b53d92a3361b03a3e18e2321a4f' })), index.h("cite", { key: '05587e4a9cf31b0dfff482bae3f6ffc54804c6f9' }, index.h("slot", { key: 'de36fe8a0cd4a9f1f41251473167141dc1ed93e7', name: 'citation' })), hasAudio && (index.h("prx-audio-quote-controls", { key: '03c6bccb80bfabb996909a830ce6b97aec19fc6c' }, index.h("button", { key: '007ecc3b88312ef1672e1b8ebc13bf6d75a8e1ee', type: "button", class: "restart-button", onClick: handleRestartClick, "aria-label": "Restart" }), index.h("button", { key: '4f2905647873481df209c24331a194d08bdf4e67', type: "button", class: "play-button", onClick: handlePlayToggleClick, "aria-label": playing ? 'Pause' : 'Play' }, index.h("span", { key: 'b05eb4976bf7ac66e2d7c0a913a12f315730ec3b', class: "play-icon" })))))));
+        return (index.h(index.Host, { key: 'e032bd5b4f689cb0b586d5344dec1aca58d3aad1', playing: playing, highlight: hasTranscript, style: { '--prx-audio-quote--progress': `${progress}` } }, index.h("blockquote", { key: 'b39747bd6db8fcc7bbfd7a08e5e0a108021c2414' }, index.h("prx-quote", { key: 'a6cbd5289a65faf4c07aaefc411e70249d09f95c' }, index.h("slot", { key: 'c61f6f2adb293c47e9c95d7943c8f440bdbd45c5' })), index.h("cite", { key: '54db55b8c8912e63193d674b15196a4278414374' }, index.h("slot", { key: '3be8f10ef6d1702646794f42279da612f76bf5c6', name: 'citation' })), hasAudio && (index.h("prx-audio-quote-controls", { key: 'acc418f77f4437e2a1cc4b58b99481b617fe5e7a' }, index.h("button", { key: 'c0a1a6546dd357c56d153f7d38f4f630ad891473', type: "button", class: "restart-button", onClick: this.handleRestartClick, "aria-label": "Restart" }), index.h("button", { key: '569c38aa32cff95eb3a6c9f231e9a4bed4951a1f', type: "button", class: "play-button", onClick: this.handlePlayToggleClick, "aria-label": playing ? 'Pause' : 'Play' }, index.h("span", { key: 'e8cc776b3916398db153732609b37b885f96f467', class: "play-icon" })))))));
     }
 };
 PrxAudioQuote.style = prxAudioQuoteCss;
