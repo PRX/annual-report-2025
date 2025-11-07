@@ -94,9 +94,8 @@
       console.log('drag', evt);
     }
 
-    function handleClick(evt) {
+    function handleClick() {
       if (audio.paused) {
-        win.prx?.pausePlayingAudio(evt.target);
         audio.play();
       } else {
         audio.pause();
