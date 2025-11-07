@@ -1,4 +1,5 @@
-import { Component, Element, Host, Prop, State, h } from '@stencil/core';
+// biome-ignore lint/correctness/noUnusedImports: `h` is required code hinting JSX.
+import { Component, Element, Host, h, Prop, State } from '@stencil/core';
 
 @Component({
   tag: 'prx-audio-quote',
@@ -168,6 +169,8 @@ export class PrxAudioQuote {
 
       this.audioEl.appendChild(this.trackEl);
     }
+
+    this.el.appendChild( this.audioEl );
   }
 
   disconnectCallback() {
@@ -176,7 +179,7 @@ export class PrxAudioQuote {
   }
 
   render() {
-    const { playing, progress, src, transcriptUrl, handlePlayToggleClick, handleRestartClick } = this;
+    const { playing, progress, src, transcriptUrl } = this;
     const hasAudio = !!src?.length;
     const hasTranscript = !!transcriptUrl?.length;
 
@@ -187,8 +190,8 @@ export class PrxAudioQuote {
           <cite><slot name='citation'></slot></cite>
           {hasAudio && (
             <prx-audio-quote-controls>
-              <button type="button" class="restart-button" onClick={handleRestartClick} aria-label="Restart"></button>
-              <button type="button" class="play-button" onClick={handlePlayToggleClick} aria-label={playing ? 'Pause' : 'Play'}>
+              <button type="button" class="restart-button" onClick={this.handleRestartClick} aria-label="Restart"></button>
+              <button type="button" class="play-button" onClick={this.handlePlayToggleClick} aria-label={playing ? 'Pause' : 'Play'}>
                 <span class="play-icon"></span>
               </button>
             </prx-audio-quote-controls>
