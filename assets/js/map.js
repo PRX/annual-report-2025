@@ -145,7 +145,6 @@ async function loadCSVData() {
 
         // Process the data and add to map
         processCSVData();
-        updateDataStats();
 
     } catch (error) {
         console.error('Error loading map.csv:', error);
@@ -323,37 +322,6 @@ function toggleAudio(button) {
       audioElement.pause();
       playIcon.textContent = '▶️';
   }
-}
-
-// Function to update data statistics
-function updateDataStats() {
-
-  if (!isDataLoaded) return;
-  // Check if the element exists before trying to update it
-  const statsDiv = document.getElementById('data-stats');
-  if (!statsDiv) {
-      console.warn('data-stats element not found, skipping stats update');
-      return;
-  }
-
-  const stats = {
-      total: csvData.length,
-      broadcast: csvData.filter(item => !item.type || item.type.toLowerCase() === 'Broadcast').length,
-      podcast: csvData.filter(item => item.type && (item.type.toLowerCase() === 'Podcast' || item.type.toLowerCase() === 'podcast')).length,
-      technology: csvData.filter(item => item.type && (item.type.toLowerCase() === 'Technology' || item.type.toLowerCase() === 'technology')).length,
-      voices: csvData.filter(item => item.type && item.type.toLowerCase() === 'Voices').length
-  };
-
-  statsDiv.innerHTML = `
-    <p><strong>Data Summary:</strong></p>
-    <ul>
-        <li>Total Locations: ${stats.total}</li>
-        <li>Broadcast Programming: ${stats.broadcast}</li>
-        <li>Podcasts: ${stats.podcast}</li>
-        <li>Technology: ${stats.technology}</li>
-        <li>Voices: ${stats.voices}</li>
-    </ul>
-  `;
 }
 
 // Function to show error messages
