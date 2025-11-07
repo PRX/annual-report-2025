@@ -746,74 +746,92 @@
   },
   {
     "label": "Barr Foundation",
-    "level": "institution-1mil"
+    "level": "institution-1mil",
+    "location": "" 
   },
   {
     "label": "The Corporation for Public Broadcasting",
-    "level": "institution-1mil"
+    "level": "institution-1mil",
+    "location": "" 
   },
   {
     "label": "Meadow Fund",
-    "level": "institution-1mil"
+    "level": "institution-1mil",
+    "location": "" 
   },
   {
     "label": "Mellon Foundation",
-    "level": "institution-1mil"
+    "level": "institution-1mil",
+    "location": "" 
   },
   {
     "label": "John Templeton Foundation",
-    "level": "institution-1mil"
+    "level": "institution-1mil",
+    "location": "" 
   },
   {
     "label": "Carnegie Corporation of New York",
-    "level": "institution-250"
+    "level": "institution-250",
+    "location": "" 
   },
   {
     "label": "The Just Trust",
-    "level": "institution-250"
+    "level": "institution-250",
+    "location": "" 
   },
   {
     "label": "The John S. &amp; James L. Knight Foundation",
-    "level": "institution-250"
+    "level": "institution-250",
+    "location": "" 
   },
   {
     "label": "The Henry Luce Foundation",
-    "level": "institution-250"
+    "level": "institution-250",
+    "location": "" 
   },
   {
     "label": "Lumina Foundation",
-    "level": "institution-250"
+    "level": "institution-250",
+    "location": "" 
   },
   {
     "label": "Mellon Foundation",
-    "level": "institution-250"
+    "level": "institution-250",
+    "location": "" 
   },
   {
     "label": "John D. &amp; Catherine T. MacArthur Foundation",
-    "level": "institution-100"
+    "level": "institution-100",
+    "location": "" 
   },
   {
     "label": "National Endowment for the Humanities",
-    "level": "institution-100"
+    "level": "institution-100",
+    "location": "" 
   },
   {
     "label": "Anonymous",
-    "level": "institution-25"
+    "level": "institution-25",
+    "location": "" 
   },
   {
     "label": "Apple",
-    "level": "institution-25"
+    "level": "institution-25",
+    "location": "" 
   },
   {
     "label": "National Endowment for the Humanities",
-    "level": "institution-25"
+    "level": "institution-25",
+    "location": "" 
   },
   {
     "label": "The Schmidt Family Foundation",
-    "level": "institution-25"
+    "level": "institution-25",
+    "location": "" 
   },
   {
     "label": "United States - Japan Foundation",
-    "level": "institution-25"
+    "level": "institution-25",
+    "location": "" 
   }
 ]
