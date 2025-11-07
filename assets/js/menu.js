@@ -19,7 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
       toggleBtn.setAttribute('aria-expanded', String(isMenuOpen));
     }
     if (navDrawer) {
-      navDrawer.setAttribute('aria-hidden', String(!isMenuOpen));
+      if (isMenuOpen) {
+        navDrawer.removeAttribute('inert');
+      } else {
+        navDrawer.setAttribute('inert', '');
+      }
     }
   };
 
