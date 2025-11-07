@@ -141,7 +141,7 @@ async function loadCSVData() {
         isDataLoaded = true;
 
         console.log(`Successfully loaded ${csvData.length} records from map.csv`);
-        updateStatus('success', `${csvData.length} locations`);
+        updateStatus('success');
 
         // Process the data and add to map
         processCSVData();
