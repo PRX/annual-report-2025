@@ -1,6 +1,6 @@
 [
   {
-    "heading": "$10,514,187",
+    "heading": "$8,387,118",
     "description": "Underwriting",
     "type": "revenue",
     "color": "orange",
@@ -15,7 +15,7 @@
     ]
   },
   {
-    "heading": "$8,556,348",
+    "heading": "$8,560,830",
     "description": "Operating Activities",
     "type": "revenue",
     "color": "cyan",
@@ -30,7 +30,7 @@
     ]
   },
   {
-    "heading": "$4,906,133",
+    "heading": "$3,347,057",
     "description": "Grants",
     "type": "revenue",
     "color": "yellow",
@@ -45,8 +45,8 @@
     ]
   },
   {
-    "heading": "$2,446,097",
-    "description": "Individual Gifts",
+    "heading": "$2,416,885",
+    "description": "Individual Gifts & Major Donors",
     "type": "revenue",
     "color": "blue",
     "positions": [
@@ -57,7 +57,7 @@
     ]
   },
   {
-    "heading": "$3,808,453",
+    "heading": "$4,326,674",
     "description": "Other",
     "type": "revenue",
     "color": "navy",
@@ -72,7 +72,7 @@
     ]
   },
   {
-    "heading": "$16,531,024",
+    "heading": "$12,026,684",
     "description": "Support for Creators",
     "type": "expense",
     "color": "orange",
@@ -87,7 +87,7 @@
     ]
   },
   {
-    "heading": "$16,056,516",
+    "heading": "$13,223,021",
     "description": "Content Production and Distribution",
     "type": "expense",
     "color": "cyan",
@@ -102,7 +102,7 @@
     ]
   },
   {
-    "heading": "$1,474,295",
+    "heading": "$1,293,413",
     "description": "Fundraising",
     "type": "expense",
     "color": "blue",
@@ -114,7 +114,7 @@
     ]
   },
   {
-    "heading": "$1,815,549",
+    "heading": "$1,506,701",
     "description": "Administrative",
     "type": "expense",
     "color": "yellow",
