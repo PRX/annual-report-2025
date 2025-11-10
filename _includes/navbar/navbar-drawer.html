@@ -8,6 +8,7 @@
     %}
 
     {% for welcome in site.welcome %}
+      {% assign href = welcome.link.anchor | default: content.slug | prepend: '#' %}
       {% assign label = welcome.link.label | default: welcome.title %}
       {% assign icon = welcome.link.icon %}
       {% include components/menu-item.html
