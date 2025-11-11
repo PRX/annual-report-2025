@@ -49,6 +49,11 @@
     display: flex;
     align-items: center;
     column-gap: 0.25rem;
+    font-style: italic;
+
+    i, em {
+      font-style: normal;
+    }
   }
 
   picture, img {
