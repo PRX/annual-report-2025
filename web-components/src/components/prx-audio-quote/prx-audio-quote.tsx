@@ -170,7 +170,7 @@ export class PrxAudioQuote {
       this.audioEl.appendChild(this.trackEl);
     }
 
-    this.el.appendChild( this.audioEl );
+    this.el.after( this.audioEl );
   }
 
   disconnectCallback() {
