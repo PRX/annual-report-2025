@@ -1,5 +1,5 @@
 ---
-title: "Awards &amp; Press"
+title: "Awards and Press"
 link:
   anchor: "awards-press"
   label: "Awards &amp; Press"

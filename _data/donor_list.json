@@ -532,7 +532,7 @@
   {
     "label": "Jacob Frank",
     "level": "advocate",
-    "location": "San Francisco, CA"
+    "location": "Brooklyn, NY"
   },
   {
     "label": "Rich Gorelick",
@@ -622,7 +622,7 @@
   {
     "label": "Leslie Meadowcroft",
     "level": "advocate",
-    "location": ""
+    "location": "Santa Barbara, CA"
   },
   {
     "label": "Ravi Mohan",
@@ -756,11 +756,6 @@
   },
   {
     "label": "Meadow Fund",
-    "level": "institution-1mil",
-    "location": "" 
-  },
-  {
-    "label": "Mellon Foundation",
     "level": "institution-1mil",
     "location": "" 
   },
