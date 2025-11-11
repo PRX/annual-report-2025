@@ -15,7 +15,7 @@ quotes:
     audio:
       url: https://f.prxu.org/9003/8c095798-57a1-4fd4-bdd3-eeb16d73f0b4/a4ecc292-ad89-4765-8a61-a950618a1fcb.mp3
       transcript: https://f.prxu.org/9003/8c095798-57a1-4fd4-bdd3-eeb16d73f0b4/transcripts/7dd782c9-179c-4006-9311-d6a2c3e8272e/III-Radiotopia-Rene-Vacchio-Albee.vtt
-  - text: "<p>Radiotopia — we've created a place where independent artists can be independent, but together. And that by working together, we're building sustainability for this kind of work. It's an example of what we can accomplish when we work together and pool our resources and have each other's back.</p>"
+  - text: "<p>Radiotopia — we've created a place where independent artists can be independent, but together. And, that by working together, we're building sustainability for this kind of work. It's an example of what we can accomplish when we work together and pool our resources and have each other's back.</p>"
     citation: "Yooree Losordo, Director of Network Operations at Radiotopia from PRX"
     image: img/staff/yooree.webp
     audio:

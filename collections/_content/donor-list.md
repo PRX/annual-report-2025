@@ -1,5 +1,5 @@
 ---
-title: "Thank you"
+title: "Thank You"
 link:
   anchor: "donor-list"
   label: "Donor Acknowledgements"

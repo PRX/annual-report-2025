@@ -3,7 +3,7 @@ content-type: "content"
 title: "Resilience and Innovation in Uncertain Times"
 link:
   anchor: "resilience"
-  label: "Resilience and Innovation"
+  label: "Resilience & Innovation"
   icon: "sprout"
 color: "teal"
 menu-group: "1"
