@@ -15,11 +15,13 @@ $show-tiles--tile-radius: 20px;
   position: absolute;
   inset: 0;
   z-index: -1;
+  opacity: 0.8;
 
   display: grid;
   justify-content: center;
   aspect-ratio: 1;
   overflow: clip;
+
 
   grid-template-columns: repeat(#{$show-tiles--columns}, #{$show-tiles--tile-size});
   grid-template-rows: repeat(#{$show-tiles--rows}, #{$show-tiles--tile-size});
@@ -65,7 +67,7 @@ $show-tile--animation-duration--step: $show-tile--animation-duration / ($show-ti
 
   display: grid;
   min-width: $show-tiles--tile-min-size;
-  opacity: 0.8;
+  opacity: 1;
 
   margin: 0;
   padding: $show-tiles--gap / 2;
