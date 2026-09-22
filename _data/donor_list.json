@@ -416,6 +416,10 @@
   },
   {
     "label": "Anonymous",
+    "level": "advocate"
+  },
+  {
+    "label": "Anonymous",
     "level": "advocate",
     "location": ""
   },
@@ -660,11 +664,6 @@
     "location": "West Hollywood, CA"
   },
   {
-    "label": "Dominique Harre-Rogers and Glenn Rogers",
-    "level": "advocate",
-    "location": "Bedford, PA"
-  },
-  {
     "label": "Sharon G. and Robert L. Ryan",
     "level": "advocate",
     "location": "Minneapolis, MN"
@@ -747,86 +746,86 @@
   {
     "label": "Barr Foundation",
     "level": "institution-1mil",
-    "location": "" 
+    "location": ""
   },
   {
     "label": "The Corporation for Public Broadcasting",
     "level": "institution-1mil",
-    "location": "" 
+    "location": ""
   },
   {
     "label": "Meadow Fund",
     "level": "institution-1mil",
-    "location": "" 
+    "location": ""
   },
   {
     "label": "John Templeton Foundation",
     "level": "institution-1mil",
-    "location": "" 
+    "location": ""
   },
   {
     "label": "Carnegie Corporation of New York",
     "level": "institution-250",
-    "location": "" 
+    "location": ""
   },
   {
     "label": "The Just Trust",
     "level": "institution-250",
-    "location": "" 
+    "location": ""
   },
   {
     "label": "The John S. &amp; James L. Knight Foundation",
     "level": "institution-250",
-    "location": "" 
+    "location": ""
   },
   {
     "label": "The Henry Luce Foundation",
     "level": "institution-250",
-    "location": "" 
+    "location": ""
   },
   {
     "label": "Lumina Foundation",
     "level": "institution-250",
-    "location": "" 
+    "location": ""
   },
   {
     "label": "Mellon Foundation",
     "level": "institution-250",
-    "location": "" 
+    "location": ""
   },
   {
     "label": "John D. &amp; Catherine T. MacArthur Foundation",
     "level": "institution-100",
-    "location": "" 
+    "location": ""
   },
   {
     "label": "National Endowment for the Humanities",
     "level": "institution-100",
-    "location": "" 
+    "location": ""
   },
   {
     "label": "Anonymous",
     "level": "institution-25",
-    "location": "" 
+    "location": ""
   },
   {
     "label": "Apple",
     "level": "institution-25",
-    "location": "" 
+    "location": ""
   },
   {
     "label": "National Endowment for the Humanities",
     "level": "institution-25",
-    "location": "" 
+    "location": ""
   },
   {
     "label": "The Schmidt Family Foundation",
     "level": "institution-25",
-    "location": "" 
+    "location": ""
   },
   {
     "label": "United States - Japan Foundation",
     "level": "institution-25",
-    "location": "" 
+    "location": ""
   }
 ]
